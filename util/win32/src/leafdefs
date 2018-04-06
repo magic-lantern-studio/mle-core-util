@@ -1,0 +1,100 @@
+# -*- Makefile -*-
+#
+# Copyright (C) 2000-2006  Wizzer Works
+#
+# leafdefs - Util library definitions and rules common to all
+# versions.  This file is included by the Makefiles in the version
+# directories, directories are referenced relative to a particular
+# version directory, not this one.
+#
+# $Id$
+#
+#*************************************************************************
+
+ISM_DEPTH = $(LEAF_DEPTH)/..
+include $(ISM_DEPTH)/ismdefs
+
+#
+# VPATH points to where the code actually is.
+#
+VPATH = $(LEAF_DEPTH):$(ISM_DEPTH)/../common/src
+
+LCINCS = \
+    -I$(ISM_DEPTH)/../common/include \
+    -I$(ISM_DEPTH)/include \
+    $(NULL)
+
+LCXXINCS = \
+    $(LCINCS) \
+    $(NULL)
+
+COMMONOPTS = \
+    -nologo \
+    -W3 -GX \
+    $(NULL)
+
+COPTS = \
+    $(COMMONOPTS) \
+    $(LCOPTS) \
+    $(NULL)
+
+CXXOPTS = \
+    $(COMMONOPTS) \
+    $(LCXXOPTS) \
+    $(NULL)
+
+CFILES = \
+    mlDebug.c \
+    mlErrno.c \
+    mlExpandFilename.c \
+    mlLogFile.c \
+    mlUnique.c \
+    $(NULL)
+
+CXXFILES = \
+    MleDsoLoader.cxx \
+    MleMemoryManager.cxx \
+    MleTemplate.cxx \
+    MleWin32MemoryManager.cxx \
+    MleWin32Path.cxx \
+    mlGetopt.cpp \
+    $(NULL)
+
+LIBC_STYLE = $(CF_STATIC_SINGLE_LIBC)
+LIBC_STYLE_DEFS = $(CF_STATIC_SINGLE_DEFS)
+
+#
+# To use manual precompilation uncomment these two macros
+# and specify the name for the precompiled header (PCH_MANUAL_TARGET)
+# and the basename of the .h and .cxx files where precompilation is
+# to take place.
+#
+#PCH_MANUAL_TARGET = aumath.pch
+#PCH_MANUAL_BASENAME = bar
+
+all: $(TARGETS)
+
+#
+# Add $(RCOBJECTS) after each $(OBJECTS) if resource files (*.res) are
+# to be linked into the target.
+#
+$(TARGETS): $(OBJECTS)
+	$(LD) $(LLDOPTS) $(OBJECTS)
+#	$(BSCF) $(SBRFILES)
+
+#
+# 'collect' is the rule that tells where the installation package
+# should put stuff.  CUR_COLLECTLOG is the collection file in the
+# directory of the current version (e.g. debug or release).
+#
+# *NOTE: the "-srcDir ." flag is not necessary!  It is just here in
+#        the example for completeness
+#
+collect: all
+	mkdir -p $(IBBASEDIR)/build/$(CUR_VERSION)
+	$(IBCOLLECT) -log $(CUR_COLLECTLOG) -tags "LIB" \
+		-srcDir . \
+		-destDir lib \
+		$(TARGETS)
+
+include $(ISMRULES)
