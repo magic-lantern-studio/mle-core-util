@@ -1,4 +1,8 @@
-// Copyright (c) 2015 Wizzer Works
+// COPYRIGHT_BEGIN
+//
+// The MIT License (MIT)
+//
+// Copyright (c) 2015-2018 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,14 +22,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 //
+//  For information concerning this source file, contact Mark S. Millard,
+//  of Wizzer Works at msm@wizzerworks.com.
+//
+//  More information concerning Wizzer Works may be found at
+//
+//      http://www.wizzerworks.com
+//
+// COPYRIGHT_END
 
+// Include Magic Lantern utility header files.
 #include "libmlutil.h"
 #include "mle/MleDsoLoader.h"
 
 static char *dso_path[] = {
-	"",
-	"./",
-	"$MLE_ROOT/usr/share/WizzerWorks/MagicLantern/lib/",
+	(char *)"",
+	(char *)"./",
+	(char *)"$MLE_ROOT/lib/",
 	NULL
 };
 

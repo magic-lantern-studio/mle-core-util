@@ -68,13 +68,12 @@
 // Include system header files.
 #include <stdio.h>
 #include <ctype.h>
-#ifdef WIN32
 #include <string.h>
-#else /* ! WIN32 */
+#ifndef WIN32
 #include <unistd.h>
 #include <strings.h>
 #include <pwd.h>
-#endif /* WIN32 */
+#endif /* ! WIN32 */
 #include <time.h>
 
 // Include Magic Lantern header files.

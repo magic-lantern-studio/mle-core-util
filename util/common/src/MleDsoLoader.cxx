@@ -15,7 +15,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015 Wizzer Works
+// Copyright (c) 2015-2018 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -68,13 +68,13 @@
 
 // The default path for searching for DSOs.
 static char *dso_path[] = {
-	"",
-	"./",
+	(char *)"",
+	(char *)"./",
 #if defined(__sgi) || defined(__linux__)
-	"$MLE_ROOT/usr/WizzerWorks/MagicLantern/lib/",
+	(char *)"$MLE_ROOT/lib/",
 #else
 #if defined(WIN32)
-	"C:/Program Files/WizzerWorks/MagicLantern/lib/",
+	(char *)"C:/Program Files/WizzerWorks/MagicLantern/lib/",
 #endif
 #endif
 	NULL
@@ -101,12 +101,12 @@ void (*MleDSOLoader::findInitClass(const char *classname,void *handle,const char
 	{
 #if defined(__sgi)
 		sprintf(dso_func,"initClass__%d%s%sSFv",
-			strlen(classname) + strlen(prefix),prefix,classname);
+			(strlen(classname) + strlen(prefix)),prefix,classname);
 		initClass = (void (*)(void))dlsym(handle,dso_func);
 #endif
 #if defined(__linux__)
-		sprintf(dso_func,"_ZN%d%s%s9initClassEv",
-			strlen(classname) + strlen(prefix),prefix,classname);
+		sprintf(dso_func,"_ZN%zu%s%s9initClassEv",
+			(strlen(classname) + strlen(prefix)),prefix,classname);
 		initClass = (void (*)(void))dlsym(handle,dso_func);
 #endif
 #if defined(WIN32)
@@ -129,7 +129,7 @@ void (*MleDSOLoader::findInitClass(const char *classname,void *handle,const char
 		initClass = (void (*)(void))dlsym(handle,dso_func);
 #endif
 #if defined(__linux__)
-		sprintf(dso_func,"_ZN%d%s9initClassEv",
+		sprintf(dso_func,"_ZN%zu%s9initClassEv",
 			strlen(classname),classname);
 		initClass = (void (*)(void))dlsym(handle,dso_func);
 #endif
