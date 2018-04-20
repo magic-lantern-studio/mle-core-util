@@ -40,12 +40,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
-    <OutDir>$(Platform)$(Configuration)\</OutDir>
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
-    <OutDir>$(Platform)$(Configuration)\</OutDir>
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -67,6 +67,9 @@
       <ManifestFile>$(Platform)\$(Configuration)\$(TargetName)$(TargetExt).intermediate.manifest</ManifestFile>
       <OutputFile>$(Platform)\$(Configuration)\utild.dll</OutputFile>
       <AdditionalDependencies>psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>$(Platform)\$(Configuration)\utild.lib</ImportLibrary>
+      <ProgramDatabaseFile>$(Platform)\$(Configuration)\$(TargetName).pdb</ProgramDatabaseFile>
+      <ProfileGuidedDatabase>$(Platform)\$(Configuration)\$(TargetName).pgd</ProfileGuidedDatabase>
     </Link>
     <ManifestResourceCompile>
       <ResourceOutputFileName>$(Platform)\$(Configuration)\$(TargetName)$(TargetExt).embed.manifest.res</ResourceOutputFileName>
@@ -74,6 +77,12 @@
     <BuildLog>
       <Path>$(Platform)\$(Configuration)\$(MSBuildProjectName).log</Path>
     </BuildLog>
+    <Bscmake>
+      <OutputFile>$(Platform)\$(Configuration)\$(TargetName).bsc</OutputFile>
+    </Bscmake>
+    <Xdcmake>
+      <OutputFile>$(Platform)\$(Configuration)\$(TargetName).xml</OutputFile>
+    </Xdcmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -99,6 +108,9 @@
       <ManifestFile>$(Platform)\$(Configuration)\$(TargetName)$(TargetExt).intermediate.manifest</ManifestFile>
       <OutputFile>$(Platform)\$(Configuration)\util.dll</OutputFile>
       <AdditionalDependencies>psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>$(Platform)\$(Configuration)\util.lib</ImportLibrary>
+      <ProgramDatabaseFile>$(Platform)\$(Configuration)\$(TargetName).pdb</ProgramDatabaseFile>
+      <ProfileGuidedDatabase>$(Platform)\$(Configuration)\$(TargetName).pgd</ProfileGuidedDatabase>
     </Link>
     <BuildLog>
       <Path>$(Platform)\$(Configuration)\$(MSBuildProjectName).log</Path>
@@ -106,6 +118,12 @@
     <ManifestResourceCompile>
       <ResourceOutputFileName>$(Platform)\$(Configuration)\$(TargetName)$(TargetExt).embed.manifest.res</ResourceOutputFileName>
     </ManifestResourceCompile>
+    <Bscmake>
+      <OutputFile>$(Platform)\$(Configuration)\$(TargetName).bsc</OutputFile>
+    </Bscmake>
+    <Xdcmake>
+      <OutputFile>$(Platform)\$(Configuration)\$(TargetName).xml</OutputFile>
+    </Xdcmake>
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
