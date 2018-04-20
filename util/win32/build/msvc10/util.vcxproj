@@ -88,6 +88,8 @@
       <ProgramDataBaseFileName>$(Platform)\$(Configuration)\</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
+      <XMLDocumentationFileName>$(Platform)\$(Configuration)</XMLDocumentationFileName>
+      <BrowseInformationFile>$(Platform)\$(Configuration)</BrowseInformationFile>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -107,13 +109,14 @@
 copy win32\Release\util.lib $(MLE_HOME)\lib\tools\util.lib
 mkdir $(MLE_HOME)\lib\runtime\cdecl
 copy win32\Release\util.lib $(MLE_HOME)\lib\runtime\cdecl\util.lib
-mkdir $(MLE_HOME)\lib\rehearsal
-copy win32\Release\util.lib $(MLE_HOME)\lib\rehearsal\util.lib
 mkdir $(MLE_HOME)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
 xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
 </Command>
     </PostBuildEvent>
+    <BuildLog>
+      <Path>$(Platform)\$(Configuration)\$(MSBuildProjectName).log</Path>
+    </BuildLog>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
@@ -152,8 +155,6 @@ xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
 copy x64\Release\util.lib $(MLE_HOME)\lib64\tools\util.lib
 mkdir $(MLE_HOME)\lib64\runtime\cdecl
 copy x64\Release\util.lib $(MLE_HOME)\lib64\runtime\cdecl\util.lib
-mkdir $(MLE_HOME)\lib64\rehearsal
-copy x64\Release\util.lib $(MLE_HOME)\lib64\rehearsal\util.lib
 mkdir $(MLE_HOME)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
 xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
@@ -175,6 +176,8 @@ xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <XMLDocumentationFileName>$(Platform)\$(Configuration)</XMLDocumentationFileName>
+      <BrowseInformationFile>$(Platform)\$(Configuration)</BrowseInformationFile>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -194,13 +197,14 @@ xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
 copy win32\Debug\utild.lib $(MLE_HOME)\lib\tools\utild.lib
 mkdir $(MLE_HOME)\lib\runtime\cdecl
 copy win32\Debug\utild.lib $(MLE_HOME)\lib\runtime\cdecl\utild.lib
-mkdir $(MLE_HOME)\lib\rehearsal
-copy win32\Debug\utild.lib $(MLE_HOME)\lib\rehearsal\utild.lib
 mkdir $(MLE_HOME)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
 xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
 </Command>
     </PostBuildEvent>
+    <BuildLog>
+      <Path>$(Platform)\$(Configuration)\$(MSBuildProjectName).log</Path>
+    </BuildLog>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
@@ -239,8 +243,6 @@ xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
 copy x64\Debug\utild.lib $(MLE_HOME)\lib64\tools\utild.lib
 mkdir $(MLE_HOME)\lib64\runtime\cdecl
 copy x64\Debug\utild.lib $(MLE_HOME)\lib64\runtime\cdecl\utild.lib
-mkdir $(MLE_HOME)\lib64\rehearsal
-copy x64\Debug\utild.lib $(MLE_HOME)\lib64\rehearsal\utild.lib
 mkdir $(MLE_HOME)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
 xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
