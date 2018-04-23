@@ -125,7 +125,7 @@ mkdir $(MLE_HOME)\lib\rehearsal
 copy win32\Debug\utild.lib $(MLE_HOME)\lib\rehearsal\utild.lib
 mkdir $(MLE_HOME)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
-xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle</Command>
+</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -171,7 +171,7 @@ mkdir $(MLE_HOME)\lib64\rehearsal
 copy x64\Debug\utild.lib $(MLE_HOME)\lib64\rehearsal\utild.lib
 mkdir $(MLE_HOME)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
-xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle</Command>
+</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -221,7 +221,7 @@ mkdir $(MLE_HOME)\lib\rehearsal
 copy win32\Release\util.lib $(MLE_HOME)\lib\rehearsal\util.lib
 mkdir $(MLE_HOME)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
-xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle</Command>
+</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -271,7 +271,7 @@ mkdir $(MLE_HOME)\lib\rehearsal
 copy x64\Release\util.lib $(MLE_HOME)\lib64\rehearsal\util.lib
 mkdir $(MLE_HOME)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
-xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle</Command>
+</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -298,6 +298,7 @@ xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle</Command>
     <ClInclude Include="..\..\..\common\include\mle\mlToken.h" />
     <ClInclude Include="..\..\..\common\include\mle\mlTypes.h" />
     <ClInclude Include="..\..\..\common\include\mle\mlUnique.h" />
+    <ClInclude Include="..\..\src\mlutil.h" />
     <ClInclude Include="util_rehearsal.h" />
   </ItemGroup>
   <ItemGroup>
@@ -313,20 +314,7 @@ xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle</Command>
     <ClCompile Include="..\..\..\win32\src\MleWin32MemoryManager.cxx" />
     <ClCompile Include="..\..\..\win32\src\MleWin32Path.cxx" />
     <ClCompile Include="..\..\..\win32\src\mlGetopt.cpp" />
-    <ClCompile Include="dllmain.cpp">
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-      </PrecompiledHeader>
-    </ClCompile>
+    <ClCompile Include="..\..\src\mlutil.cpp" />
     <ClCompile Include="util_rehearsal.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
