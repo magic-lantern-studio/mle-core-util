@@ -77,22 +77,24 @@
 #ifndef __MLE_EXPANDFILENAME_H_
 #define __MLE_EXPANDFILENAME_H_
 
+#include "mle/MleUtil.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+
 
 /**
  * Set the filename index.
  *
  * @param The index to set.
  */
-void mlFilenameIndexSet(int);
+MLE_UTIL_API void mlFilenameIndexSet(int);
 
 /**
  * Increment the filename index.
  */
-void mlFilenameIndexIncrement(void);
+MLE_UTIL_API void mlFilenameIndexIncrement(void);
 
 
 /**
@@ -103,7 +105,8 @@ void mlFilenameIndexIncrement(void);
  * @return The result is newly malloc'ed storage; it's up to the caller to
  * mleFree() this.
  */
-char *mlFilenameExpand(const char *name);
+MLE_UTIL_API char * mlFilenameExpand(const char *name);
+
 
 #ifdef __cplusplus
 } /* end of 'extern "C"' */
