@@ -87,7 +87,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>MLE_REHEARSAL;MLE_DLL;MLE_INTERNAL;MLE_DEBUG;WIN32;_DEBUG;_WINDOWS;_USRDLL;UTIL_REHEARSAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>MLE_REHEARSAL;MLE_DLL;MLE_INTERNAL;MLE_MAKE_DLL;MLE_DEBUG;WIN32;_DEBUG;_WINDOWS;_USRDLL;UTIL_REHEARSAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\include;..\..\..\common\include;..\..\..\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)\$(TargetName).pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>$(Platform)\$(Configuration)/</AssemblerListingLocation>
@@ -133,7 +133,7 @@ xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>MLE_REHEARSAL;MLE_DLL;MLE_INTERNAL;MLE_DEBUG;WIN32;_DEBUG;_WINDOWS;_USRDLL;UTIL_REHEARSAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>MLE_REHEARSAL;MLE_DLL;MLE_INTERNAL;MLE_MAKE_DLL;MLE_DEBUG;WIN32;_DEBUG;_WINDOWS;_USRDLL;UTIL_REHEARSAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\include;..\..\..\common\include;..\..\..\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)\$(TargetName).pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>$(Platform)\$(Configuration)/</AssemblerListingLocation>
@@ -181,7 +181,7 @@ xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>MLE_REHEARSAL;MLE_DLL;MLE_INTERNAL;WIN32;NDEBUG;_WINDOWS;_USRDLL;UTIL_REHEARSAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>MLE_REHEARSAL;MLE_DLL;MLE_INTERNAL;MLE_MAKE_DLL;WIN32;NDEBUG;_WINDOWS;_USRDLL;UTIL_REHEARSAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\include;..\..\..\common\include;..\..\..\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)$(TargetName).pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>$(Platform)\$(Configuration)/</AssemblerListingLocation>
@@ -231,7 +231,7 @@ xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>MLE_REHEARSAL;MLE_DLL;MLE_INTERNAL;WIN32;NDEBUG;_WINDOWS;_USRDLL;UTIL_REHEARSAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>MLE_REHEARSAL;MLE_DLL;MLE_INTERNAL;MLE_MAKE_DLL;WIN32;NDEBUG;_WINDOWS;_USRDLL;UTIL_REHEARSAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\include;..\..\..\common\include;..\..\..\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)$(TargetName).pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>$(Platform)\$(Configuration)/</AssemblerListingLocation>
@@ -299,7 +299,6 @@ xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
     <ClInclude Include="..\..\..\common\include\mle\mlTypes.h" />
     <ClInclude Include="..\..\..\common\include\mle\mlUnique.h" />
     <ClInclude Include="..\..\src\mlutil.h" />
-    <ClInclude Include="util_rehearsal.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\common\src\mlDebug.c" />
@@ -315,7 +314,6 @@ xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
     <ClCompile Include="..\..\..\win32\src\MleWin32Path.cxx" />
     <ClCompile Include="..\..\..\win32\src\mlGetopt.cpp" />
     <ClCompile Include="..\..\src\mlutil.cpp" />
-    <ClCompile Include="util_rehearsal.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
