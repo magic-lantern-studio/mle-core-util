@@ -60,7 +60,7 @@
 #include "mle/mlToken.h"
 
 /* Declare global debug manager. */
-MleDebugMgrP *g_mlDebugMgr;
+MLE_UTIL_API MleDebugMgrP *g_mlDebugMgr;
 
 /*
  * Routine to facilitate syntax parsing of token strings.

@@ -65,6 +65,7 @@ error...undefined platform
 
 /* Include Magic Lantern header files. */
 #include "mle/mlTypes.h"
+#include "mle/MleUtil.h"
 
 /* NOTE: This duplicates the source found under the player's  */
 /*       source tree.  This was an intentional decision made  */
@@ -174,16 +175,16 @@ typedef struct _MleDebugMgrP
 EXTERN MlBoolean _mlDBInit(MleDebugMgrP *,const char *,const char *);
 EXTERN void _mlDBDeinit(MleDebugMgrP *);
 
-EXTERN MleDebugMgrP *mlDebugCreate(char *,char *);
-EXTERN MlBoolean mlDebugDelete(MleDebugMgrP *);
-EXTERN MlBoolean mlDebugMatch(MleDebugMgrP *,const char *,const char *,signed long);
-EXTERN signed long mlDebugGetLevel(MleDebugMgrP *,const char *);
-EXTERN void mlDebugDump(MleDebugMgrP *);
+EXTERN MLE_UTIL_API MleDebugMgrP *mlDebugCreate(char *,char *);
+EXTERN MLE_UTIL_API MlBoolean mlDebugDelete(MleDebugMgrP *);
+EXTERN MLE_UTIL_API MlBoolean mlDebugMatch(MleDebugMgrP *,const char *,const char *,signed long);
+EXTERN MLE_UTIL_API signed long mlDebugGetLevel(MleDebugMgrP *,const char *);
+EXTERN MLE_UTIL_API void mlDebugDump(MleDebugMgrP *);
 
 
 #if defined(MLE_DEBUG)
 
-extern MleDebugMgrP *g_mlDebugMgr;
+extern MLE_UTIL_API MleDebugMgrP *g_mlDebugMgr;
 
 
 /* Useful macros. */

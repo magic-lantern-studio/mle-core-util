@@ -16,7 +16,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015 Wizzer Works
+// Copyright (c) 2015-2018 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -48,4 +48,7 @@
 /*
  * Global variable for holding the last error number.
  */
-unsigned short g_mlErrno;
+
+#include "mle/MleUtil.h"
+
+MLE_UTIL_API unsigned short g_mlErrno;
