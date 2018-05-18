@@ -52,6 +52,7 @@
 #include <memory.h>
 #endif /* WIN32 */
 #else
+#include <string.h>
 #include <new>
 #endif
 #include <ostream>
