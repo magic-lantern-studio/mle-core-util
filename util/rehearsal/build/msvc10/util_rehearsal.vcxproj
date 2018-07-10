@@ -298,6 +298,7 @@ xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
     <ClInclude Include="..\..\..\common\include\mle\mlToken.h" />
     <ClInclude Include="..\..\..\common\include\mle\mlTypes.h" />
     <ClInclude Include="..\..\..\common\include\mle\mlUnique.h" />
+    <ClInclude Include="..\..\..\win32\include\mle\MleWin32Path.h" />
     <ClInclude Include="..\..\src\mlutil.h" />
   </ItemGroup>
   <ItemGroup>

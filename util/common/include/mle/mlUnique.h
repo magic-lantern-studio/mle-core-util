@@ -51,7 +51,11 @@
 extern "C" {
 #endif /* __cplusplus */
 
-int mlUnique(void *ap, int n, int size, int(*compare)(const void *, const void *));
+/* Include Magic Lantern header files. */
+#include "mle/mlTypes.h"
+#include "mle/MleUtil.h"
+
+EXTERN MLE_UTIL_API int mlUnique(void *ap, int n, int size, int(*compare)(const void *, const void *));
 
 #ifdef __cplusplus
 }

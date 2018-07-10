@@ -14,7 +14,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015 Wizzer Works
+// Copyright (c) 2015-2018 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -65,9 +65,9 @@
 
 
 /* Declare static variables. */
-#ifdef __sgi
+#if defined(__linux__)
 //static char *g_directory = "/usr/tmp";
-const char *defaultDirectory = "/usr/tmp";
+const char *defaultDirectory = "/opt/MagicLantern/log";
 #else
 const char *defaultDirectory = "C:/WINDOWS/Temp";
 #endif

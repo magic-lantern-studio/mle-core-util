@@ -14,7 +14,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015 Wizzer Works
+// Copyright (c) 2015-2018 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -45,6 +45,9 @@
 
 // Include system header files.
 #include <memory.h>
+
+// Inlude Magic Lantern header files.
+#include "mle/mlUnique.h"
 
 /*
  * mleUnique - return an array identical to the input but with duplicate entries
@@ -77,7 +80,6 @@ int mlUnique(void *ap, int n, int size, int(*compare)(const void *, const void *
     }
     return n;
 }
-
 	    
 #ifdef UNIT_TEST
 
