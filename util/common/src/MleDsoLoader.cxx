@@ -368,8 +368,11 @@ MleDSOLoader::loadFile(const char *filename,char **pathlist)
 #if defined(__sgi) || defined(__linux__)
 			char *buf = dlerror();
 			if ( strstr(buf,"map soname") == NULL ||
-				getenv("MLE_DSO_VERBOSE") )
-				printf("%s.\n",buf);
+                             getenv("MLE_DSO_VERBOSE") ) {
+                                printf("MleDsoLoader: %s.\n",buf);
+                                fflush(stdout);
+                        }
+
 #endif
 		}
 
