@@ -15,7 +15,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2018 Wizzer Works
+// Copyright (c) 2015-2020 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -52,7 +52,7 @@ extern "C" {
 #endif
 
 // Include standard header files.
-#if defined(__sgi) || defined(__linux__)
+#if defined(__linux__)
 #elif defined(WIN32)
 #elif defined(psx)
 /* Temporary hack to add breakpoints to PSX target under PSYQ environment. */
@@ -70,7 +70,7 @@ error...undefined platform
 /* NOTE: This duplicates the source found under the player's  */
 /*       source tree.  This was an intentional decision made  */
 /*       to alienate changes made to the player's source to   */
-/*       facilitate the rehersal player and debugging tools.  */
+/*       facilitate the rehearsal player and debugging tools. */
 
 #define __QUARK_SRC__
 #ifdef __QUARK_SRC__
@@ -94,18 +94,24 @@ EXTERN void _dbgUnrefQuark(const _dbgQuark);
 #define _dbgDICTTABLESIZE 15
 #endif
 
+/**
+ * This structure is a dictionary entry used for internal debug support.
+ */
 typedef struct __dbgDictEntry
 {
-    _dbgQuark key;
-    void *ptr;
+    _dbgQuark key;  /**< A token key for the entry. */
+    void *ptr;      /**< A pointer to the entry. */
 
-    struct __dbgDictEntry *next;
+    struct __dbgDictEntry *next;  /**< A pointer to the next entry. */
 } _dbgDictEntry;
 
 
+/**
+ * This structure is a dictionary used for internal debug support.
+ */
 typedef struct __dbgDict
 {
-    _dbgDictEntry *entry[_dbgDICTTABLESIZE];
+    _dbgDictEntry *entry[_dbgDICTTABLESIZE];  /**< A list of entries. */
 } *_dbgDict;
 
 

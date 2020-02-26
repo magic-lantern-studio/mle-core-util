@@ -1,0 +1,25 @@
+/**
+ * \mainpage
+ *
+ * The Magic Lantern Core Utility Library is a common library that may be
+ * used in both Magic Lantern tools as well as target platform titles.
+ *
+ * \section Overview
+ * <ul>
+ * <li>
+ * On the Windows platform the library is called <b><i>util.lib</i></b>.
+ * </li><li>
+ * On the Linux platform the library is call <b><i>libmleutil.a</i></b>.
+ * </li>
+ * </ul>
+ *
+ * \section windowsBuild Build Instructions for Windows Platform
+ *
+ * The build instructions for <i>util.lib</i> may be found on the project
+ * wiki at https://github.com/magic-lantern-studio/mle-documentation/wiki/SDK-Build-Environment-using-Microsoft-Visual-Studio#build-the-core-util-library-for-tools.
+ *
+ * \section linuxBuild Build Instructions for Linux Platform
+ *
+ * The build instructions for <i>libmlutil.a</i> may be found on the project
+ * wiki at https://github.com/magic-lantern-studio/mle-documentation/wiki/SDK-Build-Environment-for-Linux-Platform#build-the-core-util-library-for-tools.
+ */

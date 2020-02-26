@@ -1,4 +1,11 @@
-/** @defgroup MleCore Magic Lantern Runtime Engine Core Utility Library API */
+/**
+ * @defgroup MleCore Magic Lantern Core Utility Library API
+ * @brief Utility library for Magic Lantern tools and titles.
+ *
+ * The utility library is a common library that provides components
+ * that may be used in both Magic Lantern tools as well and target
+ * platform titles.
+ */
 
 /**
  * @file mlAssert.h
@@ -16,7 +23,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2018 Wizzer Works
+// Copyright (c) 2015-2020 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
