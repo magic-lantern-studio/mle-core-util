@@ -449,7 +449,7 @@ MleDSOLoader::loadClass(const char *classname,const char *prefix)
 	sprintf(dso_file,"%s.so",classname);
 #else
 #if defined(WIN32)
-#endif
+#endif /* XXX - what matches this endif? */
 #ifdef MLE_DEBUG
 	sprintf(dso_file,"%sd.dll",classname);
 #else
@@ -457,6 +457,14 @@ MleDSOLoader::loadClass(const char *classname,const char *prefix)
 #endif /* ! MLE_DEBUG */
 #endif
 	handle = loadFile(dso_file,m_pathlist);
+
+#if defined(__linux__)
+    if (handle == NULL) {
+        // Try to load with Unix 'lib' prefix.
+        sprintf(dso_file,"lib%s.so",classname);
+        handle = loadFile(dso_file,m_pathlist);
+    }
+#endif /* __linux__ */
 
 	// If we haven't found it yet, hope it's in the current image.
 	if ( handle == NULL )
