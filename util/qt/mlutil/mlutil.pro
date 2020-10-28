@@ -33,7 +33,6 @@ SOURCES += \
     $$PWD/../../linux/src/MleLinuxMemoryManager.cxx \
     $$PWD/../../linux/src/MleLinuxPath.cxx
 
-
 HEADERS += \
     $$PWD/../../common/include/mle/mlArray.h \
     $$PWD/../../common/include/mle/mlAssert.h \
@@ -56,6 +55,9 @@ HEADERS += \
     $$PWD/../../common/include/mle/mlTypes.h \
     $$PWD/../../common/include/mle/mlUnique.h
 
+HEADERS += \
+    $$PWD/../../linux/include/mle/MleLinuxPath.h \
+    $$PWD/../../linux/include/mle/mlPlatformDefs.h
 
 # Default rules for deployment.
 unix {
