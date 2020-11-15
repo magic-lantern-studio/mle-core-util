@@ -21,8 +21,8 @@ libmlutil_la_SOURCES = \
 	../../src/MleLinuxMemoryManager.cxx \
 	../../src/MleLinuxPath.cxx
 
-# Linker options libTestProgram
-libmlutil_la_LDFLAGS = 
+# Linker options for libmlutil
+libmlutil_la_LDFLAGS = -version-info 1:0:0
 
 # Compiler options. Here we are adding the include directory
 # to be searched for headers included in the source code.
