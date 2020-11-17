@@ -8,7 +8,6 @@
  * debugging class.
  *
  * @author Mark S. Millard
- * @date May 1, 2003
  */
 
 // COPYRIGHT_BEGIN
@@ -684,7 +683,7 @@ void mlDebugDump(MleDebugMgrP *manager)
                 while (catEntry) {
                     cat = (MleDebugCategoryP *)catEntry->ptr;
                     catName = _dbgQuarkToString(catEntry->key);
-                    printf("\t\t%s = %d\n",catName,cat->level);
+                    printf("\t\t%s = %ld\n",catName,cat->level);
                     catEntry = catEntry->next;
                 }
 	    } /* For each category in hash. */

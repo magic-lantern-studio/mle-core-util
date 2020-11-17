@@ -7,7 +7,6 @@
  * This file implements the classes used for generating code based on templates.
  *
  * @author Mark S. Millard
- * @date September 15, 2004
  */
 
 // COPYRIGHT_BEGIN
@@ -411,7 +410,8 @@ void MleTemplateBindings::removeBinding(char *name)
 
 void MleTemplateProcess::outstr(char *str)
 {
-    while (*str != NULL )
+	//while ( *str != NULL )
+    while ( *str != '\0' )
 	{
 		outchar((int)*str);
 		str++;
@@ -766,7 +766,8 @@ void MleTemplateBindings::dump(FILE *fd, int tab)
 			fprintf(fd,"'STRING \"%s\"", pb->m_value.m_sval);
 			break;
 		  case  Binding::PROC:
-			fprintf(fd,"'PROC 0x%08x", (long)pb->m_value.m_cb.m_proc);
+			//fprintf(fd,"'PROC 0x%08x", (long)pb->m_value.m_cb.m_proc);
+			fprintf(fd,"'PROC 0x%p", pb->m_value.m_cb.m_proc);
 			break;
 		}
 		fprintf(fd, ")\n");

@@ -7,7 +7,6 @@
  * This file contains utilities for maintaining a log file.
  *
  * @author Mark S. Millard
- * @date May 1, 2003
  */
 
 // COPYRIGHT_BEGIN
@@ -50,6 +49,7 @@
 #include <string.h>
 #include <process.h>
 #else
+#include <string.h>
 #include <strings.h>
 #endif /* WIN32 */
 #include <time.h>
@@ -279,7 +279,7 @@ mlLogFilePrintf(MleLogFileP *logFile,const char *format, ...)
         *nlp = ' ';
     }
     strcat(buf,"\n");
-    mlWrite(logFile->m_fd,buf,strlen(buf));
+    int n = mlWrite(logFile->m_fd,buf,strlen(buf));
 }
 
 
@@ -294,7 +294,7 @@ mlLogFileHexDump(const char *ptr,const int cnt)
     MLE_ASSERT(ptr != NULL);
     MLE_ASSERT(cnt > 0);
 
-    printf("------  %d bytes at 0x%x\n",cnt,ptr);
+    printf("------  %d bytes at 0x%p\n",cnt,ptr);
     for (i = 0;i < cnt;i += 16) {
         for (j = 0;j < 16;j++) {
             ascii[j] = ' ';
@@ -314,7 +314,7 @@ mlLogFileHexDump(const char *ptr,const int cnt)
                 ascii[j] = '.';
             }
         }
-        printf("%06d  %-*.*s  %s\n",i,sizeof(hex),sizeof(hex),hex,ascii);
+        printf("%06d  %-*.*s  %s\n",i,(int)sizeof(hex),(int)sizeof(hex),hex,ascii);
     }
 }
 

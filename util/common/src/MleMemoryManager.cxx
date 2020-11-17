@@ -7,8 +7,6 @@
  *  Implementation of memory manager abstraction.
  *
  *  @author Mark S. Millard
- *  @date July 10, 2003
- *  @version 0.13
  */
 
 // COPYRIGHT_BEGIN
@@ -111,7 +109,8 @@ extern "C" {
 
     void *mlDebugRealloc(void *ptr, size_t size)
 	{
-	    if (MleMemoryManager::getManager()->resize(&ptr, size) != NULL)
+	    //if (MleMemoryManager::getManager()->resize(&ptr, size) != NULL)
+	    if (MleMemoryManager::getManager()->resize(&ptr, size) != MLE_E_FAIL)
 		{
 	        return ptr;
 		}
