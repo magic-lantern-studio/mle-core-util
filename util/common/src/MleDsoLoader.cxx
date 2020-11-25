@@ -8,7 +8,6 @@
  * DSO Loader class.
  *
  * @author Mark S. Millard
- * @date July 10, 2003
  */
 
 // COPYRIGHT_BEGIN
@@ -49,15 +48,15 @@
 #include <stdio.h>
 #include <malloc.h>
 #include <string.h>
-#if defined(__sgi) || defined(__linux__)
+#if defined(__linux__)
 #include <dlfcn.h>
-#endif
+#endif /* __linux__ */
 #if defined(WIN32)
 #include <windows.h>
 #include <stdio.h>
 #include <process.h>
 #include "psapi.h"
-#endif
+#endif /* WIN32 */
 
 // Include Magic Lantern header files.
 #include "mle/mlAssert.h"
@@ -70,13 +69,12 @@
 static char *dso_path[] = {
 	(char *)"",
 	(char *)"./",
-#if defined(__sgi) || defined(__linux__)
+#if defined(__linux__)
 	(char *)"$MLE_ROOT/lib/",
-#else
+#endif /* __linux__ */
 #if defined(WIN32)
 	(char *)"C:/Program Files/WizzerWorks/MagicLantern/lib/",
-#endif
-#endif
+#endif /* WIN32 */
 	NULL
 };
 
@@ -99,16 +97,11 @@ void (*MleDSOLoader::findInitClass(const char *classname,void *handle,const char
 	// Try with prefix first.
 	if ( prefix )
 	{
-#if defined(__sgi)
-		sprintf(dso_func,"initClass__%d%s%sSFv",
-			(strlen(classname) + strlen(prefix)),prefix,classname);
-		initClass = (void (*)(void))dlsym(handle,dso_func);
-#endif
 #if defined(__linux__)
 		sprintf(dso_func,"_ZN%zu%s%s9initClassEv",
 			(strlen(classname) + strlen(prefix)),prefix,classname);
 		initClass = (void (*)(void))dlsym(handle,dso_func);
-#endif
+#endif /* __linux__ */
 #if defined(WIN32)
 		typedef VOID (*INITCLASSFUNC)(VOID); 
 
@@ -117,22 +110,17 @@ void (*MleDSOLoader::findInitClass(const char *classname,void *handle,const char
 		procAddress = (INITCLASSFUNC) GetProcAddress((HINSTANCE)handle, dso_func);
 
 		initClass = procAddress;
-#endif
+#endif /* WIN32 */
 	}
 
 	// If that doesn't work, try without the prefix.
 	if ( initClass == NULL )
 	{
-#if defined(__sgi)
-		sprintf(dso_func,"initClass__%d%sSFv",
-			strlen(classname),classname);
-		initClass = (void (*)(void))dlsym(handle,dso_func);
-#endif
 #if defined(__linux__)
 		sprintf(dso_func,"_ZN%zu%s9initClassEv",
 			strlen(classname),classname);
 		initClass = (void (*)(void))dlsym(handle,dso_func);
-#endif
+#endif /* __linux__ */
 #if defined(WIN32)
 		typedef VOID (*INITCLASSFUNC)(VOID); 
 
@@ -141,7 +129,7 @@ void (*MleDSOLoader::findInitClass(const char *classname,void *handle,const char
 		procAddress = (INITCLASSFUNC) GetProcAddress((HINSTANCE)handle, dso_func);
 
 		initClass = procAddress;
-#endif
+#endif /* WIN32 */
 	}
 
 	// Return the function pointer.
@@ -160,8 +148,8 @@ void (*MleDSOLoader::findInitModule(void *handle))(void *)
 
 	// Assemble the initModule entry name.
 
-#if defined(__sgi) || defined(__linux__)
-	// XXX - need to fix for Unix platform.
+#if defined(__linux__)
+    // Todo - need to fix for Unix platform.
 #if 0
 	char modulename[10];
 	modulename[0] = NULL;
@@ -169,7 +157,7 @@ void (*MleDSOLoader::findInitModule(void *handle))(void *)
 		strlen(modulename),modulename);
 	initModule = (void (*)(void))dlsym(handle,dso_func);
 #endif /* 0 */
-#else
+#endif /* __linux__ */
 #if defined(WIN32)
 	typedef VOID (*INITMODULEFUNC)(VOID *); 
 
@@ -178,13 +166,11 @@ void (*MleDSOLoader::findInitModule(void *handle))(void *)
 	procAddress = (INITMODULEFUNC) GetProcAddress((HINSTANCE)handle, dso_func);
 
 	initModule = procAddress;
-#endif
-#endif
+#endif /* WIN32 */
 
 	// Return the function pointer.
 	return initModule;
 }
-
 
 #if defined(WIN32)
 #if _MSC_VER >= 1300    // for VC 7.0
@@ -349,15 +335,12 @@ MleDSOLoader::loadFile(const char *filename,char **pathlist)
 		char *expand = mlFilenameExpand(dso_file);
 
 		// Open the DSO.
-#if defined(__sgi)
-		handle = sgidladd(expand,RTLD_LAZY);
-#endif
 #ifdef WIN32
 		handle = LoadLibrary(expand);
-#endif
+#endif /* WIN32 */
 #if defined(__linux__)
 		handle = dlopen(expand,RTLD_LAZY);
-#endif
+#endif /* __linux__ */
 
 		// Release the expanded filename.
 		mlFree(expand);
@@ -365,14 +348,14 @@ MleDSOLoader::loadFile(const char *filename,char **pathlist)
 		// Check for errors.
 		if ( handle == NULL )
 		{
-#if defined(__sgi) || defined(__linux__)
+#if defined(__linux__)
 			char *buf = dlerror();
 			if ( strstr(buf,"map soname") == NULL ||
                  getenv("MLE_DSO_VERBOSE") ) {
                  printf("MleDsoLoader: %s.\n",buf);
                  fflush(stdout);
             }
-#endif
+#endif /* __linux__ */
 		}
 
 		ipath++;
@@ -441,21 +424,20 @@ MleDSOLoader::loadClass(const char *classname,const char *prefix)
 		    return 0;
 		}
 	}
-#endif /* ! WIN32 */
+#endif /* WIN32 */
 
 	// Else attempt to load a file base on the class name.
 	char dso_file[256];
-#if defined(__sgi) || defined(__linux__)
+#if defined(__linux__)
 	sprintf(dso_file,"%s.so",classname);
-#else
+#endif /* __linux__ */
 #if defined(WIN32)
-#endif /* XXX - what matches this endif? */
 #ifdef MLE_DEBUG
 	sprintf(dso_file,"%sd.dll",classname);
 #else
 	sprintf(dso_file,"%s.dll",classname);
 #endif /* ! MLE_DEBUG */
-#endif
+#endif /* WIN32 */
 	handle = loadFile(dso_file,m_pathlist);
 
 #if defined(__linux__)
@@ -468,16 +450,13 @@ MleDSOLoader::loadClass(const char *classname,const char *prefix)
 
 	// If we haven't found it yet, hope it's in the current image.
 	if ( handle == NULL )
-#if defined(__sgi)
-		handle = sgidladd(NULL,RTLD_NOW);
-#endif
 #if defined(WIN32)
 	    // Attempt to use the current module.
 	    handle = GetCurrentModule();
-#endif
+#endif /* WIN32 */
 #if defined(__linux__)
 	    handle = dlopen(NULL,RTLD_NOW);
-#endif
+#endif /* __linux__ */
 
 	// Initialize the DSO.
 	if ((handle != NULL) && (m_initData != NULL))
