@@ -433,9 +433,12 @@ MleDSOLoader::loadClass(const char *classname,const char *prefix)
 
 	// Else attempt to load a file base on the class name.
 	char dso_file[256];
-#if defined(__linux__) || defined(__APPLE__)
+#if defined(__linux__)
 	sprintf(dso_file,"%s.so",classname);
 #endif /* __linux__ */
+#if defined(__APPLE__)
+    sprintf(dso_file,"%s.dylib",classname);
+#endif /* __APPLE__ */
 #if defined(WIN32)
 #ifdef MLE_DEBUG
 	sprintf(dso_file,"%sd.dll",classname);
@@ -445,10 +448,18 @@ MleDSOLoader::loadClass(const char *classname,const char *prefix)
 #endif /* WIN32 */
 	handle = loadFile(dso_file,m_pathlist);
 
-#if defined(__linux__) || defined(__APPLE__)
+#if defined(__linux__)
     if (handle == NULL) {
         // Try to load with Unix 'lib' prefix.
         sprintf(dso_file,"lib%s.so",classname);
+        handle = loadFile(dso_file,m_pathlist);
+    }
+#endif /* __linux__ */
+
+#if defined(__APPLE__)
+    if (handle == NULL) {
+        // Try to load with Unix 'lib' prefix.
+        sprintf(dso_file,"lib%s.dylib",classname);
         handle = loadFile(dso_file,m_pathlist);
     }
 #endif /* __linux__ */
