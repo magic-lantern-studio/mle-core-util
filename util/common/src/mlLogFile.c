@@ -5,8 +5,6 @@
  * @ingroup MleCore
  *
  * This file contains utilities for maintaining a log file.
- *
- * @author Mark S. Millard
  */
 
 // COPYRIGHT_BEGIN
@@ -65,7 +63,7 @@
 
 
 /* Declare static variables. */
-#if defined(__linux__)
+#if defined(__linux__) || defined(__APPLE__)
 //static char *g_directory = "/usr/tmp";
 const char *defaultDirectory = "/opt/MagicLantern/log";
 #else

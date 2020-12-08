@@ -43,7 +43,12 @@
 // COPYRIGHT_END
 
 // Include system header files.
+#if defined(__APPLE__)
+// Todo: Make this the default for Linux and Windows after testing.
+#include <stdlib.h>
+#else
 #include <malloc.h>
+#endif
 #include <string.h>
 #include <ctype.h>
 

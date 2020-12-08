@@ -7,9 +7,6 @@
  * This file includes wrappers for the Magic Lantern file
  * IO utilities. It is designed to be shared by
  * both C and C++ programs.
- *
- * @author Mark S. Millard
- * @date September 19, 2015
  */
 
 // COPYRIGHT_BEGIN
@@ -55,7 +52,7 @@
 
 /*** L E V E L  1   F I L E   I / O ***/
 
-#if defined(__sgi) || defined(__linux__)
+#if defined(__linux__) || defined(__APPLE__)
 
 /* Include system header files. */
 #include <unistd.h>
@@ -111,7 +108,7 @@
 
 /*** L E V E L  2   F I L E   I / O ***/
 
-#if defined(__sgi) || defined(WIN32) || defined(psx) || defined(__linux__)
+#if defined(WIN32) || defined(psx) || defined(__linux__) || defined(__APPLE__)
 
 /* Include syste header files. */
 #include <stdio.h>
@@ -137,7 +134,7 @@ long ftell (FILE *stream);
 int unlink(char *path);
 #endif /* psx */
 
-#endif /* __sgi */
+#endif /* __linux__ */
 
 
 /*** B Y T E   O R D E R I N G  ***/
@@ -150,7 +147,7 @@ int unlink(char *path);
 #define LITTLE_ENDIAN   1234    /**< least-significant byte first */
 #define BIG_ENDIAN      4321    /**< most-significant byte first */
 
-#ifdef WIN32
+#if defined(WIN32)
 #define BYTE_ORDER LITTLE_ENDIAN
 #else
 #define BYTE_ORDER BIG_ENDIAN

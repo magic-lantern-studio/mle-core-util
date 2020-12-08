@@ -6,10 +6,6 @@
  *
  *  This file defines an abstraction for file names and Uniform Resource Locators (URLs)
  *  It was ported from the Auteur Portability Toolkit from Wizzer Works.
- *
- *  @author Mark S. Millard
- *  @date July 10, 2003
- *  @version 0.13
  */
 
 // COPYRIGHT_BEGIN

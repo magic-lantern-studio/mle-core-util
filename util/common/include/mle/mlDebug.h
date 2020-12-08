@@ -6,9 +6,6 @@
  *
  * This file contains the definition of the Magic Lantern
  * debugging macros.
- *
- * @author Mark S. Millard
- * @date May 1, 2003
  */
 
 // COPYRIGHT_BEGIN
@@ -52,7 +49,7 @@ extern "C" {
 #endif
 
 // Include standard header files.
-#if defined(__linux__)
+#if defined(__linux__) || defined(__APPLE__)
 #elif defined(WIN32)
 #elif defined(psx)
 /* Temporary hack to add breakpoints to PSX target under PSYQ environment. */

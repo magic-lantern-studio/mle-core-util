@@ -7,9 +7,6 @@
  * This file contains utilities for keeping track of
  * Magic Lantern errors. It is designed to be shared by
  * both C and C++ programs.
- *
- * @author Marl S. Millard
- * @date May 5, 2003
  */
 
 // COPYRIGHT_BEGIN

@@ -6,9 +6,6 @@
  *
  * This file includes useful parameterized macros.
  * It is designed to be shared by both C and C++ programs.
- *
- * @author Mark S. Millard
- * @date May 5, 2003
  */
 
 // COPYRIGHT_BEGIN

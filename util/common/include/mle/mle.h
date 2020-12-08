@@ -5,9 +5,6 @@
  * @ingroup MleCore
  *
  * Magic Lantern Core Library API.
- *
- * @author Mark S. Millard
- * @date May 1, 2003
  */
 
 

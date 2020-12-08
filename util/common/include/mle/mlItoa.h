@@ -3,9 +3,6 @@
 /**
  * @file mlItoa.h
  * @ingroup MleCore
- *
- * @author Mark S. Millard
- * @date November 11, 2017
  */
 
 // COPYRIGHT_BEGIN

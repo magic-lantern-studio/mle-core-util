@@ -7,9 +7,6 @@
  * This file includes wrappers for the Magic Lantern memory
  * allocation utilities. It is designed to be shared by
  * both C and C++ programs.
- *
- * @author Mark S. Millard
- * @date May 1, 2003
  */
 
 // COPYRIGHT_BEGIN

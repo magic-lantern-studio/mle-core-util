@@ -7,9 +7,6 @@
  * This file contains utilities for keeping track of
  * Magic Lantern errors and return results.
  * It is designed to be shared by both C and C++ programs.
- *
- * @author Mark S. Millard
- * @date May 5, 2003
  */
 
 // COPYRIGHT_BEGIN
@@ -48,7 +45,7 @@
 #ifndef __MLE_ERRNO_H_
 #define __MLE_ERRNO_H_
 
-#if defined(__linux__)
+#if defined(__linux__) || defined(__APPLE__)
 #include <errno.h>
 #endif
 

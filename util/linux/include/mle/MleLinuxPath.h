@@ -7,17 +7,13 @@
  *  This file defines the Linux interface of the cross platform path abstraction
  *  for file names and Uniform Resource Locators (URLs)
  *  It was ported from the Auteur Portability Toolkit from Wizzer Works.
- *
- *  @author Mark S. Millard
- *  @date September 19, 2015
- *  @version 0.1
  */
 
 // COPYRIGHT_BEGIN
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015 Wizzer Works
+// Copyright (c) 2015-2020 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal

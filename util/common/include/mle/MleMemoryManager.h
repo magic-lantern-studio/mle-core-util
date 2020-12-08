@@ -3,10 +3,6 @@
 /**
  *  @file MleMemoryManager.h
  *  @ingroup MleCore
- *
- *  @author Mark S. Millard
- *  @date September 19, 2015
- *  @version 0.13
  */
 
 // COPYRIGHT_BEGIN
@@ -259,7 +255,7 @@ template <uint_t blockSize>
 			    return MLE_E_FAIL;
 			}
     
-	    	memory = (void *) m_FreeList;
+            *memory = (void *) m_FreeList;
 		    m_FreeList = m_FreeList->next;
     
 		    return MLE_S_OK;    
@@ -309,7 +305,7 @@ template <uint_t blockSize>
 		    MLE_ASSERT(memory != NULL);
 
 		    Block * block = (Block *) memory;
-		    block.next = m_FreeList;
+            block->next = m_FreeList;
 		    m_FreeList = block;
     
 		    memory = NULL;
@@ -332,7 +328,7 @@ template <uint_t blockSize>
 		/*
 		 * The free block list
 		 */
-		Block *	m_FreeList;
+        Block *m_FreeList;
 };
 
 
@@ -360,9 +356,9 @@ extern "C" {
     void *mlDebugMalloc(size_t size);
     void mlDebugFree(void *ptr);
     void *mlDebugRealloc(void *ptr, size_t size);
-}
+} /* "C" */
 
 
 #endif /* DEBUG_MEMORY_FAILURE */
 
-#endif /* __MLE_MEMORYMANAGER_H_ */
+#endif /* __MLE_MEMORY_MANAGER_H_ */

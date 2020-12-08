@@ -7,9 +7,6 @@
  * This file contains the data types and macro constants defined
  * for Magic Lantern. It is designed to be shared by both C
  * and C++ programs.
- *
- * @author Mark S. Millard
- * @date May 1, 2015
  */
 
 // COPYRIGHT_BEGIN
@@ -68,15 +65,11 @@
 typedef unsigned char       ubyte_t;     /**< 8-bit unsigned type. */
 typedef unsigned char       uchar_t;     /**< 8-bit unsigned type. */
 typedef unsigned short      ushort_t;    /**< 16-bit unsigned type. */
-#ifdef __sgi
-typedef __uint32_t          uint_t;      /**< 32-bit unsigned type. */
-typedef __uint64_t          uintd_t;     /**< 64-bit unsigned type. */
-#endif
-#ifdef WIN32
+#if defined(WIN32)
 typedef unsigned __int32    uint_t;      /**< 32-bit unsigned type. */
 typedef unsigned __int64    uintd_t;     /**< 64-bit unsigned type. */
 #endif
-#ifdef __linux__
+#if defined(__linux__) || defined(__APPLE__)
 typedef u_int32_t           uint_t;      /**< 32-bit unsigned type. */
 typedef u_int64_t           uintd_t;     /**< 64-bit unsigned type. */
 #endif
@@ -85,17 +78,13 @@ typedef u_int64_t           uintd_t;     /**< 64-bit unsigned type. */
 typedef signed char         byte_t;      /**< 8-bit signed type. */
 typedef signed char         char_t;
 typedef signed short        short_t;     /**< 16-bit signed type. */
-#ifdef __sgi
-typedef __int32_t           int_t;       /**< 32-bit signed type. */
-typedef __int64_t           intd_t;      /**< 64-bit signed type. */
-#endif
-#ifdef WIN32
+#if defined(WIN32)
 typedef signed __int32      int_t;       /**< 32-bit signed type. */
 typedef signed __int64      intd_t;      /**< 64-bit signed type. */
 #endif
-#ifdef __linux__
-typedef int32_t             int_t;      /**< 32-bit unsigned type. */
-typedef int64_t             intd_t;     /**< 64-bit unsigned type. */
+#if defined(__linux__) || defined(__APPLE__)
+typedef int32_t             int_t;       /**< 32-bit unsigned type. */
+typedef int64_t             intd_t;      /**< 64-bit unsigned type. */
 #endif
 
 /* Floating point types. */
@@ -164,17 +153,8 @@ typedef double              double_t;    /**< double precision floating-point ty
 
 
 /* Set the size of a long so that Magic Lantern can set types correctly. */
-#ifdef __sgi
-#if (_MIPS_SZLONG == 64)
-// 64-bit "native" integers
-#define _ML_SZLONG 64
-#else /* _MIPS_SZLONG */
-// 32-bit "native" integers
-#define _ML_SZLONG 32
-#endif /* _MIPS_SZLONG */
-#endif /* __sgi */
 
-#ifdef __linux__
+#if defined(__linux__)
 #if (UINT_MAX >= 0xffffffffffffffff)
 // 64-bit "native" integers
 #define _ML_SZLONG 64
@@ -184,11 +164,15 @@ typedef double              double_t;    /**< double precision floating-point ty
 #endif
 #endif /* __linux __ */
 
-#ifdef WIN32
+#if defined(WIN32)
 // 32-bit "native" integers
 #define _ML_SZLONG 32
 #endif /* WIN32 */
 
+#if defined(__APPLE__)
+// 64-bit "native" integers
+#define _ML_SZLONG 64
+#endif /* __APPLE__ */
 
 /*** A R C H I T E C T U R E    I N D E P E N D A N T ***/
 

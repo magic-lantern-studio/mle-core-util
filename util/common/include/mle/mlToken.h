@@ -6,9 +6,6 @@
  *
  * This file contains the type definitions to support the
  * Magic Lantern debugging utilities.
- *
- * @author Mark S. Millard
- * @date May 1, 2003
  */
 
 // COPYRIGHT_BEGIN

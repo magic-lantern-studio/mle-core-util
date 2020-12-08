@@ -118,7 +118,7 @@ extern "C" {
 	        return NULL;
 		}
     }
-}
+} /* "C" */
 
 
 MleMemoryManager::MleMemoryManager()

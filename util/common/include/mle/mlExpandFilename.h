@@ -36,9 +36,6 @@
  * <li>Other % keys are passed to strftime.</li>
  * </ol>
  * </ol>
- *
- * @author Mark S. Millard
- * @date July 10, 2003
  */
 
 // COPYRIGHT_BEGIN

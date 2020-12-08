@@ -6,9 +6,6 @@
  *
  * This file contains the definition of the Magic Lantern
  * uniqueness utilities.
- *
- * @author Mark S. Millard
- * @date May 1, 2003
  */
 
 // COPYRIGHT_BEGIN

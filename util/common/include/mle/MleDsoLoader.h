@@ -6,9 +6,6 @@
  *
  * This file contains a generic interface for loading dynamic
  * loadable modules such as DSOs and DLLs.
- *
- * @author Mark S. Millard
- * @date July 10, 2003
  */
 
 // COPYRIGHT_BEGIN

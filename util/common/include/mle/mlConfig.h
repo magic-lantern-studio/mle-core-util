@@ -6,9 +6,6 @@
  *
  * This file contains constants concerning the installation of
  * Magic Lantern in a customer machine.
- *
- * @author Mark S. Millard
- * @date July 10, 2003
  */
 
 // COPYRIGHT_BEGIN
@@ -48,7 +45,7 @@
 #define __MLE_CONFIG_H_
 
 
-#if defined(__sgi) || defined(__linux__)
+#if defined(__linux__) || defined(__APPLE__)
 #define MleDefaultHomePath "/usr/WizzerWorks/MagicLantern"
 #else
 #if defined(WIN32)
@@ -73,7 +70,7 @@ Unknown Platform Configuration!!!
  * Miscellaneous executables
  */
 
-#if defined(__sgi) || defined(__linux__)
+#if defined(__linux__) || defined(__APPLE__)
 #define MLE_PLAYER_PATH \
 	(getenv("MLE_PLAYER") ? getenv("MLE_PLAYER") : "$MLE_ROOT/bin/mleplay")
 #else

@@ -3,9 +3,6 @@
 /**
  * @file mlArray.h
  * @ingroup MleCore
- *
- * @author Mark S. Millard
- * @date May 1, 2003
  */
 
 // COPYRIGHT_BEGIN
@@ -46,15 +43,14 @@
 
 
 // Include standard header files.
-#if ! defined(__linux__)
-#include <new.h> // So we can call new on a preallocated buffer.
+#if defined(__linux__) || defined(__APPLE__)
+#include <string>
+#include <new>
+#endif /* __linux__ */
 #ifdef WIN32
+#include <new.h>
 #include <memory.h>
 #endif /* WIN32 */
-#else
-#include <string.h>
-#include <new>
-#endif
 #include <ostream>
 
 // Include Magic Lantern header files.

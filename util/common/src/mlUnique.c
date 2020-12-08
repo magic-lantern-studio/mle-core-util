@@ -5,9 +5,6 @@
  * @ingroup MleCore
  *
  * This file contains utilities for maintaining a log file.
- *
- * @author Mark S. Millard
- * @date May 1, 2003
  */
 
 // COPYRIGHT_BEGIN
@@ -54,7 +51,8 @@
  * compressed out.
  */
 
-int mlUnique(void *ap, int n, int size, int(*compare)(const void *, const void *))
+int
+mlUnique(void *ap, int n, int size, int(*compare)(const void *, const void *))
 {
     int i, j;
 

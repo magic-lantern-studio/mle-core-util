@@ -27,9 +27,6 @@
  *      3) Percent notation.
  *          A) if %n is used, a counting integer is substituted.
  *          B) Other % keys are passed to strftime
- *
- * @author Mark S. Millard
- * @date May 1, 2003
  */
 
 // COPYRIGHT_BEGIN

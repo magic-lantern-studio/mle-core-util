@@ -46,9 +46,14 @@
 
 // Include system header files.
 #include <stdio.h>
+#if defined(__APPLE__)
+// Todo: Make this the default for Linux and Windows after testing.
+#include <stdlib.h>
+#else
 #include <malloc.h>
+#endif
 #include <string.h>
-#if defined(__linux__)
+#if defined(__linux__) || defined(__APPLE__)
 #include <dlfcn.h>
 #endif /* __linux__ */
 #if defined(WIN32)
@@ -69,7 +74,7 @@
 static char *dso_path[] = {
 	(char *)"",
 	(char *)"./",
-#if defined(__linux__)
+#if defined(__linux__) || defined(__APPLE__)
 	(char *)"$MLE_ROOT/lib/",
 #endif /* __linux__ */
 #if defined(WIN32)
@@ -97,7 +102,7 @@ void (*MleDSOLoader::findInitClass(const char *classname,void *handle,const char
 	// Try with prefix first.
 	if ( prefix )
 	{
-#if defined(__linux__)
+#if defined(__linux__) || defined(__APPLE__)
 		sprintf(dso_func,"_ZN%zu%s%s9initClassEv",
 			(strlen(classname) + strlen(prefix)),prefix,classname);
 		initClass = (void (*)(void))dlsym(handle,dso_func);
@@ -116,7 +121,7 @@ void (*MleDSOLoader::findInitClass(const char *classname,void *handle,const char
 	// If that doesn't work, try without the prefix.
 	if ( initClass == NULL )
 	{
-#if defined(__linux__)
+#if defined(__linux__) || defined(__APPLE__)
 		sprintf(dso_func,"_ZN%zu%s9initClassEv",
 			strlen(classname),classname);
 		initClass = (void (*)(void))dlsym(handle,dso_func);
@@ -148,8 +153,8 @@ void (*MleDSOLoader::findInitModule(void *handle))(void *)
 
 	// Assemble the initModule entry name.
 
-#if defined(__linux__)
-    // Todo - need to fix for Unix platform.
+#if defined(__linux__) || defined(__APPLE__)
+    // Todo - need to fix for Unix and Apple platform.
 #if 0
 	char modulename[10];
 	modulename[0] = NULL;
@@ -338,7 +343,7 @@ MleDSOLoader::loadFile(const char *filename,char **pathlist)
 #ifdef WIN32
 		handle = LoadLibrary(expand);
 #endif /* WIN32 */
-#if defined(__linux__)
+#if defined(__linux__) || defined(__APPLE__)
 		handle = dlopen(expand,RTLD_LAZY);
 #endif /* __linux__ */
 
@@ -348,7 +353,7 @@ MleDSOLoader::loadFile(const char *filename,char **pathlist)
 		// Check for errors.
 		if ( handle == NULL )
 		{
-#if defined(__linux__)
+#if defined(__linux__) || defined(__APPLE__)
 			char *buf = dlerror();
 			if ( strstr(buf,"map soname") == NULL ||
                  getenv("MLE_DSO_VERBOSE") ) {
@@ -428,7 +433,7 @@ MleDSOLoader::loadClass(const char *classname,const char *prefix)
 
 	// Else attempt to load a file base on the class name.
 	char dso_file[256];
-#if defined(__linux__)
+#if defined(__linux__) || defined(__APPLE__)
 	sprintf(dso_file,"%s.so",classname);
 #endif /* __linux__ */
 #if defined(WIN32)
@@ -440,7 +445,7 @@ MleDSOLoader::loadClass(const char *classname,const char *prefix)
 #endif /* WIN32 */
 	handle = loadFile(dso_file,m_pathlist);
 
-#if defined(__linux__)
+#if defined(__linux__) || defined(__APPLE__)
     if (handle == NULL) {
         // Try to load with Unix 'lib' prefix.
         sprintf(dso_file,"lib%s.so",classname);
@@ -454,7 +459,7 @@ MleDSOLoader::loadClass(const char *classname,const char *prefix)
 	    // Attempt to use the current module.
 	    handle = GetCurrentModule();
 #endif /* WIN32 */
-#if defined(__linux__)
+#if defined(__linux__) || defined(__APPLE__)
 	    handle = dlopen(NULL,RTLD_NOW);
 #endif /* __linux__ */
 

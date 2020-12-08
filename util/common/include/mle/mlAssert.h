@@ -14,9 +14,6 @@
  * This file contains the assertion macros defined
  * for Magic Lantern. It is designed to be shared by both C
  * and C++ programs.
- *
- * @author Mark S. Millard
- * @date May 1, 2003
  */
 
 // COPYRIGHT_BEGIN
@@ -58,7 +55,7 @@
 
 #if defined(MLE_DEBUG)
 
-#if defined(__sgi) || defined(WIN32) || defined (__linux__)
+#if defined(WIN32) || defined (__linux__) || defined(__APPLE__)
 #include <stdio.h>
 #include <stdlib.h>
 #elif defined(psx)
@@ -82,7 +79,7 @@ error...undefined platform
 
 #if defined(MLE_DEBUG)
 
-#if defined(__sgi) || defined(WIN32) || defined(__linux__)
+#if defined(WIN32) || defined(__linux__) || defined(__APPLE__)
 /**
  * Assert macro for testing pre-conditions in function implementations
  * - turned on if MLE_DEBUG flag is set.
@@ -119,7 +116,7 @@ error...undefined platform (must define one of __linux__, __sgi, WIN32, psx)
 
 #if defined(MLE_DEBUG)
 
-#if defined(__sgi) || defined(WIN32) || defined(__linux__)
+#if defined(WIN32) || defined(__linux__) || defined(__APPLE__)
 /**
  * Assert macro for testing pre-conditions in function implementations
  * - turned off unless MLE_DEBUG flag is set.
@@ -157,7 +154,7 @@ error...undefined platform (must define one of__linux__, __sgi, WIN32, psx)
 
 #if defined(MLE_DEBUG)
 
-#if defined(__sgi) || defined(WIN32) || defined(__linux__)
+#if defined(WIN32) || defined(__linux__) || defined(__APPLE__)
 /**
  * Use the following when calling methods or functions that are
  * not absolutely required to succeed.
@@ -187,7 +184,7 @@ error...undefined platform (must define one of__linux__, __sgi, WIN32, psx)
 
 #if defined(MLE_DEBUG)
 
-#if defined(__sgi) || defined(WIN32) || defined(__linux__)
+#if defined(WIN32) || defined(__linux__) || defined(__APPLE__)
 
 /**
  * Use the following when calling methods or functions that MUST
@@ -220,7 +217,7 @@ error...undefined platform (must define one of__linux__, __sgi, WIN32, psx)
 #if defined(MLE_DEBUG)
 
 
-#if defined(__sgi) || defined(WIN32) || defined(__linux__)
+#if defined(WIN32) || defined(__linux__) || defined(__APPLE__)
 /**
  * Use this macro when calling functions and methods that should throw an
  * exception if they don't succeed.

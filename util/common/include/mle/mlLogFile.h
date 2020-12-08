@@ -6,9 +6,6 @@
  *
  * This file contains the definition of the Magic Lantern
  * logging utilities.
- *
- * @author Mark S. Millard
- * @date May 1, 2003
  */
 
 // COPYRIGHT_BEGIN
@@ -51,9 +48,6 @@
 /* Include system header files. */
 #include <stdio.h>
 #include <sys/types.h>
-#if defined(__sgi)
-#include <unistd.h>
-#endif
 
 /* Include Magic Lantern header files. */
 #include "mle/mlTypes.h"
@@ -70,7 +64,7 @@ typedef struct _MleLogFileP
     char       *m_directory; /**< Directory where log file is created/opened. */
     char       *m_category;  /**< Category/class of log item. */
     int         m_fd;        /**< File descriptor for log file. */
-#ifdef WIN32
+#if defined(WIN32)
     int         m_pid;       /**< Process id which is logging file. */
 #else
     pid_t       m_pid;       /**< Process id which is logging file. */

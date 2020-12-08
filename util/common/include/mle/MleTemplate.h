@@ -5,9 +5,6 @@
  * @ingroup MleCore
  *
  * This file defines the classes used for generating code based on templates.
- *
- * @author Mark S. Millard
- * @date September 15, 2004
  */
 
 // COPYRIGHT_BEGIN

@@ -3,9 +3,6 @@
 /**
  * @file MleUtil.h
  * @ingroup MleCore
- *
- * @author Mark S. Millard
- * @date Dec 20, 2005
  */
 
 // COPYRIGHT_BEGIN
