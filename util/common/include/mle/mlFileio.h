@@ -13,7 +13,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2020 Wizzer Works
+// Copyright (c) 2015-2021 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -65,7 +65,7 @@
 #define mlAccess   access
 #define mlCreate   creat
 
-#endif /* __sgi */
+#endif /* __linux__ */
 
 
 #ifdef WIN32
@@ -143,7 +143,7 @@ int unlink(char *path);
  * Definitions for byte order,
  * according to byte significance from low address to high.
  */
-#if !defined(__linux__)
+#if !defined(__linux__) && !defined(__APPLE__)
 #define LITTLE_ENDIAN   1234    /**< least-significant byte first */
 #define BIG_ENDIAN      4321    /**< most-significant byte first */
 
@@ -153,7 +153,11 @@ int unlink(char *path);
 #define BYTE_ORDER BIG_ENDIAN
 #endif
 #else
+#if defined(__APPLE__)
+#include <i386/endian.h>
+#else
 #include <endian.h>
+#endif
 #endif
 
 
