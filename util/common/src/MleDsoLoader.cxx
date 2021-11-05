@@ -356,7 +356,8 @@ MleDSOLoader::loadFile(const char *filename,char **pathlist)
 #if defined(__linux__) || defined(__APPLE__)
 			char *buf = dlerror();
 			if ( strstr(buf,"map soname") == NULL ||
-                 getenv("MLE_DSO_VERBOSE") ) {
+                 getenv("MLE_DSO_VERBOSE") )
+            {
                  printf("MleDsoLoader: %s.\n",buf);
                  fflush(stdout);
             }
@@ -376,8 +377,10 @@ MleDSOLoader::loadFile(const char *filename,char **pathlist)
 		dsoEntry->next = m_dsoList;
 		m_dsoList = dsoEntry;
 
-		if ( getenv("MLE_DSO_VERBOSE") )
+        if ( getenv("MLE_DSO_VERBOSE") ) {
 			printf("MleDsoLoader: loaded DSO %s.\n",filename);
+            fflush(stdout);
+        }
 	}
 
 	return handle;
@@ -400,8 +403,10 @@ MleDSOLoader::loadClass(const char *classname,const char *prefix)
 		if ( initClass )
 		{
 			// Found it.
-			if ( getenv("MLE_DSO_VERBOSE") )
+            if ( getenv("MLE_DSO_VERBOSE") ) {
 				printf("%s class loaded from previously loaded DSO %s.\n",classname,dsoEntry->filename);
+                fflush(stdout);
+            }
 
 			// Call the initClass().
 			(*initClass)();
