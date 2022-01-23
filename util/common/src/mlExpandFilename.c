@@ -153,7 +153,7 @@ mlFilenameExpand(const char *inName)
     VStr *vstr;
 
     if (inName == NULL) {
-        return strdup("");
+        return _strdup("");
     }
     
     /*
@@ -163,7 +163,7 @@ mlFilenameExpand(const char *inName)
     if (*inName != TILDE &&
         strchr(inName, DOLLAR) == NULL &&
         strchr(inName, PERCENT) == NULL ) {
-        return strdup(inName);
+        return _strdup(inName);
     }
 
     /*
@@ -279,7 +279,7 @@ getHomeOfMe()
     char *home;
  
     if ((home = getenv("HOME")) != NULL) {
-    return strdup(home);
+        return _strdup(home);
     }
     home = (char *) mlMalloc(2);
     home[0] = TILDE;

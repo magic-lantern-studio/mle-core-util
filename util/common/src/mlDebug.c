@@ -150,7 +150,7 @@ static char *_takeTokenText(MleDBTokenDataP *tokenData)
     MLE_VALIDATE_PTR(tokenData);
 
     if (tokenData->_tokenText != NULL) {
-        txt = strdup(tokenData->_tokenText);
+        txt = _strdup(tokenData->_tokenText);
         tokenData->_tokenUsed = 0;
         tokenData->_tokenText[0] = 0;
         return txt;
@@ -754,7 +754,7 @@ _dbgQuark _dbgStringToQuark(const char *s)
 
     /* Put a new entry in the list. */
     *qe = (_dbgQuarkEntry *)mlMalloc(sizeof(_dbgQuarkEntry));
-    (*qe)->string = strdup(s);      /* XXX this also does a malloc */
+    (*qe)->string = _strdup(s);      /* XXX this also does a malloc */
     (*qe)->quark = q;
     (*qe)->ref = 0;
     (*qe)->next = NULL;

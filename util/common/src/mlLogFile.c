@@ -11,7 +11,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2020 Wizzer Works
+// Copyright (c) 2015-2022 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -84,13 +84,13 @@ _mlLogFileInit(
     MLE_ASSERT(tag != NULL);
 
     logFile->m_isOpen = FALSE;
-    logFile->m_directory = (char *)strdup(defaultDirectory);
-    logFile->m_category = (char *)strdup(category);
-    logFile->m_name = (char *)strdup(name);
+    logFile->m_directory = (char *)_strdup(defaultDirectory);
+    logFile->m_category = (char *)_strdup(category);
+    logFile->m_name = (char *)_strdup(name);
     if (tag != NULL)
-        logFile->m_tag = (char *)strdup(tag);
+        logFile->m_tag = (char *)_strdup(tag);
     else
-        logFile->m_tag = (char *)strdup("??");
+        logFile->m_tag = (char *)_strdup("??");
 #ifdef WIN32
 	logFile->m_pid = _getpid();
 #else
@@ -162,7 +162,7 @@ mlLogFileSetDirectory(MleLogFileP *logFile,const char *dir)
 
     if (logFile->m_directory)
         mlFree(logFile->m_directory);
-    logFile->m_directory = (char *)strdup(dir);
+    logFile->m_directory = (char *)_strdup(dir);
 }
 
 
@@ -174,7 +174,7 @@ mlLogFileSetTag(MleLogFileP *logFile,const char *tag)
 
     if (logFile->m_tag != NULL)
 	mlFree(logFile->m_tag);
-    logFile->m_tag = (char *)strdup(tag);
+    logFile->m_tag = (char *)_strdup(tag);
 }
 
 
@@ -277,7 +277,7 @@ mlLogFilePrintf(MleLogFileP *logFile,const char *format, ...)
         *nlp = ' ';
     }
     strcat(buf,"\n");
-    int n = mlWrite(logFile->m_fd,buf,strlen(buf));
+    mlWrite(logFile->m_fd,buf,strlen(buf));
 }
 
 

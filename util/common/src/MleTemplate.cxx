@@ -168,7 +168,7 @@ int MleTemplate::read(FILE *fd)
 				if ( pch2 != pch1 )
 				{
 					appendSection(pcursect);
-					pcursect = new MleTemplateSection(strdup(pch1));
+					pcursect = new MleTemplateSection(_strdup(pch1));
 				}
 			}
 	    
@@ -225,7 +225,7 @@ MleTemplateSection::MleTemplateSection(char *name)
     m_head = NULL;
     m_tail = NULL;
     m_next = NULL;
-    m_name = strdup(name);
+    m_name = _strdup(name);
 }
 
 MleTemplateSection::~MleTemplateSection()
@@ -262,7 +262,7 @@ void MleTemplateSection::addStr(char *line)
 
 void MleTemplateSection::addStrDup(char *line)
 {
-    addStr(strdup(line));
+    addStr(_strdup(line));
 }
 
 int MleTemplateSection::go(MleTemplateProcess *tp)
@@ -342,7 +342,7 @@ void MleTemplateBindings::defineConstant(char *name, int _ival)
     Binding *pbinding = new Binding();
     pbinding->m_next = NULL;
     pbinding->m_type = Binding::INT;
-    pbinding->m_pName = strdup(name);
+    pbinding->m_pName = _strdup(name);
     pbinding->m_value.m_ival = _ival;
     addBinding(pbinding);
 }
@@ -353,7 +353,7 @@ void MleTemplateBindings::defineConstant(char *name, double _fval)
     Binding *pbinding = new Binding();
     pbinding->m_next = NULL;
     pbinding->m_type =  Binding::DOUBLE;
-    pbinding->m_pName = strdup(name);
+    pbinding->m_pName = _strdup(name);
     pbinding->m_value.m_fval = _fval;
     addBinding(pbinding);
 }
@@ -363,8 +363,8 @@ void MleTemplateBindings::defineConstant(char *name, char *_sval)
     Binding *pbinding = new Binding();
     pbinding->m_next = NULL;
     pbinding->m_type =  Binding::STR;
-    pbinding->m_pName = strdup(name);
-    pbinding->m_value.m_sval = strdup(_sval);
+    pbinding->m_pName = _strdup(name);
+    pbinding->m_value.m_sval = _strdup(_sval);
     addBinding(pbinding);
 }
 
@@ -377,7 +377,7 @@ void MleTemplateBindings::defineCallback(
     Binding *pbinding = new Binding();
     pbinding->m_next = NULL;
     pbinding->m_type =  Binding::PROC;
-    pbinding->m_pName = strdup(name);
+    pbinding->m_pName = _strdup(name);
     pbinding->m_value.m_cb.m_proc = cb;
     pbinding->m_value.m_cb.m_clientdata = clientdata;
     addBinding(pbinding);
