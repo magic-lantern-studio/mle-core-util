@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6730A2FA-7DBA-4520-8E19-E190E0961486}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>util_rehearsal</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>MLE_REHEARSAL;MLE_DLL;MLE_INTERNAL;MLE_MAKE_DLL;MLE_DEBUG;WIN32;_DEBUG;_WINDOWS;_USRDLL;UTIL_REHEARSAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\include;..\..\..\common\include;..\..\..\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)\$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(Platform)\$(Configuration)/</AssemblerListingLocation>
+      <ObjectFileName>$(Platform)\$(Configuration)/</ObjectFileName>
+      <ProgramDataBaseFileName>$(Platform)\$(Configuration)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <BrowseInformationFile>$(Platform)\$(Configuration)/</BrowseInformationFile>
+      <XMLDocumentationFileName>$(Platform)\$(Configuration)</XMLDocumentationFileName>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ManifestFile>$(Platform)\$(Configuration)\$(TargetName)$(TargetExt).intermediate.manifest</ManifestFile>
+      <OutputFile>$(Platform)\$(Configuration)\utild.dll</OutputFile>
+      <AdditionalDependencies>psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>$(Platform)\$(Configuration)\utild.lib</ImportLibrary>
+      <ProgramDatabaseFile>$(Platform)\$(Configuration)\$(TargetName).pdb</ProgramDatabaseFile>
+      <ProfileGuidedDatabase>$(Platform)\$(Configuration)\$(TargetName).pgd</ProfileGuidedDatabase>
+    </Link>
+    <ManifestResourceCompile>
+      <ResourceOutputFileName>$(Platform)\$(Configuration)\$(TargetName)$(TargetExt).embed.manifest.res</ResourceOutputFileName>
+    </ManifestResourceCompile>
+    <BuildLog>
+      <Path>$(Platform)\$(Configuration)\$(MSBuildProjectName).log</Path>
+    </BuildLog>
+    <Bscmake>
+      <OutputFile>$(Platform)\$(Configuration)\$(TargetName).bsc</OutputFile>
+    </Bscmake>
+    <Xdcmake>
+      <OutputFile>$(Platform)\$(Configuration)\$(TargetName).xml</OutputFile>
+    </Xdcmake>
+    <PostBuildEvent>
+      <Command>mkdir $(MLE_HOME)\bin\rehearsal
+copy win32\Debug\utild.dll $(MLE_HOME)\bin\rehearsal\utild.dll
+mkdir $(MLE_HOME)\lib\rehearsal
+copy win32\Debug\utild.lib $(MLE_HOME)\lib\rehearsal\utild.lib
+mkdir $(MLE_HOME)\include\mle
+xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>MLE_REHEARSAL;MLE_DLL;MLE_INTERNAL;MLE_MAKE_DLL;MLE_DEBUG;WIN32;_DEBUG;_WINDOWS;_USRDLL;UTIL_REHEARSAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\include;..\..\..\common\include;..\..\..\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)\$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(Platform)\$(Configuration)/</AssemblerListingLocation>
+      <ObjectFileName>$(Platform)\$(Configuration)/</ObjectFileName>
+      <ProgramDataBaseFileName>$(Platform)\$(Configuration)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <BrowseInformationFile>$(Platform)\$(Configuration)/</BrowseInformationFile>
+      <XMLDocumentationFileName>$(Platform)\$(Configuration)</XMLDocumentationFileName>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ManifestFile>$(Platform)\$(Configuration)\$(TargetName)$(TargetExt).intermediate.manifest</ManifestFile>
+      <OutputFile>$(Platform)\$(Configuration)\utild.dll</OutputFile>
+      <AdditionalDependencies>psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>$(Platform)\$(Configuration)\utild.lib</ImportLibrary>
+      <ProgramDatabaseFile>$(Platform)\$(Configuration)\$(TargetName).pdb</ProgramDatabaseFile>
+      <ProfileGuidedDatabase>$(Platform)\$(Configuration)\$(TargetName).pgd</ProfileGuidedDatabase>
+    </Link>
+    <ManifestResourceCompile>
+      <ResourceOutputFileName>$(Platform)\$(Configuration)\$(TargetName)$(TargetExt).embed.manifest.res</ResourceOutputFileName>
+    </ManifestResourceCompile>
+    <BuildLog>
+      <Path>$(Platform)\$(Configuration)\$(MSBuildProjectName).log</Path>
+    </BuildLog>
+    <Bscmake>
+      <OutputFile>$(Platform)\$(Configuration)\$(TargetName).bsc</OutputFile>
+    </Bscmake>
+    <Xdcmake>
+      <OutputFile>$(Platform)\$(Configuration)\$(TargetName).xml</OutputFile>
+    </Xdcmake>
+    <PostBuildEvent>
+      <Command>mkdir $(MLE_HOME)\bin64\rehearsal
+copy x64\Debug\utild.dll $(MLE_HOME)\bin64\rehearsal\utild.dll
+mkdir $(MLE_HOME)\lib64\rehearsal
+copy x64\Debug\utild.lib $(MLE_HOME)\lib64\rehearsal\utild.lib
+mkdir $(MLE_HOME)\include\mle
+xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>MLE_REHEARSAL;MLE_DLL;MLE_INTERNAL;MLE_MAKE_DLL;WIN32;NDEBUG;_WINDOWS;_USRDLL;UTIL_REHEARSAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\include;..\..\..\common\include;..\..\..\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(Platform)\$(Configuration)/</AssemblerListingLocation>
+      <ObjectFileName>$(Platform)\$(Configuration)/</ObjectFileName>
+      <ProgramDataBaseFileName>$(Platform)\$(Configuration)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <XMLDocumentationFileName>$(Platform)\$(Configuration)/</XMLDocumentationFileName>
+      <BrowseInformationFile>$(Platform)\$(Confguration)</BrowseInformationFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ManifestFile>$(Platform)\$(Configuration)\$(TargetName)$(TargetExt).intermediate.manifest</ManifestFile>
+      <OutputFile>$(Platform)\$(Configuration)\util.dll</OutputFile>
+      <AdditionalDependencies>psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>$(Platform)\$(Configuration)\util.lib</ImportLibrary>
+      <ProgramDatabaseFile>$(Platform)\$(Configuration)\$(TargetName).pdb</ProgramDatabaseFile>
+      <ProfileGuidedDatabase>$(Platform)\$(Configuration)\$(TargetName).pgd</ProfileGuidedDatabase>
+    </Link>
+    <BuildLog>
+      <Path>$(Platform)\$(Configuration)\$(MSBuildProjectName).log</Path>
+    </BuildLog>
+    <ManifestResourceCompile>
+      <ResourceOutputFileName>$(Platform)\$(Configuration)\$(TargetName)$(TargetExt).embed.manifest.res</ResourceOutputFileName>
+    </ManifestResourceCompile>
+    <Bscmake>
+      <OutputFile>$(Platform)\$(Configuration)\$(TargetName).bsc</OutputFile>
+    </Bscmake>
+    <Xdcmake>
+      <OutputFile>$(Platform)\$(Configuration)\$(TargetName).xml</OutputFile>
+    </Xdcmake>
+    <PostBuildEvent>
+      <Command>mkdir $(MLE_HOME)\bin\rehearsal
+copy win32\Release\util.dll $(MLE_HOME)\bin\rehearsal\util.dll
+mkdir $(MLE_HOME)\lib\rehearsal
+copy win32\Release\util.lib $(MLE_HOME)\lib\rehearsal\util.lib
+mkdir $(MLE_HOME)\include\mle
+xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>MLE_REHEARSAL;MLE_DLL;MLE_INTERNAL;MLE_MAKE_DLL;WIN32;NDEBUG;_WINDOWS;_USRDLL;UTIL_REHEARSAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\include;..\..\..\common\include;..\..\..\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(Platform)\$(Configuration)/</AssemblerListingLocation>
+      <ObjectFileName>$(Platform)\$(Configuration)/</ObjectFileName>
+      <ProgramDataBaseFileName>$(Platform)\$(Configuration)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <XMLDocumentationFileName>$(Platform)\$(Configuration)/</XMLDocumentationFileName>
+      <BrowseInformationFile>$(Platform)\$(Confguration)</BrowseInformationFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ManifestFile>$(Platform)\$(Configuration)\$(TargetName)$(TargetExt).intermediate.manifest</ManifestFile>
+      <OutputFile>$(Platform)\$(Configuration)\util.dll</OutputFile>
+      <AdditionalDependencies>psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>$(Platform)\$(Configuration)\util.lib</ImportLibrary>
+      <ProgramDatabaseFile>$(Platform)\$(Configuration)\$(TargetName).pdb</ProgramDatabaseFile>
+      <ProfileGuidedDatabase>$(Platform)\$(Configuration)\$(TargetName).pgd</ProfileGuidedDatabase>
+    </Link>
+    <BuildLog>
+      <Path>$(Platform)\$(Configuration)\$(MSBuildProjectName).log</Path>
+    </BuildLog>
+    <ManifestResourceCompile>
+      <ResourceOutputFileName>$(Platform)\$(Configuration)\$(TargetName)$(TargetExt).embed.manifest.res</ResourceOutputFileName>
+    </ManifestResourceCompile>
+    <Bscmake>
+      <OutputFile>$(Platform)\$(Configuration)\$(TargetName).bsc</OutputFile>
+    </Bscmake>
+    <Xdcmake>
+      <OutputFile>$(Platform)\$(Configuration)\$(TargetName).xml</OutputFile>
+    </Xdcmake>
+    <PostBuildEvent>
+      <Command>mkdir $(MLE_HOME)\bin64\rehearsal
+copy x64\Release\util.dll $(MLE_HOME)\bin64\rehearsal\util.dll
+mkdir $(MLE_HOME)\lib\rehearsal
+copy x64\Release\util.lib $(MLE_HOME)\lib64\rehearsal\util.lib
+mkdir $(MLE_HOME)\include\mle
+xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\common\include\mle\mlArray.h" />
+    <ClInclude Include="..\..\..\common\include\mle\mlAssert.h" />
+    <ClInclude Include="..\..\..\common\include\mle\mlConfig.h" />
+    <ClInclude Include="..\..\..\common\include\mle\mlDebug.h" />
+    <ClInclude Include="..\..\..\common\include\mle\mle.h" />
+    <ClInclude Include="..\..\..\common\include\mle\MleDsoLoader.h" />
+    <ClInclude Include="..\..\..\common\include\mle\MleMemoryManager.h" />
+    <ClInclude Include="..\..\..\common\include\mle\MlePath.h" />
+    <ClInclude Include="..\..\..\common\include\mle\mlErrno.h" />
+    <ClInclude Include="..\..\..\common\include\mle\MleTemplate.h" />
+    <ClInclude Include="..\..\..\common\include\mle\MleUtil.h" />
+    <ClInclude Include="..\..\..\common\include\mle\mlExpandFilename.h" />
+    <ClInclude Include="..\..\..\common\include\mle\mlFileio.h" />
+    <ClInclude Include="..\..\..\common\include\mle\mlItoa.h" />
+    <ClInclude Include="..\..\..\common\include\mle\mlLogFile.h" />
+    <ClInclude Include="..\..\..\common\include\mle\mlMacros.h" />
+    <ClInclude Include="..\..\..\common\include\mle\mlMalloc.h" />
+    <ClInclude Include="..\..\..\common\include\mle\mlToken.h" />
+    <ClInclude Include="..\..\..\common\include\mle\mlTypes.h" />
+    <ClInclude Include="..\..\..\common\include\mle\mlUnique.h" />
+    <ClInclude Include="..\..\..\win32\include\mle\MleWin32Path.h" />
+    <ClInclude Include="..\..\src\mlutil.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\common\src\mlDebug.c" />
+    <ClCompile Include="..\..\..\common\src\MleDsoLoader.cxx" />
+    <ClCompile Include="..\..\..\common\src\MleMemoryManager.cxx" />
+    <ClCompile Include="..\..\..\common\src\mlErrno.c" />
+    <ClCompile Include="..\..\..\common\src\MleTemplate.cxx" />
+    <ClCompile Include="..\..\..\common\src\mlExpandFilename.c" />
+    <ClCompile Include="..\..\..\common\src\mlItoa.c" />
+    <ClCompile Include="..\..\..\common\src\mlLogFile.c" />
+    <ClCompile Include="..\..\..\common\src\mlUnique.c" />
+    <ClCompile Include="..\..\..\win32\src\MleWin32MemoryManager.cxx" />
+    <ClCompile Include="..\..\..\win32\src\MleWin32Path.cxx" />
+    <ClCompile Include="..\..\..\win32\src\mlGetopt.cpp" />
+    <ClCompile Include="..\..\src\mlutil.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
