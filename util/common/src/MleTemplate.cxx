@@ -13,7 +13,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2020 Wizzer Works
+// Copyright (c) 2015-2022 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -168,7 +168,11 @@ int MleTemplate::read(FILE *fd)
 				if ( pch2 != pch1 )
 				{
 					appendSection(pcursect);
+#if defined(WIN32)
 					pcursect = new MleTemplateSection(_strdup(pch1));
+#else
+					pcursect = new MleTemplateSection(strdup(pch1));
+#endif
 				}
 			}
 	    
@@ -225,7 +229,11 @@ MleTemplateSection::MleTemplateSection(char *name)
     m_head = NULL;
     m_tail = NULL;
     m_next = NULL;
+#if defined(WIN32)
     m_name = _strdup(name);
+#else
+    m_name = strdup(name);
+#endif
 }
 
 MleTemplateSection::~MleTemplateSection()
@@ -262,7 +270,11 @@ void MleTemplateSection::addStr(char *line)
 
 void MleTemplateSection::addStrDup(char *line)
 {
+#if defined(WIN32)
     addStr(_strdup(line));
+#else
+    addStr(strdup(line));
+#endif
 }
 
 int MleTemplateSection::go(MleTemplateProcess *tp)
@@ -342,7 +354,11 @@ void MleTemplateBindings::defineConstant(char *name, int _ival)
     Binding *pbinding = new Binding();
     pbinding->m_next = NULL;
     pbinding->m_type = Binding::INT;
+#if defined(WIN32)
     pbinding->m_pName = _strdup(name);
+#else
+    pbinding->m_pName = strdup(name);
+#endif
     pbinding->m_value.m_ival = _ival;
     addBinding(pbinding);
 }
@@ -353,7 +369,11 @@ void MleTemplateBindings::defineConstant(char *name, double _fval)
     Binding *pbinding = new Binding();
     pbinding->m_next = NULL;
     pbinding->m_type =  Binding::DOUBLE;
+#if defined(WIN32)
     pbinding->m_pName = _strdup(name);
+#else
+    pbinding->m_pName = strdup(name);
+#endif
     pbinding->m_value.m_fval = _fval;
     addBinding(pbinding);
 }
@@ -363,8 +383,14 @@ void MleTemplateBindings::defineConstant(char *name, char *_sval)
     Binding *pbinding = new Binding();
     pbinding->m_next = NULL;
     pbinding->m_type =  Binding::STR;
+#if defined(WIN32)
     pbinding->m_pName = _strdup(name);
     pbinding->m_value.m_sval = _strdup(_sval);
+#else
+    pbinding->m_pName = strdup(name);
+    pbinding->m_value.m_sval = strdup(_sval);
+#endif
+
     addBinding(pbinding);
 }
 
@@ -377,7 +403,11 @@ void MleTemplateBindings::defineCallback(
     Binding *pbinding = new Binding();
     pbinding->m_next = NULL;
     pbinding->m_type =  Binding::PROC;
+#if defined(WIN32)
     pbinding->m_pName = _strdup(name);
+#else
+    pbinding->m_pName = strdup(name);
+#endif
     pbinding->m_value.m_cb.m_proc = cb;
     pbinding->m_value.m_cb.m_clientdata = clientdata;
     addBinding(pbinding);

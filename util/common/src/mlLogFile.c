@@ -84,6 +84,7 @@ _mlLogFileInit(
     MLE_ASSERT(tag != NULL);
 
     logFile->m_isOpen = FALSE;
+#ifdef WIN32
     logFile->m_directory = (char *)_strdup(defaultDirectory);
     logFile->m_category = (char *)_strdup(category);
     logFile->m_name = (char *)_strdup(name);
@@ -91,9 +92,15 @@ _mlLogFileInit(
         logFile->m_tag = (char *)_strdup(tag);
     else
         logFile->m_tag = (char *)_strdup("??");
-#ifdef WIN32
 	logFile->m_pid = _getpid();
 #else
+    logFile->m_directory = (char *)strdup(defaultDirectory);
+    logFile->m_category = (char *)strdup(category);
+    logFile->m_name = (char *)strdup(name);
+    if (tag != NULL)
+        logFile->m_tag = (char *)strdup(tag);
+    else
+        logFile->m_tag = (char *)strdup("??");
     logFile->m_pid = getpid();
 #endif /* WIN32 */
 }
@@ -162,7 +169,11 @@ mlLogFileSetDirectory(MleLogFileP *logFile,const char *dir)
 
     if (logFile->m_directory)
         mlFree(logFile->m_directory);
+#ifdef WIN32
     logFile->m_directory = (char *)_strdup(dir);
+#else
+    logFile->m_directory = (char *)strdup(dir);
+#endif
 }
 
 
@@ -174,7 +185,11 @@ mlLogFileSetTag(MleLogFileP *logFile,const char *tag)
 
     if (logFile->m_tag != NULL)
 	mlFree(logFile->m_tag);
+#ifdef WIN32
     logFile->m_tag = (char *)_strdup(tag);
+#else
+    logFile->m_tag = (char *)strdup(tag);
+#endif
 }
 
 

@@ -33,7 +33,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2020 Wizzer Works
+// Copyright (c) 2015-2022 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -153,7 +153,11 @@ mlFilenameExpand(const char *inName)
     VStr *vstr;
 
     if (inName == NULL) {
+#if defined(WIN32)
         return _strdup("");
+#else
+        return strdup("");
+#endif
     }
     
     /*
@@ -163,7 +167,11 @@ mlFilenameExpand(const char *inName)
     if (*inName != TILDE &&
         strchr(inName, DOLLAR) == NULL &&
         strchr(inName, PERCENT) == NULL ) {
+#if defined(WIN32)
         return _strdup(inName);
+#else
+        return strdup(inName);
+#endif
     }
 
     /*
@@ -279,7 +287,11 @@ getHomeOfMe()
     char *home;
  
     if ((home = getenv("HOME")) != NULL) {
+#if defined(WIN32)
         return _strdup(home);
+#else
+        return strdup(home);
+#endif
     }
     home = (char *) mlMalloc(2);
     home[0] = TILDE;

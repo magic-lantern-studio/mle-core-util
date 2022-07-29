@@ -14,7 +14,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2020 Wizzer Works
+// Copyright (c) 2015-2022 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -150,7 +150,11 @@ static char *_takeTokenText(MleDBTokenDataP *tokenData)
     MLE_VALIDATE_PTR(tokenData);
 
     if (tokenData->_tokenText != NULL) {
+#if defined(WN32)
         txt = _strdup(tokenData->_tokenText);
+#else
+        txt = strdup(tokenData->_tokenText);
+#endif
         tokenData->_tokenUsed = 0;
         tokenData->_tokenText[0] = 0;
         return txt;
@@ -754,7 +758,11 @@ _dbgQuark _dbgStringToQuark(const char *s)
 
     /* Put a new entry in the list. */
     *qe = (_dbgQuarkEntry *)mlMalloc(sizeof(_dbgQuarkEntry));
+#if defined(WIN32)
     (*qe)->string = _strdup(s);      /* XXX this also does a malloc */
+#else
+    (*qe)->string = strdup(s);      /* XXX this also does a malloc */
+#endif
     (*qe)->quark = q;
     (*qe)->ref = 0;
     (*qe)->next = NULL;
