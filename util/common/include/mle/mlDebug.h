@@ -12,7 +12,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2020 Wizzer Works
+// Copyright (c) 2015-2022 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -91,24 +91,24 @@ EXTERN void _dbgUnrefQuark(const _dbgQuark);
 #define _dbgDICTTABLESIZE 15
 #endif
 
-/**
+/*
  * This structure is a dictionary entry used for internal debug support.
  */
 typedef struct __dbgDictEntry
 {
-    _dbgQuark key;  /**< A token key for the entry. */
-    void *ptr;      /**< A pointer to the entry. */
+    _dbgQuark key;  /* A token key for the entry. */
+    void *ptr;      /* A pointer to the entry. */
 
     struct __dbgDictEntry *next;  /**< A pointer to the next entry. */
 } _dbgDictEntry;
 
 
-/**
+/*
  * This structure is a dictionary used for internal debug support.
  */
 typedef struct __dbgDict
 {
-    _dbgDictEntry *entry[_dbgDICTTABLESIZE];  /**< A list of entries. */
+    _dbgDictEntry *entry[_dbgDICTTABLESIZE];  /* A list of entries. */
 } *_dbgDict;
 
 
@@ -124,7 +124,7 @@ EXTERN _dbgDictEntry *_dbgDictFindEntry(_dbgDict,_dbgQuark key);
 
 
 /**
- * This structure encapsulates a Debug Category.
+ * This structure encapsulates a Debug Category data.
  */
 typedef struct _MleDebugCategoryP
 {
@@ -134,7 +134,7 @@ typedef struct _MleDebugCategoryP
 
 
 /**
- * This structure encapsulates a Debug Component.
+ * This structure encapsulates a Debug Component data.
  */
 typedef struct _MleDebugComponentP
 {
@@ -144,7 +144,7 @@ typedef struct _MleDebugComponentP
 
 
 /**
- * This structure encapsulates the Debug Manager.
+ * This structure encapsulates the Debug Manager data.
  */
 typedef struct _MleDebugMgrP
 {
@@ -178,11 +178,56 @@ typedef struct _MleDebugMgrP
 EXTERN MlBoolean _mlDBInit(MleDebugMgrP *,const char *,const char *);
 EXTERN void _mlDBDeinit(MleDebugMgrP *);
 
-EXTERN MLE_UTIL_API MleDebugMgrP *mlDebugCreate(char *,char *);
-EXTERN MLE_UTIL_API MlBoolean mlDebugDelete(MleDebugMgrP *);
-EXTERN MLE_UTIL_API MlBoolean mlDebugMatch(MleDebugMgrP *,const char *,const char *,signed long);
-EXTERN MLE_UTIL_API signed long mlDebugGetLevel(MleDebugMgrP *,const char *);
-EXTERN MLE_UTIL_API void mlDebugDump(MleDebugMgrP *);
+/**
+ * Create a new debug manager.
+ *
+ * @param envVar The environment variable used to control the debug manager behavior.
+ * By default, this is usually <b>MLE_DEBUG</b>.
+ * @param homeFile The name of the file where the default control is specified.
+ * By default, this is usually set to <b>.mle.debug</b>.
+ *
+ * @return A pointer to the new debug manager is returned.
+ */
+EXTERN MLE_UTIL_API MleDebugMgrP *mlDebugCreate(char *envVar,char *homeFile);
+
+/**
+ * Delete the specified debug manager.
+ *
+ * @param manager A pointer to the debug manager to delete.
+ *
+ * @ return Upon success, <b>1</b> is returned. Otherwise <b>0</b>.
+ */
+EXTERN MLE_UTIL_API MlBoolean mlDebugDelete(MleDebugMgrP *manager);
+
+/**
+ * Match the component, category and level in the specified debug manager.
+ *
+ * @param manager A pointer to the debug manager to perform the match.
+ * @param component A pointer to the component string used to perform the match.
+ * @param category A pointer to the category string used to perform the match.
+ * @param level A long integer specifying the level to match.
+ *
+ * @return If a mtach is found, then <b>1</b> will be returned. Otherwise <b>0</b> will
+ * be returned.
+ */
+EXTERN MLE_UTIL_API MlBoolean mlDebugMatch(MleDebugMgrP *manager,const char *component,const char *category,signed long level);
+
+/**
+ * Get the level for the specified category.
+ *
+ * @param manager A pointer to the debug manager to use.
+ * @param category A pointer to the category string to match.
+ *
+ * @reutrn The level for the specified category will be returned.
+ */
+EXTERN MLE_UTIL_API signed long mlDebugGetLevel(MleDebugMgrP *manager,const char *category);
+
+/**
+ * Dump the contents of the specified debug manager to stdout.
+ *
+ * @param manager A pointer to the debug manager to dump.
+ */
+EXTERN MLE_UTIL_API void mlDebugDump(MleDebugMgrP *manager);
 
 
 #if defined(MLE_DEBUG)

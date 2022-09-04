@@ -162,7 +162,9 @@ static char *_takeTokenText(MleDBTokenDataP *tokenData)
     return NULL;
 }
 
-
+/*
+ * Routine for setting a component in the debug manager.
+ */
 static void _setComponent(MleDebugMgrP *manager,char *str)
 {
     MLE_VALIDATE_PTR(manager);
@@ -173,7 +175,9 @@ static void _setComponent(MleDebugMgrP *manager,char *str)
     manager->curComponent = str;
 }
 
-
+/*
+ * Routine for setting a category in the debug manager.
+ */
 static void _setCategory(MleDebugMgrP *manager,char *str)
 {
     MLE_VALIDATE_PTR(manager);
@@ -184,7 +188,9 @@ static void _setCategory(MleDebugMgrP *manager,char *str)
     manager->curCategory = str;
 }
 
-
+/*
+ * Routine for setting the level in the debug manager.
+ */
 static void _setLevel(MleDebugMgrP *manager,unsigned long level)
 {
     MLE_VALIDATE_PTR(manager);
@@ -192,7 +198,10 @@ static void _setLevel(MleDebugMgrP *manager,unsigned long level)
     manager->curLevel = level;
 }
 
-
+/*
+ * Add the debug manager definition to the internal debug component and category
+ * dictionaries.
+ */
 static void _add(MleDebugMgrP *manager)
 {
     /* Declare local variables. */
@@ -245,11 +254,9 @@ static void _add(MleDebugMgrP *manager)
     MLE_DEBUG_SET_MATCH(component->flags);
 }
 
-
 /*
- * Parse string -- parse a string into the two-level debug structure
+ * Parse a string into the two-level debug structure.
  */
-
 static void _parseString(MleDebugMgrP *manager,char *str)
 {
     /* Declare local variables. */
@@ -358,7 +365,9 @@ static void _parseString(MleDebugMgrP *manager,char *str)
     }
 }
 
-
+/*
+ * Parse a file's contents into its two-level debug structure.
+ */
 static void _parseFile(MleDebugMgrP *manager,const char *file)
 {
     /* Declare local variables. */
@@ -394,7 +403,9 @@ static void _parseFile(MleDebugMgrP *manager,const char *file)
     mlClose(fd);
 }
 
-
+/*
+ * Initialize the debug manager.
+ */
 MlBoolean _mlDBInit(
     MleDebugMgrP *manager,
     const char *envVar,
@@ -446,7 +457,9 @@ MlBoolean _mlDBInit(
     return(retValue);
 }
 
-
+/*
+ * Deinitialize the debug manager.
+ */
 void _mlDBDeinit(MleDebugMgrP *manager)
 {
     /* Declare local variables. */
@@ -478,7 +491,9 @@ void _mlDBDeinit(MleDebugMgrP *manager)
     _dbgDictDestroy(manager->components);
 }
 
-
+/*
+ * Create a new debug manager.
+ */
 MleDebugMgrP *mlDebugCreate(char *envVar, char *homeFile)
 {
     /* Declare local variables. */
@@ -495,7 +510,10 @@ MleDebugMgrP *mlDebugCreate(char *envVar, char *homeFile)
     return(manager);
 }
 
-
+/*
+ * Delete the specified debug manager.
+ *
+ */
 MlBoolean mlDebugDelete(MleDebugMgrP *manager)
 {
     MLE_VALIDATE_PTR(manager);
@@ -506,7 +524,9 @@ MlBoolean mlDebugDelete(MleDebugMgrP *manager)
     return(TRUE);
 }
 
-
+/*
+ * Match the component in the specified dictonary.
+ */
 static MlBoolean _mlDBMatchComponent(
     _dbgDict dictionary,
     const char *component,
@@ -531,7 +551,7 @@ static MlBoolean _mlDBMatchComponent(
             if (MLE_DEBUG_MATCH(dcp->flags)) {
                 *categories = dcp->categories;
                 status = TRUE;
-	    }
+	        }
         }
     }
 
@@ -540,7 +560,9 @@ static MlBoolean _mlDBMatchComponent(
     return(status);
 }
 
-
+/*
+ * Match the category in the specified dictionary.
+ */
 static MlBoolean _mlDBMatchCategory(
     _dbgDict dictionary,
     const char *category,
@@ -585,7 +607,9 @@ static MlBoolean _mlDBMatchCategory(
     return(status);
 }
 
-
+/*
+ * Match the component, category and level in the specified debug manager.
+ */
 MlBoolean mlDebugMatch(
     MleDebugMgrP *manager,
     const char *component,
@@ -653,7 +677,7 @@ signed long mlDebugGetLevel(MleDebugMgrP *manager,const char *str)
                         lev = cat->level > lev ? cat->level : lev;
                     }
                 }
-	    }
+	        }
 
             dcpEntry = dcpEntry->next;
         }
@@ -662,7 +686,9 @@ signed long mlDebugGetLevel(MleDebugMgrP *manager,const char *str)
     return lev;
 }
 
-
+/*
+ * Dump the contents of the debug manager.
+ */
 void mlDebugDump(MleDebugMgrP *manager)
 {
     /* Declare local variables. */
