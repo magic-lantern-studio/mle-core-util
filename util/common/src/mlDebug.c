@@ -1037,15 +1037,10 @@ main (int argc,char *argv[])
     /* Test 2 -- test for simple category construction. */
     fprintf(stdout,"Running Test 2 ...\n");
 
-#ifdef __sgi
-    if ((fd = creat(TEST_FILE,S_IRWXU | S_IRWXG | S_IRWXO)) < 0 ) {
-        exit(-1);
-    }
-#else
 	if ((fd = mlCreate(TEST_FILE,S_IREAD | S_IWRITE)) < 0 ) {
         exit(-1);
     }
-#endif
+
     strcpy(buf,"info");
     mlWrite(fd,buf,strlen(buf));
     mlClose(fd);
@@ -1068,15 +1063,10 @@ main (int argc,char *argv[])
     /* Test 3 -- test for component/category construction. */
     fprintf(stdout,"Running Test 3 ...\n");
 
-#ifdef __sgi
-    if ((fd = creat(TEST_FILE,S_IRWXU | S_IRWXG | S_IRWXO)) < 0 ) {
-        exit(-1);
-    }
-#else
 	if ((fd = mlCreate(TEST_FILE,S_IREAD | S_IWRITE)) < 0 ) {
         exit(-1);
     }
-#endif    strcpy(buf,"Test3.info=5");
+    strcpy(buf,"Test3.info=5");
     mlWrite(fd,buf,strlen(buf));
     mlClose(fd);
 
@@ -1102,15 +1092,10 @@ main (int argc,char *argv[])
     /* Test 4 -- test for multiple component/category construction. */
     fprintf(stdout,"Running Test 4 ...\n");
 
-#ifdef __sgi
-    if ((fd = creat(TEST_FILE,S_IRWXU | S_IRWXG | S_IRWXO)) < 0 ) {
-        exit(-1);
-    }
-#else
 	if ((fd = mlCreate(TEST_FILE,S_IREAD | S_IWRITE)) < 0 ) {
         exit(-1);
     }
-#endif    strcpy(buf,"Test1.info=1\n");
+    strcpy(buf,"Test1.info=1\n");
     mlWrite(fd,buf,strlen(buf));
     strcpy(buf,"Test2.info=2\n");
     mlWrite(fd,buf,strlen(buf));
@@ -1146,15 +1131,10 @@ main (int argc,char *argv[])
     /* Test 5 -- test convenience macros. */
     fprintf(stdout,"Running Test 5 ...\n");
 
-#ifdef __sgi
-    if ((fd = creat(TEST_FILE,S_IRWXU | S_IRWXG | S_IRWXO)) < 0 ) {
-        exit(-1);
-    }
-#else
 	if ((fd = mlCreate(TEST_FILE,S_IREAD | S_IWRITE)) < 0 ) {
         exit(-1);
     }
-#endif
+
     strcpy(buf,"Test5.info=5\n");
     mlWrite(fd,buf,strlen(buf));
     mlClose(fd);
