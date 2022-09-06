@@ -1,4 +1,34 @@
 // COPYRTIGH_BEGIN
+//
+// The MIT License (MIT)
+//
+// Copyright (c) 2022 Wizzer Works
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+//
+//  For information concerning this header file, contact Mark S. Millard,
+//  of Wizzer Works at msm@wizzerworks.com.
+//
+//  More information concerning Wizzer Works may be found at
+//
+//      http://www.wizzerworks.com
+//
 // COPYRIGHT_END
 
 // Include system header files.
@@ -24,7 +54,7 @@ TEST(MlDebugTest, CreateDebugManager) {
     // test case.
 
 	MleDebugMgrP *mlDebugMgr = NULL;
-    mlDebugMgr = mlDebugCreate(BOGUS_ENVVAR,BOGUS_FILE);
+    mlDebugMgr = mlDebugCreate(const_cast<char *>(BOGUS_ENVVAR),const_cast<char *>(BOGUS_FILE));
 
     ASSERT_NE(mlDebugMgr, nullptr);
 
@@ -55,8 +85,8 @@ TEST(MlDebugTest, SimpleCategoryConstruction) {
     mlWrite(fd,buf,strlen(buf));
     mlClose(fd);
 
-    MleDebugMgrP *mlDebugMgr = NULL;
-    mlDebugMgr = mlDebugCreate(BOGUS_ENVVAR,TEST_FILE);
+    MleDebugMgrP *mlDebugMgr = nullptr;
+    mlDebugMgr = mlDebugCreate(const_cast<char *>(BOGUS_ENVVAR),const_cast<char *>(TEST_FILE));
 
     ASSERT_NE(mlDebugMgr, nullptr);
 
@@ -95,8 +125,8 @@ TEST(MlDebugTest, ComponentCategoryConstruction) {
     mlWrite(fd,buf,strlen(buf));
     mlClose(fd);
 
-    MleDebugMgrP *mlDebugMgr = NULL;
-    mlDebugMgr = mlDebugCreate(BOGUS_ENVVAR,TEST_FILE);
+    MleDebugMgrP *mlDebugMgr = nullptr;
+    mlDebugMgr = mlDebugCreate(const_cast<char *>(BOGUS_ENVVAR),const_cast<char *>(TEST_FILE));
 
     ASSERT_NE(mlDebugMgr, nullptr);
 
@@ -153,8 +183,8 @@ TEST(MlDebugTest, MultipleComponentCategoryConstruction) {
     mlWrite(fd,buf,strlen(buf));
     mlClose(fd);
 
-    MleDebugMgrP *mlDebugMgr = NULL;
-    mlDebugMgr = mlDebugCreate(BOGUS_ENVVAR,TEST_FILE);
+    MleDebugMgrP *mlDebugMgr = nullptr;
+    mlDebugMgr = mlDebugCreate(const_cast<char *>(BOGUS_ENVVAR),const_cast<char *>(TEST_FILE));
 
     ASSERT_NE(mlDebugMgr, nullptr);
 
@@ -183,6 +213,63 @@ TEST(MlDebugTest, MultipleComponentCategoryConstruction) {
 
     EXPECT_FALSE(match);
     fprintf(stdout,"Unable to match '*.bogus' with level '5'\n");
+
+    MlBoolean deleted;
+    deleted = mlDebugDelete(mlDebugMgr);
+
+    EXPECT_TRUE(deleted);
+
+    // Clean up.
+    mlDebugMgr = NULL;
+    unlink(TEST_FILE);
+}
+
+TEST(MlDebugTest, ConvenienceMacros) {
+    // This test is named "ConvenienceMacros", and belongs to the "MlDebugTest"
+    // test case
+
+	signed long fd;
+    if ((fd = mlCreate(TEST_FILE,S_IREAD | S_IWRITE)) < 0 ) {
+        FAIL();
+    }
+
+    char buf[BUFSIZ];
+    strcpy(buf,"Test5.info=5");
+    mlWrite(fd,buf,strlen(buf));
+    mlClose(fd);
+
+    MleDebugMgrP *mlDebugMgr = nullptr;
+    mlDebugMgr = mlDebugCreate(const_cast<char *>(BOGUS_ENVVAR),const_cast<char *>(TEST_FILE));
+
+    ASSERT_NE(mlDebugMgr, nullptr);
+    g_mlDebugMgr = mlDebugMgr;
+
+    //mlDebugDump(g_mlDebugMgr);
+
+    MLE_DEBUG_FULL("Test5","info",3, {
+    	SUCCEED();
+        fprintf(stdout,"Matched 'Test5.info' with level '3'\n");
+    });
+    MLE_DEBUG_CAT("info", {
+    	SUCCEED();
+        fprintf(stdout,"Matched '*.info' with level '0'\n");
+    });
+    MLE_DEBUG_CATLEVEL("info",3, {
+    	SUCCEED();
+        fprintf(stdout,"Matched '*.info' with level '3'\n");
+    });
+    MLE_DEBUG_CMPT("Test5", {
+    	SUCCEED();
+        fprintf(stdout,"Matched 'Test5.*' with level '0'\n");
+    });
+    MLE_DEBUG_CMPTLEVEL("Test5",3, {
+    	SUCCEED();
+        fprintf(stdout,"Matched 'Test5.*' with level '3'\n");
+    });
+    MLE_DEBUG_FULL("Bogus","bogus",3, {
+    	FAIL();
+        fprintf(stdout,"Matched 'Bogus.bogus' with level '3'\n");
+    });
 
     MlBoolean deleted;
     deleted = mlDebugDelete(mlDebugMgr);

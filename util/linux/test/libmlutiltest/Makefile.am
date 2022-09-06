@@ -18,6 +18,7 @@ libmlutiltest_la_LDFLAGS =
 # to be searched for headers included in the source code.
 libmlutiltest_la_CPPFLAGS = \
     -DMLE_NOT_DLL \
+    -DMLE_DEBUG \
 	-I$(top_srcdir)/include \
 	-I$(top_srcdir)/../include \
 	-I$(top_srcdir)/../../common/include \

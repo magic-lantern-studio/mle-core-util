@@ -31,6 +31,7 @@ exampleProgram_LDFLAGS = \
 
 # Compiler options for a.out
 exampleProgram_CPPFLAGS = \
+    -DMLE_DEBUG \
 	-I$(top_srcdir)/include \
 	-I$(top_srcdir)/../include \
 	-I$(top_srcdir)/../../common/include \
