@@ -246,7 +246,7 @@ mlLogFileClose(MleLogFileP *logFile)
     MLE_ASSERT(logFile != NULL);
 
     /* Check if already open. */
-    if (! logFile->m_isOpen) {
+    if (logFile->m_isOpen) {
         mlClose(logFile->m_fd);
         logFile->m_isOpen = FALSE;
     } else

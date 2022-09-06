@@ -87,14 +87,76 @@ extern "C" {
 void _mlLogFileInit(MleLogFileP *,const char *,const char *,const char *);
 void _mlLogFileDeinit(MleLogFileP *);
 
-MleLogFileP *mlLogFileCreate(const char *,const char *,const char *);
-void mlLogFileDelete(MleLogFileP *);
-MlBoolean mlLogFileOpen(MleLogFileP *);
-MlBoolean mlLogFileClose(MleLogFileP *);
-void mlLogFileSetDirectory(MleLogFileP *,const char *);
-void mlLogFileSetTag(MleLogFileP *,const char *);
-void mlLogFilePrintf(MleLogFileP *,const char *, ...);
-void mlLogFileHexDump(const char *,const int);
+/**
+ * Create a log file descriptor.
+ *
+ * @param category The name of a category for the logged item.
+ * @param name The name of the item to log.
+ * @param tag Additional tagging information for the logged item (i.e. timestamp).
+ *
+ * @return A pointer to a strucutre containing the logging descriptor is returned.
+ */
+MleLogFileP *mlLogFileCreate(const char *category,const char *name,const char *tag);
+
+/**
+ * Delete a log file descriptor.
+ *
+ * @param A pointer to the log file descriptor to delete.
+ */
+void mlLogFileDelete(MleLogFileP *logFile);
+
+/**
+ * Open a log file.
+ *
+ * @param A pointer to the descriptor for the log file.
+ *
+ * @return If the log file is successfully opened, then <b>TRUE</b is returned.
+ * Otherwise, <b>FALSE</b> will be returned.
+ */
+MlBoolean mlLogFileOpen(MleLogFileP *logFile);
+
+/**
+ * Close a log file.
+ *
+ * @param logFile A pointer to a descriptor for the log file to close.
+ *
+ * @return If the log file is successfully opened, then <b>TRUE</b is returned.
+ * Otherwise, <b>FALSE</b> will be returned.
+ */
+MlBoolean mlLogFileClose(MleLogFileP *logFile);
+
+/**
+ * Set the directory location for the log file.
+ *
+ * @param logFile A pointer to the descriptor for the log file.
+ * @param dir The directory location to set.
+ */
+void mlLogFileSetDirectory(MleLogFileP *logFile,const char *dir);
+
+/**
+ * Set the tag on the log file.
+ *
+ * @param logFile A pointer to the log file descriptor.
+ * @param tag The tag to set.
+ */
+void mlLogFileSetTag(MleLogFileP *logFile,const char *tag);
+
+/**
+ * Print an item to the log file.
+ *
+ * @param logFile A pointer to the log file descriptor.
+ * @param format The item that will be printed to the log file.
+ *
+ */
+void mlLogFilePrintf(MleLogFileP *logFile,const char *format, ...);
+
+/**
+ * Dump the contents of memory in HEX.
+ *
+ * @param ptr A pointer to the location in memory to dump.
+ * @param cnt The number of bytes to dump.
+ */
+void mlLogFileHexDump(const char *ptr,const int cnt);
 
 #ifdef __cplusplus
 }

@@ -9,7 +9,7 @@ lib_LTLIBRARIES = libmlutiltest.la
 
 # Sources for libmlutiltest
 libmlutiltest_la_SOURCES = libmlutiltest.cxx \
-    testMlDebug.cxx
+    testMlDebug.cxx testLogFile.cxx
 
 # Linker options libTestProgram
 libmlutiltest_la_LDFLAGS = 
