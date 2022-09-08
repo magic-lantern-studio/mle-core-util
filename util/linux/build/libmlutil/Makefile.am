@@ -30,5 +30,6 @@ libmlutil_la_CPPFLAGS = \
 	-DMLE_NOT_DLL \
 	-I$(top_srcdir)/include \
 	-I$(top_srcdir)/../../common/include \
-	-I$(top_srcdir)/../../linux/include
+	-I$(top_srcdir)/../../linux/include \
+	-std=c++11
 
