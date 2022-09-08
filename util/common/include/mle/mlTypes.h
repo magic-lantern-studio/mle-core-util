@@ -88,12 +88,13 @@ typedef int64_t             intd_t;      /**< 64-bit unsigned type. */
 #endif
 
 /* Floating point types. */
-#if defined(LINUX)
+#if defined(__linux__)
+#include <math.h>
 /* The ix86 FPUs evaluate all values in the 80 bit floating-point format
    which is also available for the user as `long double'.  Therefore we
    define:  */
-typedef long double         float_t;     /**< single precision floating-point type. */
-typedef long double         double_t;    /**< double precision floating-point type. */
+//typedef long double         float_t;     /**< single precision floating-point type. */
+//typedef long double         double_t;    /**< double precision floating-point type. */
 #else
 typedef float               float_t;     /**< single precision floating-point type. */
 typedef double              double_t;    /**< double precision floating-point type. */
