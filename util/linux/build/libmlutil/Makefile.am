@@ -17,9 +17,13 @@ libmlutil_la_SOURCES = \
 	../../../common/src/mlExpandFilename.c \
 	../../../common/src/mlLogFile.c \
 	../../../common/src/mlUnique.c \
-	../../../common/src/mlItoa.c \
+	../../../common/src/mlItoa.c
+
+if LINUX
+libmlutil_la_SOURCES += \
 	../../src/MleLinuxMemoryManager.cxx \
 	../../src/MleLinuxPath.cxx
+endif
 
 # Linker options for libmlutil
 libmlutil_la_LDFLAGS = -version-info 1:0:0

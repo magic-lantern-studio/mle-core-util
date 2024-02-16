@@ -23,3 +23,9 @@ include_HEADERS = \
 	$(top_srcdir)/../../common/include/mle/mlTypes.h \
 	$(top_srcdir)/../../common/include/mle/mlUnique.h \
 	$(top_srcdir)/../../common/include/mle/mlItoa.h
+
+if LINUX
+include_HEADERS += \
+    $(top_srcdir)/../../linux/include/mle/mlPlatformDefs.h \
+    $(top_srcdir)/../../linux/include/mle/MleLinuxPath.h
+endif

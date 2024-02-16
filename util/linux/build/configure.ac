@@ -8,6 +8,7 @@ AC_PROG_CXX
 AC_PREFIX_DEFAULT(/opt/MagicLantern)
 
 AC_CANONICAL_SYSTEM
+AC_CANONICAL_HOST
 
 AC_CONFIG_MACRO_DIR([m4])
 
@@ -20,6 +21,32 @@ AM_PROG_CC_C_O
 dnl Initialize Libtool
 LT_INIT
 
+dnl Set variables for platform specific code.
+build_linux=no
+build_windows=no
+build_mac=no
+
+case "${host_os}" in
+    linux*)
+        build_linux=yes
+        ;;
+    cygwin*|mingw*)
+        build_windows=yes
+        ;;
+    darwin*)
+        build_mac=yes
+        ;;
+    *)
+        AC_MSG_ERROR(["OS $host_os is not supported"])
+        ;;
+esac
+
+dnl Pass the platform conditionals to automake.
+AM_CONDITIONAL([LINUX], [test "$build_linux" = "yes"])
+AM_CONDITIONAL([WINDOWS], [test "$build_windows" = "yes"])
+AM_CONDITIONAL([OSX], [test "$build_mac" = "yes"])
+
+dnl Specify Makefiles to generate.
 AC_CONFIG_FILES(Makefile
                 exampleProgram/Makefile
                 libmlutil/Makefile
