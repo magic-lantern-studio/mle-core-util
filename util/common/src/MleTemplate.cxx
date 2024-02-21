@@ -13,7 +13,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2022 Wizzer Works
+// Copyright (c) 2015-2024 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -208,7 +208,7 @@ void MleTemplate::appendSection(MleTemplateSection *psect)
     }
 }
 
-MleTemplateSection *MleTemplate::lookupSection(char *name)
+MleTemplateSection *MleTemplate::lookupSection(const char *name)
 {
     for (MleTemplateSection *pts = m_sectionHead ; pts != NULL ; pts = pts->m_next)
 	{
@@ -348,7 +348,7 @@ void MleTemplateBindings::addBinding(Binding *pbinding)
     m_tail->m_next = NULL;
 }
 
-void MleTemplateBindings::defineConstant(char *name, int _ival)
+void MleTemplateBindings::defineConstant(const char *name, int _ival)
 {
     removeBinding(name);
     Binding *pbinding = new Binding();
@@ -363,7 +363,7 @@ void MleTemplateBindings::defineConstant(char *name, int _ival)
     addBinding(pbinding);
 }
 
-void MleTemplateBindings::defineConstant(char *name, double _fval)
+void MleTemplateBindings::defineConstant(const char *name, double _fval)
 {
     removeBinding(name);
     Binding *pbinding = new Binding();
@@ -377,7 +377,7 @@ void MleTemplateBindings::defineConstant(char *name, double _fval)
     pbinding->m_value.m_fval = _fval;
     addBinding(pbinding);
 }
-void MleTemplateBindings::defineConstant(char *name, char *_sval)
+void MleTemplateBindings::defineConstant(const char *name, const char *_sval)
 {
     removeBinding(name);
     Binding *pbinding = new Binding();
@@ -395,7 +395,7 @@ void MleTemplateBindings::defineConstant(char *name, char *_sval)
 }
 
 void MleTemplateBindings::defineCallback(
-	char *name,
+	const char *name,
     MleTemplateBindingCallback *cb,
     void *clientdata)
 {
@@ -413,7 +413,7 @@ void MleTemplateBindings::defineCallback(
     addBinding(pbinding);
 }
 
-void MleTemplateBindings::removeBinding(char *name)
+void MleTemplateBindings::removeBinding(const char *name)
 {
     Binding *pb, *prev;
     prev = NULL;
@@ -518,7 +518,7 @@ int MleTemplateBindings::processMacro(char *name, char *arg, MleTemplateProcess 
 //////////////////////////////////////////////////////////////////////
 
 MleTemplateProcess::MleTemplateProcess(
-    char *name,
+    const char *name,
     MleTemplate *_template,
     MleTemplateBindings *bindings,
     FILE *fd)
@@ -530,7 +530,7 @@ MleTemplateProcess::MleTemplateProcess(
     m_column = 1;
 }
 
-MleTemplateProcess::MleTemplateProcess(char *name, MleTemplateProcess *ptp)
+MleTemplateProcess::MleTemplateProcess(const char *name, MleTemplateProcess *ptp)
 {
     m_pSection = name;
     m_pTemplate = ptp->m_pTemplate;

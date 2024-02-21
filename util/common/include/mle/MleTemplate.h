@@ -11,7 +11,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2020 Wizzer Works
+// Copyright (c) 2015-2024 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -157,7 +157,7 @@ class MleTemplate
 	 * @return A pointer to the found template section is returned.
 	 * <b>NULL</b> will be returned if the section can not be found.
 	 */
-	MleTemplateSection *lookupSection(char *sectionName);
+	MleTemplateSection *lookupSection(const char *sectionName);
 
     /**
 	 * @brief Append a template section to the collection of sections.
@@ -237,13 +237,13 @@ class MleTemplateBindings
 
     ~MleTemplateBindings();
 
-    void defineConstant(char *name, int value);
+    void defineConstant(const char *name, int value);
 
-    void defineConstant(char *name, double value);
+    void defineConstant(const char *name, double value);
 
-    void defineConstant(char *name, char *value);
+    void defineConstant(const char *name, const char *value);
 
-    void defineCallback(char *name, MleTemplateBindingCallback *cb, void *clientdata = 0);
+    void defineCallback(const char *name, MleTemplateBindingCallback *cb, void *clientdata = 0);
 
 #ifdef DUMP_CODE
     void dump(FILE *fd, int tab=0);
@@ -278,7 +278,7 @@ class MleTemplateBindings
 
     void addBinding(Binding *binding);
 
-    void removeBinding(char *binding);
+    void removeBinding(const char *binding);
 
     int processMacro(char *name, char *, MleTemplateProcess *process);
 };
@@ -295,9 +295,9 @@ class MleTemplateProcess
 
   public:
 
-    MleTemplateProcess(char *name, MleTemplateProcess *ptp);
+    MleTemplateProcess(const char *name, MleTemplateProcess *ptp);
 
-    MleTemplateProcess(char *name, MleTemplate *t, MleTemplateBindings *bindings, FILE *fd);
+    MleTemplateProcess(const char *name, MleTemplate *t, MleTemplateBindings *bindings, FILE *fd);
 
     ~MleTemplateProcess();
 
@@ -326,7 +326,7 @@ class MleTemplateProcess
 
     MleTemplateBindings *m_pBindings;
 
-    char *m_pSection;
+    const char *m_pSection;
 
     int m_column;
 

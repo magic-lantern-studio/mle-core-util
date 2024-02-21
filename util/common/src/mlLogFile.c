@@ -11,7 +11,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2022 Wizzer Works
+// Copyright (c) 2015-2024 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -292,7 +292,9 @@ mlLogFilePrintf(MleLogFileP *logFile,const char *format, ...)
         *nlp = ' ';
     }
     strcat(buf,"\n");
-    mlWrite(logFile->m_fd,buf,strlen(buf));
+
+    size_t nBytes;
+    nBytes = mlWrite(logFile->m_fd,buf,strlen(buf));
 }
 
 
