@@ -23,4 +23,4 @@ libmlutiltest_la_CPPFLAGS = \
 	-I$(top_srcdir)/../include \
 	-I$(top_srcdir)/../../common/include \
 	-I/usr/local/include \
-	-std=c++11
+	-std=c++17

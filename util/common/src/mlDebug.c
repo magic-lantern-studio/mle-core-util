@@ -14,7 +14,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2022 Wizzer Works
+// Copyright (c) 2015-2024 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -494,7 +494,7 @@ void _mlDBDeinit(MleDebugMgrP *manager)
 /*
  * Create a new debug manager.
  */
-MleDebugMgrP *mlDebugCreate(char *envVar, char *homeFile)
+MleDebugMgrP *mlDebugCreate(const char *envVar, const char *homeFile)
 {
     /* Declare local variables. */
     MleDebugMgrP *manager;

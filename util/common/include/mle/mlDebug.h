@@ -12,7 +12,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2022 Wizzer Works
+// Copyright (c) 2015-2024 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -188,7 +188,7 @@ EXTERN void _mlDBDeinit(MleDebugMgrP *);
  *
  * @return A pointer to the new debug manager is returned.
  */
-EXTERN MLE_UTIL_API MleDebugMgrP *mlDebugCreate(char *envVar,char *homeFile);
+EXTERN MLE_UTIL_API MleDebugMgrP *mlDebugCreate(const char *envVar,const char *homeFile);
 
 /**
  * Delete the specified debug manager.

@@ -82,7 +82,8 @@ TEST(MlDebugTest, SimpleCategoryConstruction) {
 
     char buf[BUFSIZ];
     strcpy(buf,"info");
-    mlWrite(fd,buf,strlen(buf));
+    ssize_t nWrite;
+    nWrite = mlWrite(fd,buf,strlen(buf));
     mlClose(fd);
 
     MleDebugMgrP *mlDebugMgr = nullptr;
@@ -122,7 +123,8 @@ TEST(MlDebugTest, ComponentCategoryConstruction) {
 
     char buf[BUFSIZ];
     strcpy(buf,"Test3.info=5");
-    mlWrite(fd,buf,strlen(buf));
+    ssize_t nWrite;
+    nWrite = mlWrite(fd,buf,strlen(buf));
     mlClose(fd);
 
     MleDebugMgrP *mlDebugMgr = nullptr;
@@ -170,17 +172,18 @@ TEST(MlDebugTest, MultipleComponentCategoryConstruction) {
         FAIL();
     }
 
+    ssize_t nWrite;
     char buf[BUFSIZ];
     strcpy(buf,"Test1.info=1\n");
-    mlWrite(fd,buf,strlen(buf));
+    nWrite = mlWrite(fd,buf,strlen(buf));
     strcpy(buf,"Test2.info=2\n");
-    mlWrite(fd,buf,strlen(buf));
+    nWrite = mlWrite(fd,buf,strlen(buf));
     strcpy(buf,"Test3.info=3\n");
-    mlWrite(fd,buf,strlen(buf));
+    nWrite = mlWrite(fd,buf,strlen(buf));
     strcpy(buf,"Test1.debug=4\n");
-    mlWrite(fd,buf,strlen(buf));
+    nWrite = mlWrite(fd,buf,strlen(buf));
     strcpy(buf,"Test2.debug=5\n");
-    mlWrite(fd,buf,strlen(buf));
+    nWrite = mlWrite(fd,buf,strlen(buf));
     mlClose(fd);
 
     MleDebugMgrP *mlDebugMgr = nullptr;
@@ -233,9 +236,10 @@ TEST(MlDebugTest, ConvenienceMacros) {
         FAIL();
     }
 
+    ssize_t nWrite;
     char buf[BUFSIZ];
     strcpy(buf,"Test5.info=5");
-    mlWrite(fd,buf,strlen(buf));
+    nWrite = mlWrite(fd,buf,strlen(buf));
     mlClose(fd);
 
     MleDebugMgrP *mlDebugMgr = nullptr;
