@@ -85,10 +85,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F5329AC2BC894940001D004 = {
+		2F3239172BC9A95D00BEBB87 /* Header Files */ = {
 			isa = PBXGroup;
 			children = (
-				2F5329FA2BC8A7260001D004 /* MleMacMemoryManager.cxx */,
 				2F5329D92BC897C70001D004 /* mlArray.h */,
 				2F5329E52BC897C70001D004 /* mlAssert.h */,
 				2F5329E42BC897C70001D004 /* mlConfig.h */,
@@ -109,6 +108,14 @@
 				2F5329D72BC897C70001D004 /* mlToken.h */,
 				2F5329E12BC897C70001D004 /* mlTypes.h */,
 				2F5329E02BC897C70001D004 /* mlUnique.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		2F3239182BC9A9AF00BEBB87 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F5329FA2BC8A7260001D004 /* MleMacMemoryManager.cxx */,
 				2F5329C12BC897790001D004 /* mlDebug.c */,
 				2F5329BF2BC897790001D004 /* MleDsoLoader.cxx */,
 				2F5329C42BC897790001D004 /* MleMemoryManager.cxx */,
@@ -118,6 +125,15 @@
 				2F5329C62BC897790001D004 /* mlItoa.c */,
 				2F5329BE2BC897790001D004 /* mlLogFile.c */,
 				2F5329C02BC897790001D004 /* mlUnique.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		2F5329AC2BC894940001D004 = {
+			isa = PBXGroup;
+			children = (
+				2F3239182BC9A9AF00BEBB87 /* Source Files */,
+				2F3239172BC9A95D00BEBB87 /* Header Files */,
 				2F5329C22BC897790001D004 /* README.txt */,
 				2F5329B62BC894940001D004 /* Products */,
 			);
