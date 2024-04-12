@@ -1,3 +1,4 @@
+## Linux autoconf
 **/Makefile
 **/Makefile.in
 **/.libs
@@ -18,3 +19,6 @@
 **/install-sh
 **/ltmain.sh
 **/depcomp
+
+## Apple XCode User Settings
+xcuserdata/

@@ -162,7 +162,7 @@ class MleTemplate
     /**
 	 * @brief Append a template section to the collection of sections.
 	 *
-	 * @param The section to append.
+	 * @param section The section to append.
 	 */
 	void appendSection (MleTemplateSection *section);
 

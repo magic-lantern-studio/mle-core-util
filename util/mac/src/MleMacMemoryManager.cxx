@@ -1,15 +1,19 @@
 /** @defgroup MleCore Magic Lantern Core Utility Library API */
 
 /**
- * @file mlItoa.h
- * @ingroup MleCore
+ *  @file MleMacMemoryManager.cxx
+ *  @ingroup MleCore
+ *
+ *  Apple MacOS implementation of platform specific memory manager code.
+ *
+ *  @author Mark S. Millard
  */
 
 // COPYRIGHT_BEGIN
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2017-2020 Wizzer Works
+// Copyright (c) 2015-2024 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -38,41 +42,52 @@
 //
 // COPYRIGHT_END
 
-#ifndef __MLE_ITOA_H_
-#define __MLE_ITOA_H_
+// Include system header files.
+#include <stdlib.h>
+#if defined(__APPLE__)
+// Todo: Make this the default for Linux and Windows after testing.
+#include <stdlib.h>
+#else
+#include <malloc.h>
+#endif
 
-#ifdef __cplusplus
-extern "C" {
-#endif /* __cplusplus */
+// Include Magic Lantern header files.
+#include "mle/MleMemoryManager.h"
 
-/**
- * @brief Convert integer to string.
- *
- * Converts an integer value to a null-terminated string using the
- * specified base and stores the result in the array given by str parameter.
- *
- * If base is 10 and value is negative, the resulting string is preceded
- * with a minus sign (-). With any other base, value is always considered
- * unsigned.
- *
- * str should be an array long enough to contain any possible value:
- * (sizeof(int)*8+1) for radix=2, i.e. 17 bytes in 16-bits platforms
- * and 33 in 32-bits platforms.
- *
- * @param value Value to be converted to a string.
- * @param result Array in memory where to store the resulting null-terminated
- * string.
- * @param base Numerical base used to represent the value as a string,
- * between 2 and 36, where 10 means decimal base, 16 hexadecimal,
- * 8 octal, and 2 binary.
- *
- * @return A pointer to the resulting null-terminated string,
- * same as parameter str.
- */
-char* mlItoa(int value, char* result, int base);
 
-#ifdef __cplusplus
+void
+MleMemoryManager::platformInit(void *&cookie)
+{
+    cookie = NULL;
+    // Nothing to do for Mac.
 }
-#endif /* __cplusplus */
 
-#endif /* __MLE_ITOA_H_ */
+
+void
+MleMemoryManager::platformCleanup(void *&cookie)
+{
+    // Nothing to do for Mac.
+}
+
+
+void *
+MleMemoryManager::platformAllocate(void * /* cookie */, MlUInt size)
+{
+    return mlMalloc(size);
+}
+
+
+void *
+MleMemoryManager::platformResize(void * /* cookie */, void *memory, MlUInt newSize)
+{
+    return mlRealloc(memory, newSize);
+}
+
+
+MlResult
+MleMemoryManager::platformRelease(void * /* cookie */, void *memory)
+{
+    mlFree(memory);
+
+    return MLE_S_OK;
+}

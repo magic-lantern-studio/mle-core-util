@@ -97,7 +97,7 @@ class MLE_UTIL_API MleDSOLoader
      * mleExpandFilename(), so environment variables and '~' notation
      * is allowed.
 	 *
-	 * @param A pointer to an array of directory paths.
+	 * @param pathlist A pointer to an array of directory paths.
 	 */
     void setSearchList(char **pathlist);
     

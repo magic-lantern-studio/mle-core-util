@@ -566,6 +566,7 @@ int MleTemplateProcess::goLine(char *text)
     int state;
     char *pmacro, *pmacro0, *pmacro1, *parg, *parg0, *parg1, *pstart;
     
+    pmacro = pmacro0 = pmacro1 = parg = parg0 = parg1 = pstart = NULL;
     state = 0;
     for ( pcur = text ; *pcur!=0 ; pcur++)
 	{

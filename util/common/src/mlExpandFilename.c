@@ -129,7 +129,7 @@ mlFilenameIndexSet(int x)
 
 
 void
-mlFilenameIndexIncrement()
+mlFilenameIndexIncrement(void)
 {
     mle_filename_index++;
 }
@@ -313,7 +313,7 @@ getHomeOfName(char *name)
 #else /* ! WIN32 */
 
 static char *
-getHomeOfMe()
+getHomeOfMe(void)
 {
     char           *home;
     struct passwd  *pw;

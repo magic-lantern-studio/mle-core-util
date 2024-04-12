@@ -84,9 +84,9 @@ extern "C" {
 /**
  * Set the filename index.
  *
- * @param The index to set.
+ * @param index The index to set.
  */
-MLE_UTIL_API void mlFilenameIndexSet(int);
+MLE_UTIL_API void mlFilenameIndexSet(int index);
 
 /**
  * Increment the filename index.

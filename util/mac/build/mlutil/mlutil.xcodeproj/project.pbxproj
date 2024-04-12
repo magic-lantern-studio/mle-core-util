@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F5329C82BC897790001D004 /* mlLogFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 2F5329BE2BC897790001D004 /* mlLogFile.c */; };
+		2F5329C92BC897790001D004 /* MleDsoLoader.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2F5329BF2BC897790001D004 /* MleDsoLoader.cxx */; };
+		2F5329CA2BC897790001D004 /* mlUnique.c in Sources */ = {isa = PBXBuildFile; fileRef = 2F5329C02BC897790001D004 /* mlUnique.c */; };
+		2F5329CB2BC897790001D004 /* mlDebug.c in Sources */ = {isa = PBXBuildFile; fileRef = 2F5329C12BC897790001D004 /* mlDebug.c */; };
+		2F5329CD2BC897790001D004 /* MleTemplate.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2F5329C32BC897790001D004 /* MleTemplate.cxx */; };
+		2F5329CE2BC897790001D004 /* MleMemoryManager.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2F5329C42BC897790001D004 /* MleMemoryManager.cxx */; };
+		2F5329CF2BC897790001D004 /* mlErrno.c in Sources */ = {isa = PBXBuildFile; fileRef = 2F5329C52BC897790001D004 /* mlErrno.c */; };
+		2F5329D02BC897790001D004 /* mlItoa.c in Sources */ = {isa = PBXBuildFile; fileRef = 2F5329C62BC897790001D004 /* mlItoa.c */; };
+		2F5329D12BC897790001D004 /* mlExpandFilename.c in Sources */ = {isa = PBXBuildFile; fileRef = 2F5329C72BC897790001D004 /* mlExpandFilename.c */; };
+		2F5329E62BC897C70001D004 /* mlLogFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329D22BC897C70001D004 /* mlLogFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329E72BC897C70001D004 /* mlMalloc.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329D32BC897C70001D004 /* mlMalloc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329E82BC897C70001D004 /* mlItoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329D42BC897C70001D004 /* mlItoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329E92BC897C70001D004 /* MleMemoryManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329D52BC897C70001D004 /* MleMemoryManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329EA2BC897C70001D004 /* mlFileio.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329D62BC897C70001D004 /* mlFileio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329EB2BC897C70001D004 /* mlToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329D72BC897C70001D004 /* mlToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329EC2BC897C70001D004 /* mlMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329D82BC897C70001D004 /* mlMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329ED2BC897C70001D004 /* mlArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329D92BC897C70001D004 /* mlArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329EE2BC897C70001D004 /* MleDsoLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329DA2BC897C70001D004 /* MleDsoLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329EF2BC897C70001D004 /* MleTemplate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329DB2BC897C70001D004 /* MleTemplate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329F02BC897C70001D004 /* mlDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329DC2BC897C70001D004 /* mlDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329F12BC897C70001D004 /* mlErrno.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329DD2BC897C70001D004 /* mlErrno.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329F22BC897C70001D004 /* MlePath.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329DE2BC897C70001D004 /* MlePath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329F32BC897C70001D004 /* mle.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329DF2BC897C70001D004 /* mle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329F42BC897C70001D004 /* mlUnique.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329E02BC897C70001D004 /* mlUnique.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329F52BC897C70001D004 /* mlTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329E12BC897C70001D004 /* mlTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329F62BC897C70001D004 /* mlExpandFilename.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329E22BC897C70001D004 /* mlExpandFilename.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329F72BC897C70001D004 /* MleUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329E32BC897C70001D004 /* MleUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329F82BC897C70001D004 /* mlConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329E42BC897C70001D004 /* mlConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329F92BC897C70001D004 /* mlAssert.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329E52BC897C70001D004 /* mlAssert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5329FB2BC8A7260001D004 /* MleMacMemoryManager.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2F5329FA2BC8A7260001D004 /* MleMacMemoryManager.cxx */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2F5329B52BC894940001D004 /* libmlutil.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libmlutil.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F5329BE2BC897790001D004 /* mlLogFile.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = mlLogFile.c; path = ../../../common/src/mlLogFile.c; sourceTree = "<group>"; };
+		2F5329BF2BC897790001D004 /* MleDsoLoader.cxx */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MleDsoLoader.cxx; path = ../../../common/src/MleDsoLoader.cxx; sourceTree = "<group>"; };
+		2F5329C02BC897790001D004 /* mlUnique.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = mlUnique.c; path = ../../../common/src/mlUnique.c; sourceTree = "<group>"; };
+		2F5329C12BC897790001D004 /* mlDebug.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = mlDebug.c; path = ../../../common/src/mlDebug.c; sourceTree = "<group>"; };
+		2F5329C22BC897790001D004 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.txt; path = ../../../common/src/README.txt; sourceTree = "<group>"; };
+		2F5329C32BC897790001D004 /* MleTemplate.cxx */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MleTemplate.cxx; path = ../../../common/src/MleTemplate.cxx; sourceTree = "<group>"; };
+		2F5329C42BC897790001D004 /* MleMemoryManager.cxx */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MleMemoryManager.cxx; path = ../../../common/src/MleMemoryManager.cxx; sourceTree = "<group>"; };
+		2F5329C52BC897790001D004 /* mlErrno.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = mlErrno.c; path = ../../../common/src/mlErrno.c; sourceTree = "<group>"; };
+		2F5329C62BC897790001D004 /* mlItoa.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = mlItoa.c; path = ../../../common/src/mlItoa.c; sourceTree = "<group>"; };
+		2F5329C72BC897790001D004 /* mlExpandFilename.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = mlExpandFilename.c; path = ../../../common/src/mlExpandFilename.c; sourceTree = "<group>"; };
+		2F5329D22BC897C70001D004 /* mlLogFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mlLogFile.h; path = ../../../common/include/mle/mlLogFile.h; sourceTree = "<group>"; };
+		2F5329D32BC897C70001D004 /* mlMalloc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mlMalloc.h; path = ../../../common/include/mle/mlMalloc.h; sourceTree = "<group>"; };
+		2F5329D42BC897C70001D004 /* mlItoa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mlItoa.h; path = ../../../common/include/mle/mlItoa.h; sourceTree = "<group>"; };
+		2F5329D52BC897C70001D004 /* MleMemoryManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MleMemoryManager.h; path = ../../../common/include/mle/MleMemoryManager.h; sourceTree = "<group>"; };
+		2F5329D62BC897C70001D004 /* mlFileio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mlFileio.h; path = ../../../common/include/mle/mlFileio.h; sourceTree = "<group>"; };
+		2F5329D72BC897C70001D004 /* mlToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mlToken.h; path = ../../../common/include/mle/mlToken.h; sourceTree = "<group>"; };
+		2F5329D82BC897C70001D004 /* mlMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mlMacros.h; path = ../../../common/include/mle/mlMacros.h; sourceTree = "<group>"; };
+		2F5329D92BC897C70001D004 /* mlArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mlArray.h; path = ../../../common/include/mle/mlArray.h; sourceTree = "<group>"; };
+		2F5329DA2BC897C70001D004 /* MleDsoLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MleDsoLoader.h; path = ../../../common/include/mle/MleDsoLoader.h; sourceTree = "<group>"; };
+		2F5329DB2BC897C70001D004 /* MleTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MleTemplate.h; path = ../../../common/include/mle/MleTemplate.h; sourceTree = "<group>"; };
+		2F5329DC2BC897C70001D004 /* mlDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mlDebug.h; path = ../../../common/include/mle/mlDebug.h; sourceTree = "<group>"; };
+		2F5329DD2BC897C70001D004 /* mlErrno.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mlErrno.h; path = ../../../common/include/mle/mlErrno.h; sourceTree = "<group>"; };
+		2F5329DE2BC897C70001D004 /* MlePath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MlePath.h; path = ../../../common/include/mle/MlePath.h; sourceTree = "<group>"; };
+		2F5329DF2BC897C70001D004 /* mle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mle.h; path = ../../../common/include/mle/mle.h; sourceTree = "<group>"; };
+		2F5329E02BC897C70001D004 /* mlUnique.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mlUnique.h; path = ../../../common/include/mle/mlUnique.h; sourceTree = "<group>"; };
+		2F5329E12BC897C70001D004 /* mlTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mlTypes.h; path = ../../../common/include/mle/mlTypes.h; sourceTree = "<group>"; };
+		2F5329E22BC897C70001D004 /* mlExpandFilename.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mlExpandFilename.h; path = ../../../common/include/mle/mlExpandFilename.h; sourceTree = "<group>"; };
+		2F5329E32BC897C70001D004 /* MleUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MleUtil.h; path = ../../../common/include/mle/MleUtil.h; sourceTree = "<group>"; };
+		2F5329E42BC897C70001D004 /* mlConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mlConfig.h; path = ../../../common/include/mle/mlConfig.h; sourceTree = "<group>"; };
+		2F5329E52BC897C70001D004 /* mlAssert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mlAssert.h; path = ../../../common/include/mle/mlAssert.h; sourceTree = "<group>"; };
+		2F5329FA2BC8A7260001D004 /* MleMacMemoryManager.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MleMacMemoryManager.cxx; path = ../../src/MleMacMemoryManager.cxx; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2F5329B32BC894940001D004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F5329AC2BC894940001D004 = {
+			isa = PBXGroup;
+			children = (
+				2F5329FA2BC8A7260001D004 /* MleMacMemoryManager.cxx */,
+				2F5329D92BC897C70001D004 /* mlArray.h */,
+				2F5329E52BC897C70001D004 /* mlAssert.h */,
+				2F5329E42BC897C70001D004 /* mlConfig.h */,
+				2F5329DC2BC897C70001D004 /* mlDebug.h */,
+				2F5329DF2BC897C70001D004 /* mle.h */,
+				2F5329DA2BC897C70001D004 /* MleDsoLoader.h */,
+				2F5329D52BC897C70001D004 /* MleMemoryManager.h */,
+				2F5329DE2BC897C70001D004 /* MlePath.h */,
+				2F5329DD2BC897C70001D004 /* mlErrno.h */,
+				2F5329DB2BC897C70001D004 /* MleTemplate.h */,
+				2F5329E32BC897C70001D004 /* MleUtil.h */,
+				2F5329E22BC897C70001D004 /* mlExpandFilename.h */,
+				2F5329D62BC897C70001D004 /* mlFileio.h */,
+				2F5329D42BC897C70001D004 /* mlItoa.h */,
+				2F5329D22BC897C70001D004 /* mlLogFile.h */,
+				2F5329D82BC897C70001D004 /* mlMacros.h */,
+				2F5329D32BC897C70001D004 /* mlMalloc.h */,
+				2F5329D72BC897C70001D004 /* mlToken.h */,
+				2F5329E12BC897C70001D004 /* mlTypes.h */,
+				2F5329E02BC897C70001D004 /* mlUnique.h */,
+				2F5329C12BC897790001D004 /* mlDebug.c */,
+				2F5329BF2BC897790001D004 /* MleDsoLoader.cxx */,
+				2F5329C42BC897790001D004 /* MleMemoryManager.cxx */,
+				2F5329C52BC897790001D004 /* mlErrno.c */,
+				2F5329C32BC897790001D004 /* MleTemplate.cxx */,
+				2F5329C72BC897790001D004 /* mlExpandFilename.c */,
+				2F5329C62BC897790001D004 /* mlItoa.c */,
+				2F5329BE2BC897790001D004 /* mlLogFile.c */,
+				2F5329C02BC897790001D004 /* mlUnique.c */,
+				2F5329C22BC897790001D004 /* README.txt */,
+				2F5329B62BC894940001D004 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2F5329B62BC894940001D004 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F5329B52BC894940001D004 /* libmlutil.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2F5329B12BC894940001D004 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F5329E72BC897C70001D004 /* mlMalloc.h in Headers */,
+				2F5329E82BC897C70001D004 /* mlItoa.h in Headers */,
+				2F5329E92BC897C70001D004 /* MleMemoryManager.h in Headers */,
+				2F5329EA2BC897C70001D004 /* mlFileio.h in Headers */,
+				2F5329EB2BC897C70001D004 /* mlToken.h in Headers */,
+				2F5329EC2BC897C70001D004 /* mlMacros.h in Headers */,
+				2F5329ED2BC897C70001D004 /* mlArray.h in Headers */,
+				2F5329EE2BC897C70001D004 /* MleDsoLoader.h in Headers */,
+				2F5329EF2BC897C70001D004 /* MleTemplate.h in Headers */,
+				2F5329F02BC897C70001D004 /* mlDebug.h in Headers */,
+				2F5329F12BC897C70001D004 /* mlErrno.h in Headers */,
+				2F5329F22BC897C70001D004 /* MlePath.h in Headers */,
+				2F5329F32BC897C70001D004 /* mle.h in Headers */,
+				2F5329F42BC897C70001D004 /* mlUnique.h in Headers */,
+				2F5329F52BC897C70001D004 /* mlTypes.h in Headers */,
+				2F5329F62BC897C70001D004 /* mlExpandFilename.h in Headers */,
+				2F5329F72BC897C70001D004 /* MleUtil.h in Headers */,
+				2F5329F82BC897C70001D004 /* mlConfig.h in Headers */,
+				2F5329F92BC897C70001D004 /* mlAssert.h in Headers */,
+				2F5329E62BC897C70001D004 /* mlLogFile.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2F5329B42BC894940001D004 /* mlutil */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F5329B92BC894940001D004 /* Build configuration list for PBXNativeTarget "mlutil" */;
+			buildPhases = (
+				2F5329B12BC894940001D004 /* Headers */,
+				2F5329B22BC894940001D004 /* Sources */,
+				2F5329B32BC894940001D004 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mlutil;
+			productName = mlutil;
+			productReference = 2F5329B52BC894940001D004 /* libmlutil.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2F5329AD2BC894940001D004 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					2F5329B42BC894940001D004 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 2F5329B02BC894940001D004 /* Build configuration list for PBXProject "mlutil" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2F5329AC2BC894940001D004;
+			productRefGroup = 2F5329B62BC894940001D004 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F5329B42BC894940001D004 /* mlutil */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F5329B22BC894940001D004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F5329C82BC897790001D004 /* mlLogFile.c in Sources */,
+				2F5329C92BC897790001D004 /* MleDsoLoader.cxx in Sources */,
+				2F5329CA2BC897790001D004 /* mlUnique.c in Sources */,
+				2F5329CB2BC897790001D004 /* mlDebug.c in Sources */,
+				2F5329CD2BC897790001D004 /* MleTemplate.cxx in Sources */,
+				2F5329CE2BC897790001D004 /* MleMemoryManager.cxx in Sources */,
+				2F5329CF2BC897790001D004 /* mlErrno.c in Sources */,
+				2F5329FB2BC8A7260001D004 /* MleMacMemoryManager.cxx in Sources */,
+				2F5329D02BC897790001D004 /* mlItoa.c in Sources */,
+				2F5329D12BC897790001D004 /* mlExpandFilename.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2F5329B72BC894940001D004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2F5329B82BC894940001D004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2F5329BA2BC894940001D004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALTERNATE_GROUP = wizzerworks;
+				ALTERNATE_OWNER = wizzerworks;
+				CODE_SIGN_STYLE = Automatic;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				INSTALL_GROUP = wizzerworks;
+				INSTALL_OWNER = wizzerworks;
+				"OTHER_CFLAGS[sdk=macosx*]" = (
+					"-DMLE_NOT_DLL",
+					"-I../../../common/include",
+					"-I../../../mac/include",
+				);
+				"OTHER_CPLUSPLUSFLAGS[sdk=macosx*]" = (
+					"-DMLE_NOT_DLL",
+					"-I../../../common/include",
+					"-I../../../mac/include",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2F5329BB2BC894940001D004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALTERNATE_GROUP = wizzerworks;
+				ALTERNATE_OWNER = wizzerworks;
+				CODE_SIGN_STYLE = Automatic;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				INSTALL_GROUP = wizzerworks;
+				INSTALL_OWNER = wizzerworks;
+				"OTHER_CFLAGS[sdk=macosx*]" = (
+					"-DMLE_NOT_DLL",
+					"-I../../../common/include",
+					"-I../../../mac/include",
+				);
+				"OTHER_CPLUSPLUSFLAGS[sdk=macosx*]" = (
+					"-DMLE_NOT_DLL",
+					"-I../../../common/include",
+					"-I../../../mac/include",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F5329B02BC894940001D004 /* Build configuration list for PBXProject "mlutil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F5329B72BC894940001D004 /* Debug */,
+				2F5329B82BC894940001D004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F5329B92BC894940001D004 /* Build configuration list for PBXNativeTarget "mlutil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F5329BA2BC894940001D004 /* Debug */,
+				2F5329BB2BC894940001D004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2F5329AD2BC894940001D004 /* Project object */;
+}

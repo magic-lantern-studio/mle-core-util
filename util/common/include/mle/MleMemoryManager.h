@@ -267,7 +267,7 @@ template <uint_t blockSize>
 		 * @param memory A pointer to a pointer to the successfully resized memory is returned.
 		 * If resizing is unsuccessful, then NULL will be returned.
 		 *
-		 * @param newize The size of the memory chunk to reallocate.
+		 * @param newSize The size of the memory chunk to reallocate.
 		 *
 		 * @return A MlResult is returned.
 		 * <ul>

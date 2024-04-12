@@ -101,14 +101,14 @@ MleLogFileP *mlLogFileCreate(const char *category,const char *name,const char *t
 /**
  * Delete a log file descriptor.
  *
- * @param A pointer to the log file descriptor to delete.
+ * @param logFile A pointer to the log file descriptor to delete.
  */
 void mlLogFileDelete(MleLogFileP *logFile);
 
 /**
  * Open a log file.
  *
- * @param A pointer to the descriptor for the log file.
+ * @param logFile A pointer to the descriptor for the log file.
  *
  * @return If the log file is successfully opened, then <b>TRUE</b is returned.
  * Otherwise, <b>FALSE</b> will be returned.
