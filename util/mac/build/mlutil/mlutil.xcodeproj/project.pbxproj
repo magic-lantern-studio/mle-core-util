@@ -187,6 +187,7 @@
 				2F5329B12BC894940001D004 /* Headers */,
 				2F5329B22BC894940001D004 /* Sources */,
 				2F5329B32BC894940001D004 /* Frameworks */,
+				2F32393D2BC9EAD100BEBB87 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -228,6 +229,26 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2F32393D2BC9EAD100BEBB87 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./install-mlutil.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2F5329B22BC894940001D004 /* Sources */ = {
