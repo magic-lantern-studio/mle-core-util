@@ -187,7 +187,7 @@
 				2F5329B12BC894940001D004 /* Headers */,
 				2F5329B22BC894940001D004 /* Sources */,
 				2F5329B32BC894940001D004 /* Frameworks */,
-				2F32393D2BC9EAD100BEBB87 /* ShellScript */,
+				2F32393D2BC9EAD100BEBB87 /* Install libmlutil Library */,
 			);
 			buildRules = (
 			);
@@ -231,7 +231,7 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2F32393D2BC9EAD100BEBB87 /* ShellScript */ = {
+		2F32393D2BC9EAD100BEBB87 /* Install libmlutil Library */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -240,6 +240,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Install libmlutil Library";
 			outputFileListPaths = (
 			);
 			outputPaths = (
