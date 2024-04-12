@@ -1,0 +1,359 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F32392C2BC9BEB000BEBB87 /* libmlutiltest.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2F3239292BC9BEB000BEBB87 /* libmlutiltest.cxx */; };
+		2F32392D2BC9BEB000BEBB87 /* testLogFile.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2F32392A2BC9BEB000BEBB87 /* testLogFile.cxx */; };
+		2F32392E2BC9BEB000BEBB87 /* testMlDebug.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2F32392B2BC9BEB000BEBB87 /* testMlDebug.cxx */; };
+		2F3239302BC9BEC500BEBB87 /* libmlutiltest.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F32392F2BC9BEC500BEBB87 /* libmlutiltest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F3239382BC9CCFA00BEBB87 /* libgtest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3239372BC9CCFA00BEBB87 /* libgtest.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2F3239222BC9B91900BEBB87 /* libmlutiltest.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libmlutiltest.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F3239292BC9BEB000BEBB87 /* libmlutiltest.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libmlutiltest.cxx; sourceTree = "<group>"; };
+		2F32392A2BC9BEB000BEBB87 /* testLogFile.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testLogFile.cxx; sourceTree = "<group>"; };
+		2F32392B2BC9BEB000BEBB87 /* testMlDebug.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testMlDebug.cxx; sourceTree = "<group>"; };
+		2F32392F2BC9BEC500BEBB87 /* libmlutiltest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libmlutiltest.h; path = include/libmlutiltest.h; sourceTree = "<group>"; };
+		2F3239352BC9CCC800BEBB87 /* Cellar */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Cellar; path = ../../../../../../../../../opt/homebrew/Cellar; sourceTree = "<group>"; };
+		2F3239372BC9CCFA00BEBB87 /* libgtest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgtest.a; path = ../../../../../../../../../opt/homebrew/Cellar/googletest/1.14.0/lib/libgtest.a; sourceTree = "<group>"; };
+		2F3239392BC9CDA100BEBB87 /* libmlutil.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmlutil.dylib; path = "../../build/mlutil/mlutil-DerivedData/mlutil/Build/Products/Debug/libmlutil.dylib"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2F3239202BC9B91900BEBB87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F3239382BC9CCFA00BEBB87 /* libgtest.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F3239192BC9B91900BEBB87 = {
+			isa = PBXGroup;
+			children = (
+				2F3239332BC9C4CB00BEBB87 /* Source Files */,
+				2F3239312BC9BECB00BEBB87 /* Header Files */,
+				2F3239232BC9B91900BEBB87 /* Products */,
+				2F3239342BC9CCC800BEBB87 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2F3239232BC9B91900BEBB87 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F3239222BC9B91900BEBB87 /* libmlutiltest.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2F3239312BC9BECB00BEBB87 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F32392F2BC9BEC500BEBB87 /* libmlutiltest.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		2F3239332BC9C4CB00BEBB87 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F32392B2BC9BEB000BEBB87 /* testMlDebug.cxx */,
+				2F32392A2BC9BEB000BEBB87 /* testLogFile.cxx */,
+				2F3239292BC9BEB000BEBB87 /* libmlutiltest.cxx */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		2F3239342BC9CCC800BEBB87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F3239392BC9CDA100BEBB87 /* libmlutil.dylib */,
+				2F3239372BC9CCFA00BEBB87 /* libgtest.a */,
+				2F3239352BC9CCC800BEBB87 /* Cellar */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2F32391E2BC9B91900BEBB87 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F3239302BC9BEC500BEBB87 /* libmlutiltest.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2F3239212BC9B91900BEBB87 /* mlutiltest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F3239262BC9B91900BEBB87 /* Build configuration list for PBXNativeTarget "mlutiltest" */;
+			buildPhases = (
+				2F32391E2BC9B91900BEBB87 /* Headers */,
+				2F32391F2BC9B91900BEBB87 /* Sources */,
+				2F3239202BC9B91900BEBB87 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mlutiltest;
+			productName = mlutiltest;
+			productReference = 2F3239222BC9B91900BEBB87 /* libmlutiltest.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2F32391A2BC9B91900BEBB87 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					2F3239212BC9B91900BEBB87 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 2F32391D2BC9B91900BEBB87 /* Build configuration list for PBXProject "mlutiltest" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2F3239192BC9B91900BEBB87;
+			productRefGroup = 2F3239232BC9B91900BEBB87 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F3239212BC9B91900BEBB87 /* mlutiltest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F32391F2BC9B91900BEBB87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F32392E2BC9BEB000BEBB87 /* testMlDebug.cxx in Sources */,
+				2F32392D2BC9BEB000BEBB87 /* testLogFile.cxx in Sources */,
+				2F32392C2BC9BEB000BEBB87 /* libmlutiltest.cxx in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2F3239242BC9B91900BEBB87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2F3239252BC9B91900BEBB87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2F3239272BC9B91900BEBB87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"ALTERNATE_GROUP[sdk=macosx*]" = "$(INSTALL_GROUP)";
+				CODE_SIGN_STYLE = Automatic;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				INSTALL_GROUP = wizzerworks;
+				"INSTALL_GROUP[sdk=macosx*]" = wizzerworks;
+				"INSTALL_OWNER[sdk=macosx*]" = wizzerworks;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/googletest/1.14.0/lib,
+				);
+				"OTHER_CFLAGS[sdk=macosx*]" = (
+					"-DMLE_NOT_DLL",
+					"-DMLE_DEBUG",
+					"-I/opt/homebrew/Cellar/googletest/1.14.0/include",
+					"-I../../../common/include",
+				);
+				"OTHER_CPLUSPLUSFLAGS[sdk=macosx*]" = (
+					"-DMLE_NOT_DLL",
+					"-DMLE_DEBUG",
+					"-I/opt/homebrew/Cellar/googletest/1.14.0/include",
+					"-I../../../common/include",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2F3239282BC9B91900BEBB87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"ALTERNATE_GROUP[sdk=macosx*]" = wizzerworks;
+				CODE_SIGN_STYLE = Automatic;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				"INSTALL_GROUP[sdk=macosx*]" = "$(GROUP)";
+				"INSTALL_OWNER[sdk=macosx*]" = wizzerworks;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/googletest/1.14.0/lib,
+				);
+				"OTHER_CFLAGS[sdk=macosx*]" = (
+					"-DMLE_NOT_DLL",
+					"-DMLE_DEBUG",
+					"-I/opt/homebrew/Cellar/googletest/1.14.0/include",
+					"-I../../../common/include",
+				);
+				"OTHER_CPLUSPLUSFLAGS[sdk=macosx*]" = (
+					"-DMLE_NOT_DLL",
+					"-DMLE_DEBUG",
+					"-I/opt/homebrew/Cellar/googletest/1.14.0/include",
+					"-I../../../common/include",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F32391D2BC9B91900BEBB87 /* Build configuration list for PBXProject "mlutiltest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F3239242BC9B91900BEBB87 /* Debug */,
+				2F3239252BC9B91900BEBB87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F3239262BC9B91900BEBB87 /* Build configuration list for PBXNativeTarget "mlutiltest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F3239272BC9B91900BEBB87 /* Debug */,
+				2F3239282BC9B91900BEBB87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2F32391A2BC9B91900BEBB87 /* Project object */;
+}
