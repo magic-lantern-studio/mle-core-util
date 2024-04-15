@@ -12,6 +12,7 @@
 		2F32392E2BC9BEB000BEBB87 /* testMlDebug.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2F32392B2BC9BEB000BEBB87 /* testMlDebug.cxx */; };
 		2F3239302BC9BEC500BEBB87 /* libmlutiltest.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F32392F2BC9BEC500BEBB87 /* libmlutiltest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2F3239382BC9CCFA00BEBB87 /* libgtest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3239372BC9CCFA00BEBB87 /* libgtest.a */; };
+		2FE242562BCDDF2A006B331C /* libmlutil.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE242552BCDDF2A006B331C /* libmlutil.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		2F3239352BC9CCC800BEBB87 /* Cellar */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Cellar; path = ../../../../../../../../../opt/homebrew/Cellar; sourceTree = "<group>"; };
 		2F3239372BC9CCFA00BEBB87 /* libgtest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgtest.a; path = ../../../../../../../../../opt/homebrew/Cellar/googletest/1.14.0/lib/libgtest.a; sourceTree = "<group>"; };
 		2F3239392BC9CDA100BEBB87 /* libmlutil.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmlutil.dylib; path = "../../build/mlutil/mlutil-DerivedData/mlutil/Build/Products/Debug/libmlutil.dylib"; sourceTree = "<group>"; };
+		2FE242552BCDDF2A006B331C /* libmlutil.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmlutil.dylib; path = ../../../../../../../../../opt/MagicLantern/lib/libmlutil.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FE242562BCDDF2A006B331C /* libmlutil.dylib in Frameworks */,
 				2F3239382BC9CCFA00BEBB87 /* libgtest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				2F3239392BC9CDA100BEBB87 /* libmlutil.dylib */,
+				2FE242552BCDDF2A006B331C /* libmlutil.dylib */,
 				2F3239372BC9CCFA00BEBB87 /* libgtest.a */,
 				2F3239352BC9CCC800BEBB87 /* Cellar */,
 			);
@@ -283,6 +287,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/opt/homebrew/Cellar/googletest/1.14.0/lib,
+					/opt/MagicLantern/lib,
 				);
 				"OTHER_CFLAGS[sdk=macosx*]" = (
 					"-DMLE_NOT_DLL",
@@ -314,6 +319,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/opt/homebrew/Cellar/googletest/1.14.0/lib,
+					/opt/MagicLantern/lib,
 				);
 				"OTHER_CFLAGS[sdk=macosx*]" = (
 					"-DMLE_NOT_DLL",

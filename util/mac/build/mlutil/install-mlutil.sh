@@ -1,29 +1,29 @@
 #/bin/sh
 
-if [ -d "/usr/local/lib" ] 
+if [ -d "/opt/MagicLantern/lib" ] 
 then
-    echo "Directory /usr/local/lib exists." 
+    echo "Directory /opt/MagicLantern/lib exists." 
 else
-    #echo "Warning: Directory /usr/local/lib does not exist. Creating it."
-    #sudo mkdir /usr/local/lib
+    #echo "Warning: Directory /opt/MagicLantern/lib does not exist. Creating it."
+    #sudo mkdir -p /opt/MagicLantern/lib
 
-    echo "Error: Directory /usr/local/lib does not exist."
+    echo "Error: Directory /opt/MagicLantern/lib does not exist."
     exit 1
 fi
 
-echo "Installing libmlutil.dylib to /usr/local/lib."
-cp ./mlutil-DerivedData/mlutil/Build/Products/Debug/libmlutil.dylib /usr/local/lib
+echo "Installing libmlutil.dylib to /opt/MagicLantern/lib."
+cp ./mlutil-DerivedData/mlutil/Build/Products/Debug/libmlutil.dylib /opt/MagicLantern/lib
 
-if [ -d "/usr/local/include" ] 
+if [ -d "/opt/MagicLantern/include/mle" ] 
 then
-    echo "Directory /usr/local/include exists." 
+    echo "Directory /opt/MagicLantern/include/mle exists." 
 else
-    #echo "Warning: Directory /usr/local/include does not exist. Creating it."
-    #sudo mkdir /usr/local/include
+    #echo "Warning: Directory /opt/MagicLantern/include/mle does not exist. Creating it."
+    #sudo mkdir -p /opt/MagicLantern/include/mle
         
-    echo "Error: Directory /usr/local/include does not existt."
+    echo "Error: Directory /opt/MagicLantern/include/mle does not existt."
     exit 1
 fi
 
-echo "Installing libmlutil header files to /usr/local/include."
-cp -R ./mlutil-DerivedData/mlutil/Build/Products/Debug/usr/local/include/* /usr/local/include
+echo "Installing libmlutil header files to /opt/MagicLantern/include/mle."
+cp -R ./mlutil-DerivedData/mlutil/Build/Products/Debug/usr/local/include/* /opt/MagicLantern/include/mle
