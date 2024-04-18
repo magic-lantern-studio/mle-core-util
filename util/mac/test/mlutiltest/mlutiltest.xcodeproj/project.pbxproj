@@ -281,6 +281,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
+				"HEADER_SEARCH_PATHS[sdk=macosx*]" = (
+					/opt/homebrew/Cellar/googletest/1.14.0/include,
+					../../../common/include,
+				);
 				INSTALL_GROUP = wizzerworks;
 				"INSTALL_GROUP[sdk=macosx*]" = wizzerworks;
 				"INSTALL_OWNER[sdk=macosx*]" = wizzerworks;
@@ -292,14 +296,10 @@
 				"OTHER_CFLAGS[sdk=macosx*]" = (
 					"-DMLE_NOT_DLL",
 					"-DMLE_DEBUG",
-					"-I/opt/homebrew/Cellar/googletest/1.14.0/include",
-					"-I../../../common/include",
 				);
 				"OTHER_CPLUSPLUSFLAGS[sdk=macosx*]" = (
 					"-DMLE_NOT_DLL",
 					"-DMLE_DEBUG",
-					"-I/opt/homebrew/Cellar/googletest/1.14.0/include",
-					"-I../../../common/include",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -314,6 +314,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
+				"HEADER_SEARCH_PATHS[sdk=macosx*]" = (
+					/opt/homebrew/Cellar/googletest/1.14.0/include,
+					../../../common/include,
+				);
 				"INSTALL_GROUP[sdk=macosx*]" = "$(GROUP)";
 				"INSTALL_OWNER[sdk=macosx*]" = wizzerworks;
 				LIBRARY_SEARCH_PATHS = (
@@ -324,14 +328,10 @@
 				"OTHER_CFLAGS[sdk=macosx*]" = (
 					"-DMLE_NOT_DLL",
 					"-DMLE_DEBUG",
-					"-I/opt/homebrew/Cellar/googletest/1.14.0/include",
-					"-I../../../common/include",
 				);
 				"OTHER_CPLUSPLUSFLAGS[sdk=macosx*]" = (
 					"-DMLE_NOT_DLL",
 					"-DMLE_DEBUG",
-					"-I/opt/homebrew/Cellar/googletest/1.14.0/include",
-					"-I../../../common/include",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

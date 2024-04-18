@@ -390,18 +390,15 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
+				"HEADER_SEARCH_PATHS[sdk=macosx*]" = (
+					../../../common/include,
+					../../../mac/include,
+				);
 				INSTALL_GROUP = wizzerworks;
 				INSTALL_OWNER = wizzerworks;
-				"OTHER_CFLAGS[sdk=macosx*]" = (
-					"-DMLE_NOT_DLL",
-					"-I../../../common/include",
-					"-I../../../mac/include",
-				);
-				"OTHER_CPLUSPLUSFLAGS[sdk=macosx*]" = (
-					"-DMLE_NOT_DLL",
-					"-I../../../common/include",
-					"-I../../../mac/include",
-				);
+				INSTALL_PATH = /opt/MagicLantern/lib;
+				"OTHER_CFLAGS[sdk=macosx*]" = "-DMLE_NOT_DLL";
+				"OTHER_CPLUSPLUSFLAGS[sdk=macosx*]" = "-DMLE_NOT_DLL";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;
 			};
@@ -416,18 +413,15 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
+				"HEADER_SEARCH_PATHS[sdk=macosx*]" = (
+					../../../common/include,
+					../../../mac/include,
+				);
 				INSTALL_GROUP = wizzerworks;
 				INSTALL_OWNER = wizzerworks;
-				"OTHER_CFLAGS[sdk=macosx*]" = (
-					"-DMLE_NOT_DLL",
-					"-I../../../common/include",
-					"-I../../../mac/include",
-				);
-				"OTHER_CPLUSPLUSFLAGS[sdk=macosx*]" = (
-					"-DMLE_NOT_DLL",
-					"-I../../../common/include",
-					"-I../../../mac/include",
-				);
+				INSTALL_PATH = /opt/MagicLantern/lib;
+				"OTHER_CFLAGS[sdk=macosx*]" = "-DMLE_NOT_DLL";
+				"OTHER_CPLUSPLUSFLAGS[sdk=macosx*]" = "-DMLE_NOT_DLL";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;
 			};
