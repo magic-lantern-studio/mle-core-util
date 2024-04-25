@@ -42,7 +42,7 @@
 
 GTEST_API_ int main(int argc, char **argv)
 {
-  printf("Running main() from exampleProgram.\n");
+  printf("Running libmlutil Google Unit Test\n");
 
   // Initialize MlUtil Test. Forces libmlutiltest.so to be loaded.
   initMlUtilTest();
