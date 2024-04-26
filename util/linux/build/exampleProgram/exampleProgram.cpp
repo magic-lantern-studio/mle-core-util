@@ -32,7 +32,6 @@
 // COPYRIGHT_END
 
 // Include Magic Lantern utility header files.
-#include "libmlutil.h"
 #include "mle/MleDsoLoader.h"
 
 static char *dso_path[] = {

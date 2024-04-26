@@ -9,20 +9,20 @@ lib_LTLIBRARIES = libmlutil.la
 
 # Sources for libmlutil
 libmlutil_la_SOURCES = \
-	../../../common/src/mlDebug.c \
-	../../../common/src/MleDsoLoader.cxx \
-	../../../common/src/MleMemoryManager.cxx \
-	../../../common/src/mlErrno.c \
-	../../../common/src/MleTemplate.cxx \
-	../../../common/src/mlExpandFilename.c \
-	../../../common/src/mlLogFile.c \
-	../../../common/src/mlUnique.c \
-	../../../common/src/mlItoa.c
+	$(top_srcdir)/../../common/src/mlDebug.c \
+	$(top_srcdir)/../../common/src/MleDsoLoader.cxx \
+	$(top_srcdir)/../../common/src/MleMemoryManager.cxx \
+	$(top_srcdir)/../../common/src/mlErrno.c \
+	$(top_srcdir)/../../common/src/MleTemplate.cxx \
+	$(top_srcdir)/../../common/src/mlExpandFilename.c \
+	$(top_srcdir)/../../common/src/mlLogFile.c \
+	$(top_srcdir)/../../common/src/mlUnique.c \
+	$(top_srcdir)/../../common/src/mlItoa.c
 
 if LINUX
 libmlutil_la_SOURCES += \
-	../../src/MleLinuxMemoryManager.cxx \
-	../../src/MleLinuxPath.cxx
+	$(top_srcdir)/../src/MleLinuxMemoryManager.cxx \
+	$(top_srcdir)/../src/MleLinuxPath.cxx
 endif
 
 # Linker options for libmlutil
