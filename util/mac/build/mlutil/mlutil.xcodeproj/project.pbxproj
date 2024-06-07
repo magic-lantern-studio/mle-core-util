@@ -247,7 +247,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./install-mlutil.sh\n";
+			shellScript = "echo \"Installing libmleutil.dylib and headers files.\"\necho `pwd`\necho ${BUILT_PRODUCTS_DIR}\n\nif [ -d \"/opt/MagicLantern/lib\" ] \nthen\n    echo \"Directory /opt/MagicLantern/lib exists.\" \nelse\n    #echo \"Warning: Directory /opt/MagicLantern/lib does not exist. Creating it.\"\n    #sudo mkdir -p /opt/MagicLantern/lib\n\n    echo \"Error: Directory /opt/MagicLantern/lib does not exist.\"\n    exit 1\nfi\n\necho \"Installing libmlutil.dylib to /opt/MagicLantern/lib.\"\n#cp ./mlutil-DerivedData/mlutil/Build/Products/Debug/libmlutil.dylib /opt/MagicLantern/lib\ncp ${BUILT_PRODUCTS_DIR}/libmlutil.dylib /opt/MagicLantern/lib\n\nif [ -d \"/opt/MagicLantern/include/mle\" ] \nthen\n    echo \"Directory /opt/MagicLantern/include/mle exists.\" \nelse\n    #echo \"Warning: Directory /opt/MagicLantern/include/mle does not exist. Creating it.\"\n    #sudo mkdir -p /opt/MagicLantern/include/mle\n        \n    echo \"Error: Directory /opt/MagicLantern/include/mle does not existt.\"\n    exit 1\nfi\n\necho \"Installing libmlutil header files to /opt/MagicLantern/include/mle.\"\n#cp -R ./mlutil-DerivedData/mlutil/Build/Products/Debug/usr/local/include/* /opt/MagicLantern/include/mle\ncp -R ${BUILT_PRODUCTS_DIR}/usr/local/include/* /opt/MagicLantern/include/mle\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
