@@ -37,6 +37,7 @@
 		2F5329F82BC897C70001D004 /* mlConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329E42BC897C70001D004 /* mlConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2F5329F92BC897C70001D004 /* mlAssert.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329E52BC897C70001D004 /* mlAssert.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2F5329FB2BC8A7260001D004 /* MleMacMemoryManager.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2F5329FA2BC8A7260001D004 /* MleMacMemoryManager.cxx */; };
+		2F84B1E72C24692D00018F87 /* MleLinuxPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F84B1E62C24692D00018F87 /* MleLinuxPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2FD607F32C20852300677C04 /* mlPlatformDefs.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FD607F22C20852300677C04 /* mlPlatformDefs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		2F5329E42BC897C70001D004 /* mlConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mlConfig.h; path = ../../../common/include/mle/mlConfig.h; sourceTree = "<group>"; };
 		2F5329E52BC897C70001D004 /* mlAssert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mlAssert.h; path = ../../../common/include/mle/mlAssert.h; sourceTree = "<group>"; };
 		2F5329FA2BC8A7260001D004 /* MleMacMemoryManager.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MleMacMemoryManager.cxx; path = ../../src/MleMacMemoryManager.cxx; sourceTree = "<group>"; };
+		2F84B1E62C24692D00018F87 /* MleLinuxPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MleLinuxPath.h; path = ../../include/mle/MleLinuxPath.h; sourceTree = "<group>"; };
 		2FD607F22C20852300677C04 /* mlPlatformDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mlPlatformDefs.h; path = ../../include/mle/mlPlatformDefs.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 		2F3239172BC9A95D00BEBB87 /* Header Files */ = {
 			isa = PBXGroup;
 			children = (
+				2F84B1E62C24692D00018F87 /* MleLinuxPath.h */,
 				2FD607F22C20852300677C04 /* mlPlatformDefs.h */,
 				2F5329D92BC897C70001D004 /* mlArray.h */,
 				2F5329E52BC897C70001D004 /* mlAssert.h */,
@@ -177,6 +180,7 @@
 				2F5329F82BC897C70001D004 /* mlConfig.h in Headers */,
 				2F5329F92BC897C70001D004 /* mlAssert.h in Headers */,
 				2F5329E62BC897C70001D004 /* mlLogFile.h in Headers */,
+				2F84B1E72C24692D00018F87 /* MleLinuxPath.h in Headers */,
 				2FD607F32C20852300677C04 /* mlPlatformDefs.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
