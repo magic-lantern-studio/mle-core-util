@@ -38,6 +38,7 @@
 		2F5329F92BC897C70001D004 /* mlAssert.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F5329E52BC897C70001D004 /* mlAssert.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2F5329FB2BC8A7260001D004 /* MleMacMemoryManager.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2F5329FA2BC8A7260001D004 /* MleMacMemoryManager.cxx */; };
 		2F84B1E72C24692D00018F87 /* MleLinuxPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F84B1E62C24692D00018F87 /* MleLinuxPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F84B1EF2C25CD5300018F87 /* MleLinuxPath.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 2F84B1ED2C25CD5300018F87 /* MleLinuxPath.cxx */; };
 		2FD607F32C20852300677C04 /* mlPlatformDefs.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FD607F22C20852300677C04 /* mlPlatformDefs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		2F5329E52BC897C70001D004 /* mlAssert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mlAssert.h; path = ../../../common/include/mle/mlAssert.h; sourceTree = "<group>"; };
 		2F5329FA2BC8A7260001D004 /* MleMacMemoryManager.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MleMacMemoryManager.cxx; path = ../../src/MleMacMemoryManager.cxx; sourceTree = "<group>"; };
 		2F84B1E62C24692D00018F87 /* MleLinuxPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MleLinuxPath.h; path = ../../include/mle/MleLinuxPath.h; sourceTree = "<group>"; };
+		2F84B1ED2C25CD5300018F87 /* MleLinuxPath.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MleLinuxPath.cxx; path = ../../../linux/src/MleLinuxPath.cxx; sourceTree = "<group>"; };
 		2FD607F22C20852300677C04 /* mlPlatformDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mlPlatformDefs.h; path = ../../include/mle/mlPlatformDefs.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 		2F3239182BC9A9AF00BEBB87 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
+				2F84B1ED2C25CD5300018F87 /* MleLinuxPath.cxx */,
 				2F5329FA2BC8A7260001D004 /* MleMacMemoryManager.cxx */,
 				2F5329C12BC897790001D004 /* mlDebug.c */,
 				2F5329BF2BC897790001D004 /* MleDsoLoader.cxx */,
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F84B1EF2C25CD5300018F87 /* MleLinuxPath.cxx in Sources */,
 				2F5329C82BC897790001D004 /* mlLogFile.c in Sources */,
 				2F5329C92BC897790001D004 /* MleDsoLoader.cxx in Sources */,
 				2F5329CA2BC897790001D004 /* mlUnique.c in Sources */,

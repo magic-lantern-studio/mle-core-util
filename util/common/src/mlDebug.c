@@ -6,8 +6,6 @@
  *
  * This file contains the implementation of the Magic Lantern
  * debugging class.
- *
- * @author Mark S. Millard
  */
 
 // COPYRIGHT_BEGIN
