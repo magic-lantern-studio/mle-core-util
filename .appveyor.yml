@@ -5,12 +5,12 @@ branches:
 image: Ubuntu2204
 build_script:
 - sh: >-
-    cd util/linux/build
-    libtoolize
-    aclocal
-    automake --add-missing --ignore-deps
-    autoconf
-    ./configure
+    cd util/linux/build;
+    libtoolize;
+    aclocal;
+    automake --add-missing --ignore-deps;
+    autoconf;
+    ./configure;
     make
 artifacts:
 - path: util/linux/build/libmlutil/.libs/libmlutil.so
