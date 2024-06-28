@@ -3,6 +3,8 @@ branches:
   only:
   - master
 image: Ubuntu2204
+
+# Custom script to build libmlutil.so using autoconf tools.
 build_script:
 - sh: >-
     cd util/linux/build;
@@ -12,6 +14,12 @@ build_script:
     autoconf;
     ./configure;
     make
+
+# Custom script to create an .zip file containing the libmlutil artifacts.
+after_build:
+    7z a mlutil.zip %APPVEYOR_BUILD_FOLDER%/util/linux/build/libmlutil/.libs/libmlutil.so
+
+# Define artifacts to push to AppVeyor
 artifacts:
-- path: util/linux/build/libmlutil/.libs/libmlutil.so
+- path: mlutil.zip
   name: mle-core-util
