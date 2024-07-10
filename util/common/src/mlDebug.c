@@ -148,7 +148,7 @@ static char *_takeTokenText(MleDBTokenDataP *tokenData)
     MLE_VALIDATE_PTR(tokenData);
 
     if (tokenData->_tokenText != NULL) {
-#if defined(WN32)
+#if defined(WIN32)
         txt = _strdup(tokenData->_tokenText);
 #else
         txt = strdup(tokenData->_tokenText);
