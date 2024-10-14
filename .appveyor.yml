@@ -17,9 +17,9 @@ build_script:
 
 # Custom script to create an .zip file containing the libmlutil artifacts.
 after_build:
-    7z a mlutil.zip util/linux/build/libmlutil/.libs/libmlutil.so
+    7z a mlutil.zip libmlutil/.libs/libmlutil.so
 
 # Define artifacts to push to AppVeyor
 artifacts:
-- path: mlutil.zip
+- path: util/linux/build/mlutil.zip
   name: mle-core-util
