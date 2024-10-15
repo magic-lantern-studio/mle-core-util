@@ -4,6 +4,10 @@ branches:
   - master
 image: Ubuntu2204
 
+# Set environmnet
+environment:
+    MLE_ROOT: /opt/MagicLantern
+
 # Custom script to build libmlutil.so using autoconf tools.
 build_script:
 - sh: >-
@@ -14,10 +18,13 @@ build_script:
     autoconf;
     ./configure;
     make
+- sh: >-
+    sudo mkdir $MLE_ROOT;
+    sudo make install
 
 # Custom script to create an .zip file containing the libmlutil artifacts.
 after_build:
-    7z a mlutil.zip libmlutil/.libs/libmlutil.so
+    7z a mlutil.zip $MLE_ROOT
 
 # Define artifacts to push to AppVeyor
 artifacts:
