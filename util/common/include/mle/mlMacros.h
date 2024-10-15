@@ -165,6 +165,7 @@
 #define PI 3.14159265358979323846
 #endif /* PI */
 
+#if 0
 #ifndef offsetof
 /**
  * A macro providing a convenient way to offset into a
@@ -172,6 +173,6 @@
  */
 #define offsetof(type, member) (&(((type*)(0))->member))
 #endif
-
+#endif /* 0 */
 
 #endif /* __MLE_MACROS_H_ */
