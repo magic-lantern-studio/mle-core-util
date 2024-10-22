@@ -20,13 +20,14 @@ build_script:
     make
 - sh: >-
     sudo mkdir $MLE_ROOT;
-    sudo make install
+    sudo MLE_ROOT=$MLE_ROOT make install
 
 # Custom script to create an .zip file containing the libmlutil artifacts.
 after_build:
+    cd /home/appveyor/projects/mle-core-util
     7z a mlutil.zip $MLE_ROOT
 
 # Define artifacts to push to AppVeyor
 artifacts:
-- path: util/linux/build/mlutil.zip
+- path: mlutil.zip
   name: mle-core-util
