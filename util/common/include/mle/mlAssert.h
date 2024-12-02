@@ -58,9 +58,6 @@
 #if defined(WIN32) || defined (__linux__) || defined(__APPLE__)
 #include <stdio.h>
 #include <stdlib.h>
-#elif defined(psx)
-#include <libsn.h>
-void BREAKPOINT ();
 #else /* Unknown platform. */
 error...undefined platform
 #endif
@@ -96,16 +93,8 @@ error...undefined platform
             abort();                                                          \
         }                                                                     \
     }
-#elif defined(psx)
-#define MLE_ASSERT(cond)                                                      \
-    {                                                                         \
-        if (! (cond))                                                         \
-        {                                                                     \
-            BREAKPOINT();                                                     \
-        }                                                                     \
-    }
 #else /* Unknown platform. */
-error...undefined platform (must define one of __linux__, __sgi, WIN32, psx)
+error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
 #endif
 #else /* ! MLE_DEBUG */
 
@@ -123,27 +112,19 @@ error...undefined platform (must define one of __linux__, __sgi, WIN32, psx)
  * It will write a log entry to MLE_ERROR_OUTPUT_FILE.
  */
 #define MLE_ASSERT_MSG(cond, msg)                                             \
-	{                                                                         \
+    {                                                                         \
         if (! (cond))                                                         \
-		{                                                                     \
+        {                                                                     \
             fprintf(MLE_ERROR_OUTPUT_FILE,                                    \
               "Error: " __FILE__ ": %d: " #cond " failed!\n",                 \
               __LINE__);                                                      \
         fprintf(MLE_ERROR_OUTPUT_FILE, msg);                                  \
             fflush(MLE_ERROR_OUTPUT_FILE);                                    \
             abort();                                                          \
-		}                                                                     \
-    }
-#elif defined(psx)
-#define MLE_ASSERT_MSG(cond, msg)                                             \
-	{                                                                         \
-        if (! (cond))                                                         \
-		{                                                                     \
-            BREAKPOINT();                                                     \
-		}                                                                     \
+        }                                                                     \
     }
 #else
-error...undefined platform (must define one of__linux__, __sgi, WIN32, psx)
+error...undefined platform (must define one of__linux__, __APPLE__, WIN32)
 #endif
 #else /* ! MLE_DEBUG */
 
@@ -164,7 +145,7 @@ error...undefined platform (must define one of__linux__, __sgi, WIN32, psx)
     {                                                                         \
         MlBoolean rval;                                                       \
         if (TRUE != (rval = (func)))                                          \
-		{                                                                     \
+        {                                                                     \
             fprintf(MLE_ERROR_OUTPUT_FILE,                                    \
               "Warning: " __FILE__ ": %d" ": " #func " failed! rval = %d\n",  \
               __LINE__,(unsigned long) rval);                                 \
