@@ -1,8 +1,8 @@
-// COPYRIGHT_BEGIN
+// COPYRTIGH_BEGIN
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2022-2024 Wizzer Works
+// Copyright (c) 2022 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -31,11 +31,29 @@
 //
 // COPYRIGHT_END
 
-#include "libmlutiltest.h"
+// Include system header files.
+#include <string.h>
+#include <ctype.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 // Include Google Test header files.
 #include "gtest/gtest.h"
 
-bool initMlUtilTest() {
-	return true;
+// Include Magic Lantern header files.
+#include "mle/mlTrace.h"
+#include "mle/mlFileio.h"
+
+
+TEST(MlTraceTest, OutputInformativeMsg) {
+    MLE_TRACE_INFO(Testing info trace);
+}
+
+TEST(MlTraceTest, OutputWarningMsg) {
+    MLE_TRACE_WARN(Testing warning trace);
+}
+
+TEST(MlTraceTest, OutputErrorMsg) {
+    MLE_TRACE_ERROR(Testing error trace);
 }

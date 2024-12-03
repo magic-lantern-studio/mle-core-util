@@ -1,8 +1,15 @@
+/** @defgroup MleCore Magic Lantern Core Utility Library API */
+
+/**
+ * @file mlTime.h
+ * @ingroup MleCore
+ */
+
 // COPYRIGHT_BEGIN
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2022-2024 Wizzer Works
+// Copyright (c) 2024 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -31,11 +38,35 @@
 //
 // COPYRIGHT_END
 
-#include "libmlutiltest.h"
 
-// Include Google Test header files.
-#include "gtest/gtest.h"
+#ifndef __MLE_TIME_H_
+#define __MLE_TIME_H_
 
-bool initMlUtilTest() {
-	return true;
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+// Include system header files
+#include <time.h>
+
+// Include Magic Lantern header files.
+#include "mle/mlTypes.h"
+
+
+/**
+ * @brief Get the Universal Time Code.
+ *
+ * @return A pointer to a character string is returned using the
+ * %04d-%02d-%02dT%02d:%02d:%02d format. The string is dynamically allocated
+ * and is 72 bytes long. The user of this routine is responsible for managing
+ * the allocated memory.
+ */
+EXTERN char *mlGetUTC();
+
+
+#ifdef __cplusplus
 }
+#endif
+
+#endif /* __MLE_TIME_H__ */

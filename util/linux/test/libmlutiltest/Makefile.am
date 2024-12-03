@@ -8,8 +8,11 @@ lib_LTLIBRARIES = libmlutiltest.la
 # Build information for each library
 
 # Sources for libmlutiltest
-libmlutiltest_la_SOURCES = libmlutiltest.cxx \
-    testMlDebug.cxx testLogFile.cxx
+libmlutiltest_la_SOURCES = \
+    libmlutiltest.cxx \
+    testMlDebug.cxx \
+    testLogFile.cxx \
+    testMlTrace.cxx
 
 # Linker options libTestProgram
 libmlutiltest_la_LDFLAGS = 

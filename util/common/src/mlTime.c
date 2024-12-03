@@ -1,8 +1,15 @@
+/** @defgroup MleCore Magic Lantern Core Utility Library API */
+
+/**
+ * @file mlTime.c
+ * @ingroup MleCore
+ */
+
 // COPYRIGHT_BEGIN
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2022-2024 Wizzer Works
+// Copyright (c) 2024 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -31,11 +38,34 @@
 //
 // COPYRIGHT_END
 
-#include "libmlutiltest.h"
+// Include system header files.
+#include <stdio.h>
+#include <string.h>
+#include <assert.h>
 
-// Include Google Test header files.
-#include "gtest/gtest.h"
+// Include Magic Lantern header files.
+#include "mle/mlMalloc.h"
+#include "mle/mlTime.h"
 
-bool initMlUtilTest() {
-	return true;
+
+
+char *mlGetUTC()
+{
+    char *retValue = NULL;
+  
+    time_t t = time(NULL);
+    assert(t != ((time_t)-1)); // error handling
+
+    struct tm tm;
+    memset(&tm, 0, sizeof(tm));
+    assert(gmtime_r(&t, &tm) != NULL); // error handling
+
+    retValue = mlMalloc(72);
+    assert(retValue != NULL); // error handling
+
+    sprintf(retValue, "%04d-%02d-%02dT%02d:%02d:%02d",
+            1900+tm.tm_year, tm.tm_mon+1, tm.tm_mday,
+            tm.tm_hour, tm.tm_min, tm.tm_sec);
+
+    return retValue;
 }

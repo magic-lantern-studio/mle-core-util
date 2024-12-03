@@ -100,7 +100,7 @@ error...undefined platform
         fprintf(MLE_TRACE_INFO_OUTPUT_FILE,                                   \
                 "INFO: " __FILE__ ": %d: " #msg,                              \
               __LINE__);                                                      \
-        fflush(MLE_ERROR_OUTPUT_FILE);                                        \
+        fflush(MLE_TRACE_ERROR_OUTPUT_FILE);                                  \
     }
 #else /* Unknown platform. */
 error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
@@ -122,7 +122,7 @@ error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
 #define MLE_TRACE_WARN(msg)                                                   \
     {                                                                         \
         fprintf(MLE_TRACE_WARN_OUTPUT_FILE,                                   \
-                "INFO: " __FILE__ ": %d: " #msg,                              \
+                "WARN: " __FILE__ ": %d: " #msg,                              \
               __LINE__);                                                      \
         fflush(MLE_TRACE_WARN_OUTPUT_FILE);                                   \
     }
@@ -146,7 +146,7 @@ error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
 #define MLE_TRACE_ERROR(msg)                                                   \
     {                                                                          \
         fprintf(MLE_TRACE_ERROR_OUTPUT_FILE,                                   \
-                "INFO: " __FILE__ ": %d: " #msg,                               \
+                "ERROR: " __FILE__ ": %d: " #msg,                              \
               __LINE__);                                                       \
         fflush(MLE_TRACE_ERROR_OUTPUT_FILE);                                   \
     }

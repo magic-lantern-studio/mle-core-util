@@ -20,9 +20,11 @@ include_HEADERS = \
 	$(top_srcdir)/../../common/include/mle/mlMacros.h \
 	$(top_srcdir)/../../common/include/mle/mlMalloc.h \
 	$(top_srcdir)/../../common/include/mle/mlToken.h \
+	$(top_srcdir)/../../common/include/mle/mlTrace.h \
 	$(top_srcdir)/../../common/include/mle/mlTypes.h \
 	$(top_srcdir)/../../common/include/mle/mlUnique.h \
-	$(top_srcdir)/../../common/include/mle/mlItoa.h
+	$(top_srcdir)/../../common/include/mle/mlItoa.h \
+	$(top_srcdir)/../../common/include/mle/mlTime.h
 
 if LINUX
 include_HEADERS += \
