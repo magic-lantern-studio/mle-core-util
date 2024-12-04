@@ -312,6 +312,7 @@ xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="..\..\..\common\src\mlItoa.c" />
+    <ClCompile Include="..\..\..\common\src\mlTime.c" />
     <ClCompile Include="..\..\src\MleWin32MemoryManager.cxx">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -386,6 +387,7 @@ xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
     <ClInclude Include="..\..\..\common\include\mle\MleTemplate.h" />
     <ClInclude Include="..\..\..\common\include\mle\MleUtil.h" />
     <ClInclude Include="..\..\..\common\include\mle\mlItoa.h" />
+    <ClInclude Include="..\..\..\common\include\mle\mlTime.h" />
     <ClInclude Include="..\..\include\mle\MleWin32Path.h" />
     <ClInclude Include="..\..\..\common\include\mle\mlExpandFilename.h" />
     <ClInclude Include="..\..\..\common\include\mle\mlFileio.h" />

@@ -58,14 +58,24 @@ char *mlGetUTC()
 
     struct tm tm;
     memset(&tm, 0, sizeof(tm));
+#if defined(WIN32)
+	assert(gmtime_s(&tm, &t) != 0);
+#else
     assert(gmtime_r(&t, &tm) != NULL); // error handling
+#endif /* ! WIN32 */
 
     retValue = mlMalloc(72);
     assert(retValue != NULL); // error handling
 
+#if defined(WIN32)
+	sprintf_s(retValue, 72, "%04d-%02d-%02dT%02d:%02d:%02d",
+		1900 + tm.tm_year, tm.tm_mon + 1, tm.tm_mday,
+		tm.tm_hour, tm.tm_min, tm.tm_sec);
+#else
     sprintf(retValue, "%04d-%02d-%02dT%02d:%02d:%02d",
             1900+tm.tm_year, tm.tm_mon+1, tm.tm_mday,
             tm.tm_hour, tm.tm_min, tm.tm_sec);
+#endif /* ! WIN32 */
 
     return retValue;
 }

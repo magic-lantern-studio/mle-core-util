@@ -300,6 +300,7 @@ xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
     <ClInclude Include="..\..\..\common\include\mle\mlLogFile.h" />
     <ClInclude Include="..\..\..\common\include\mle\mlMacros.h" />
     <ClInclude Include="..\..\..\common\include\mle\mlMalloc.h" />
+    <ClInclude Include="..\..\..\common\include\mle\mlTime.h" />
     <ClInclude Include="..\..\..\common\include\mle\mlToken.h" />
     <ClInclude Include="..\..\..\common\include\mle\mlTypes.h" />
     <ClInclude Include="..\..\..\common\include\mle\mlUnique.h" />
@@ -315,6 +316,7 @@ xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
     <ClCompile Include="..\..\..\common\src\mlExpandFilename.c" />
     <ClCompile Include="..\..\..\common\src\mlItoa.c" />
     <ClCompile Include="..\..\..\common\src\mlLogFile.c" />
+    <ClCompile Include="..\..\..\common\src\mlTime.c" />
     <ClCompile Include="..\..\..\common\src\mlUnique.c" />
     <ClCompile Include="..\..\..\win32\src\MleWin32MemoryManager.cxx" />
     <ClCompile Include="..\..\..\win32\src\MleWin32Path.cxx" />
