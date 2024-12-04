@@ -66,29 +66,8 @@ error...undefined platform
 #include "mle/mlMalloc.h"
 #include "mle/mlTime.h"
 
-
-#ifndef MLE_TRACE_ERROR_OUTPUT_FILE
-/**
- *  This is the file on which trace error information is displayed.
- */
-#define MLE_TRACE_ERROR_OUTPUT_FILE stderr
-#endif /* MLE_TRACE_ERROR_OUTPUT_FILE */
-
-#ifndef MLE_TRACE_WARN_OUTPUT_FILE
-/**
- *  This is the file on which trace warning information is displayed.
- */
-#define MLE_TRACE_WARN_OUTPUT_FILE stdout
-#endif /* MLE_TRACE_WARN_OUTPUT_FILE */
-
-#ifndef MLE_TRACE_INFO_OUTPUT_FILE
-/**
- *  This is the file on which trace information is displayed.
- */
-#define MLE_TRACE_INFO_OUTPUT_FILE stdout
-#endif /* MLE_TRACE_INFO_OUTPUT_FILE */
-
 #endif /* MLE_DEBUG */
+
 
 /**** UTILITY MACROS *****/
 
@@ -98,15 +77,15 @@ error...undefined platform
 /**
  * Trace macro for displaying informative messages.
  * - turned on if MLE_DEBUG flag is set.
- * It will write a log entry to MLE_TRACE_INFO_OUTPUT_FILE.
+ * It will write a log entry to file.
  */
-#define MLE_TRACE_INFO(msg)                                                   \
+#define MLE_TRACE_INFO(file, msg)                                             \
     {                                                                         \
         char *utc = mlGetUTC();                                               \
-        fprintf(MLE_TRACE_INFO_OUTPUT_FILE,                                   \
+        fprintf(file,                                                         \
                 "%s [INFO] " __FILE__ ": %d: " #msg "\n",                     \
                 utc, __LINE__);                                               \
-        fflush(MLE_TRACE_ERROR_OUTPUT_FILE);                                  \
+        fflush(file);                                                         \
         mlFree(utc);                                                          \
     }
 #else /* Unknown platform. */
@@ -114,7 +93,7 @@ error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
 #endif
 #else /* ! MLE_DEBUG */
 
-#define MLE_TRACE_INFO(msg)
+#define MLE_TRACE_INFO(file, msg)
 
 #endif /* MLE_DEBUG */
 
@@ -124,15 +103,15 @@ error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
 /**
  * Trace macro for displaying warning messages in debug mode.
  * - turned on if MLE_DEBUG flag is set.
- * It will write a log entry to MLE_TRACE_WARN_OUTPUT_FILE.
+ * It will write a log entry to file.
  */
-#define MLE_TRACE_WARN(msg)                                                   \
+#define MLE_TRACE_WARN(file, msg)                                             \
     {                                                                         \
         char *utc = mlGetUTC();                                               \
-        fprintf(MLE_TRACE_WARN_OUTPUT_FILE,                                   \
+        fprintf(file,                                                         \
                 "%s [WARN] " __FILE__ ": %d: " #msg "\n",                     \
                 utc, __LINE__);                                               \
-        fflush(MLE_TRACE_WARN_OUTPUT_FILE);                                   \
+        fflush(file);                                                         \
         mlFree(utc);                                                          \
     }
 #else /* Unknown platform. */
@@ -140,7 +119,7 @@ error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
 #endif
 #else /* ! MLE_DEBUG */
 
-#define MLE_TRACE_WARN(msg)
+#define MLE_TRACE_WARN(file, msg)
 
 #endif /* MLE_DEBUG */
 
@@ -150,15 +129,15 @@ error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
 /**
  * Trace macro for displaying error messages in debug mode.
  * - turned on if MLE_DEBUG flag is set.
- * It will write a log entry to MLE_TRACE_ERROR_OUTPUT_FILE.
+ * It will write a log entry to file.
  */
-#define MLE_TRACE_ERROR(msg)                                                   \
+#define MLE_TRACE_ERROR(file, msg)                                             \
     {                                                                          \
         char *utc = mlGetUTC();                                                \
-        fprintf(MLE_TRACE_ERROR_OUTPUT_FILE,                                   \
+        fprintf(file,                                                          \
                 "%s [ERROR] " __FILE__ ": %d: " #msg "\n",                     \
                 utc, __LINE__);                                                \
-        fflush(MLE_TRACE_ERROR_OUTPUT_FILE);                                   \
+        fflush(file);                                                          \
         mlFree(utc);                                                           \
     }
 #else /* Unknown platform. */
@@ -166,10 +145,10 @@ error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
 #endif
 #else /* ! MLE_DEBUG */
 
-#define MLE_TRACE_ERROR(msg)
+#define MLE_TRACE_ERROR(file, msg)
 
 #endif /* MLE_DEBUG */
 
 
-#endif /* _MLE_TRACE_H_ */
+#endif /* __MLE_TRACE_H_ */
 

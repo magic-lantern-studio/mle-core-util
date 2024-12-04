@@ -47,32 +47,24 @@
 
 
 TEST(MlTraceTest, OutputInformativeMsg) {
-    MLE_TRACE_INFO(Testing info trace);
+    MLE_TRACE_INFO(stdout, Testing info trace);
 }
 
 TEST(MlTraceTest, OutputWarningMsg) {
-    MLE_TRACE_WARN(Testing warning trace);
+    MLE_TRACE_WARN(stdout, Testing warning trace);
 }
 
 TEST(MlTraceTest, OutputErrorMsg) {
-    MLE_TRACE_ERROR(Testing error trace);
+    MLE_TRACE_ERROR(stderr, Testing error trace);
 }
 
 
-#undef MLE_TRACE_INFO_OUTPUT_FILE
-#undef MLE_TRACE_WARN_OUTPUT_FILE
-#undef MLE_TRACE_ERROR_OUTPUT_FILE
-
 static FILE *traceFd;
-
-#define MLE_TRACE_INFO_OUTPUT_FILE traceFd
-#define MLE_TRACE_WARN_OUTPUT_FILE traceFd
-#define MLE_TRACE_ERROR_OUTPUT_FILE traceFd
 
 TEST(MlTraceTest, OutputInformativeMsgToFile) {
 	traceFd = mlFOpen("MlTraceTest.log", "w+");
-    MLE_TRACE_INFO(Testing info trace to file);
-    MLE_TRACE_WARN(Testing warning trace to file);
-    MLE_TRACE_ERROR(Testing error trace to file);
+    MLE_TRACE_INFO(traceFd, Testing info trace to file);
+    MLE_TRACE_WARN(traceFd, Testing warning trace to file);
+    MLE_TRACE_ERROR(traceFd, Testing error trace to file);
     mlFClose(traceFd);
 }
