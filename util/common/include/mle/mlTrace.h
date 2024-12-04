@@ -62,6 +62,11 @@
 error...undefined platform
 #endif
 
+// Include Magic Lantern header files
+#include "mle/mlMalloc.h"
+#include "mle/mlTime.h"
+
+
 #ifndef MLE_TRACE_ERROR_OUTPUT_FILE
 /**
  *  This is the file on which trace error information is displayed.
@@ -97,10 +102,12 @@ error...undefined platform
  */
 #define MLE_TRACE_INFO(msg)                                                   \
     {                                                                         \
+        char *utc = mlGetUTC();                                               \
         fprintf(MLE_TRACE_INFO_OUTPUT_FILE,                                   \
-                "INFO: " __FILE__ ": %d: " #msg,                              \
-              __LINE__);                                                      \
+                "%s [INFO] " __FILE__ ": %d: " #msg "\n",                     \
+                utc, __LINE__);                                               \
         fflush(MLE_TRACE_ERROR_OUTPUT_FILE);                                  \
+        mlFree(utc);                                                          \
     }
 #else /* Unknown platform. */
 error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
@@ -121,10 +128,12 @@ error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
  */
 #define MLE_TRACE_WARN(msg)                                                   \
     {                                                                         \
+        char *utc = mlGetUTC();                                               \
         fprintf(MLE_TRACE_WARN_OUTPUT_FILE,                                   \
-                "WARN: " __FILE__ ": %d: " #msg,                              \
-              __LINE__);                                                      \
+                "%s [WARN] " __FILE__ ": %d: " #msg "\n",                     \
+                utc, __LINE__);                                               \
         fflush(MLE_TRACE_WARN_OUTPUT_FILE);                                   \
+        mlFree(utc);                                                          \
     }
 #else /* Unknown platform. */
 error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
@@ -145,10 +154,12 @@ error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
  */
 #define MLE_TRACE_ERROR(msg)                                                   \
     {                                                                          \
+        char *utc = mlGetUTC();                                                \
         fprintf(MLE_TRACE_ERROR_OUTPUT_FILE,                                   \
-                "ERROR: " __FILE__ ": %d: " #msg,                              \
-              __LINE__);                                                       \
+                "%s [ERROR] " __FILE__ ": %d: " #msg "\n",                     \
+                utc, __LINE__);                                                \
         fflush(MLE_TRACE_ERROR_OUTPUT_FILE);                                   \
+        mlFree(utc);                                                           \
     }
 #else /* Unknown platform. */
 error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
