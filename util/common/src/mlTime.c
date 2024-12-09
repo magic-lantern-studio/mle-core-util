@@ -59,7 +59,7 @@ char *mlGetUTC()
     struct tm tm;
     memset(&tm, 0, sizeof(tm));
 #if defined(WIN32)
-	assert(gmtime_s(&tm, &t) != 0);
+	assert(gmtime_s(&tm, &t) == 0);
 #else
     assert(gmtime_r(&t, &tm) != NULL); // error handling
 #endif /* ! WIN32 */
