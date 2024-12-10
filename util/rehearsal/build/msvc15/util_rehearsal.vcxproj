@@ -69,13 +69,15 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IntDir>$(Platform)\$(Configuration)\</IntDir>
-    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\util_rehearsal\</IntDir>
+    <OutDir>$(Platform)\$(Configuration)\util_rehearsal\</OutDir>
+    <TargetName>utild</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IntDir>$(Platform)\$(Configuration)\</IntDir>
-    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\util_rehearsal\</IntDir>
+    <OutDir>$(Platform)\$(Configuration)\util_rehearsal\</OutDir>
+    <TargetName>utild</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -84,8 +86,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IntDir>$(Platform)\$(Configuration)\</IntDir>
-    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\util_rehearsal\</IntDir>
+    <OutDir>$(Platform)\$(Configuration)\util_rehearsal\</OutDir>
+    <TargetName>util</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -140,40 +143,41 @@ xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>MLE_REHEARSAL;MLE_DLL;MLE_INTERNAL;MLE_MAKE_DLL;MLE_DEBUG;WIN32;_DEBUG;_WINDOWS;_USRDLL;UTIL_REHEARSAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\include;..\..\..\common\include;..\..\..\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)\$(TargetName).pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>$(Platform)\$(Configuration)/</AssemblerListingLocation>
-      <ObjectFileName>$(Platform)\$(Configuration)/</ObjectFileName>
-      <ProgramDataBaseFileName>$(Platform)\$(Configuration)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
-      <BrowseInformationFile>$(Platform)\$(Configuration)/</BrowseInformationFile>
-      <XMLDocumentationFileName>$(Platform)\$(Configuration)</XMLDocumentationFileName>
+      <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)\util_rehearsal\util.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(Platform)\$(Configuration)\util_rehearsal/</AssemblerListingLocation>
+      <ObjectFileName>$(Platform)\$(Configuration)\util_rehearsal/</ObjectFileName>
+      <ProgramDataBaseFileName>$(Platform)\$(Configuration)\util_rehearsal/utild.pdb</ProgramDataBaseFileName>
+      <BrowseInformationFile>$(Platform)\$(Configuration)\util_rehearsal/</BrowseInformationFile>
+      <XMLDocumentationFileName>$(Platform)\$(Configuration)\util_rehearsal</XMLDocumentationFileName>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ManifestFile>$(Platform)\$(Configuration)\$(TargetName)$(TargetExt).intermediate.manifest</ManifestFile>
-      <OutputFile>$(Platform)\$(Configuration)\utild.dll</OutputFile>
+      <OutputFile>$(Platform)\$(Configuration)\util_rehearsal\utild.dll</OutputFile>
       <AdditionalDependencies>psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ImportLibrary>$(Platform)\$(Configuration)\utild.lib</ImportLibrary>
-      <ProgramDatabaseFile>$(Platform)\$(Configuration)\$(TargetName).pdb</ProgramDatabaseFile>
-      <ProfileGuidedDatabase>$(Platform)\$(Configuration)\$(TargetName).pgd</ProfileGuidedDatabase>
+      <ImportLibrary>$(Platform)\$(Configuration)\util_rehearsal\utild.lib</ImportLibrary>
+      <ProgramDatabaseFile>$(Platform)\$(Configuration)\util_rehearsal\util.pdb</ProgramDatabaseFile>
+      <ProfileGuidedDatabase>$(Platform)\$(Configuration)\util_rehearsal\util.pgd</ProfileGuidedDatabase>
     </Link>
     <ManifestResourceCompile>
       <ResourceOutputFileName>$(Platform)\$(Configuration)\$(TargetName)$(TargetExt).embed.manifest.res</ResourceOutputFileName>
     </ManifestResourceCompile>
     <BuildLog>
-      <Path>$(Platform)\$(Configuration)\$(MSBuildProjectName).log</Path>
+      <Path>$(Platform)\$(Configuration)\util_rehearsal\$(MSBuildProjectName).log</Path>
     </BuildLog>
     <Bscmake>
-      <OutputFile>$(Platform)\$(Configuration)\$(TargetName).bsc</OutputFile>
+      <OutputFile>$(Platform)\$(Configuration)\util_rehearsal\util.bsc</OutputFile>
     </Bscmake>
     <Xdcmake>
-      <OutputFile>$(Platform)\$(Configuration)\$(TargetName).xml</OutputFile>
+      <OutputFile>$(Platform)\$(Configuration)\util_rehearsal\util.xml</OutputFile>
     </Xdcmake>
     <PostBuildEvent>
       <Command>mkdir $(MLE_HOME)\bin64\rehearsal
-copy x64\Debug\utild.dll $(MLE_HOME)\bin64\rehearsal\utild.dll
+copy x64\Debug\util_rehearsal\utild.dll $(MLE_HOME)\bin64\rehearsal\utild.dll
 mkdir $(MLE_HOME)\lib64\rehearsal
-copy x64\Debug\utild.lib $(MLE_HOME)\lib64\rehearsal\utild.lib
+copy x64\Debug\util_rehearsal\utild.lib $(MLE_HOME)\lib64\rehearsal\utild.lib
 mkdir $(MLE_HOME)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
 </Command>
@@ -238,12 +242,13 @@ xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>MLE_REHEARSAL;MLE_DLL;MLE_INTERNAL;MLE_MAKE_DLL;WIN32;NDEBUG;_WINDOWS;_USRDLL;UTIL_REHEARSAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\include;..\..\..\common\include;..\..\..\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)$(TargetName).pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>$(Platform)\$(Configuration)/</AssemblerListingLocation>
-      <ObjectFileName>$(Platform)\$(Configuration)/</ObjectFileName>
-      <ProgramDataBaseFileName>$(Platform)\$(Configuration)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
-      <XMLDocumentationFileName>$(Platform)\$(Configuration)/</XMLDocumentationFileName>
-      <BrowseInformationFile>$(Platform)\$(Confguration)</BrowseInformationFile>
+      <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)\util_rehearsal\$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(Platform)\$(Configuration)\util_rehearsal/</AssemblerListingLocation>
+      <ObjectFileName>$(Platform)\$(Configuration)\util_rehearsal/</ObjectFileName>
+      <ProgramDataBaseFileName>$(Platform)\$(Configuration)\util_rehearsal\util.pdb</ProgramDataBaseFileName>
+      <XMLDocumentationFileName>$(Platform)\$(Configuration)\util_rehearsal/util.xml</XMLDocumentationFileName>
+      <BrowseInformationFile>$(Platform)\$(Confguration)\util_rehearsal\</BrowseInformationFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -251,29 +256,29 @@ xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ManifestFile>$(Platform)\$(Configuration)\$(TargetName)$(TargetExt).intermediate.manifest</ManifestFile>
-      <OutputFile>$(Platform)\$(Configuration)\util.dll</OutputFile>
+      <OutputFile>$(Platform)\$(Configuration)\util_rehearsal\util.dll</OutputFile>
       <AdditionalDependencies>psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ImportLibrary>$(Platform)\$(Configuration)\util.lib</ImportLibrary>
-      <ProgramDatabaseFile>$(Platform)\$(Configuration)\$(TargetName).pdb</ProgramDatabaseFile>
-      <ProfileGuidedDatabase>$(Platform)\$(Configuration)\$(TargetName).pgd</ProfileGuidedDatabase>
+      <ImportLibrary>$(Platform)\$(Configuration)\util_rehearsal\util.lib</ImportLibrary>
+      <ProgramDatabaseFile>$(Platform)\$(Configuration)\util_rehearsal\$(TargetName).pdb</ProgramDatabaseFile>
+      <ProfileGuidedDatabase>$(Platform)\$(Configuration)\util_rehearsal\$(TargetName).pgd</ProfileGuidedDatabase>
     </Link>
     <BuildLog>
-      <Path>$(Platform)\$(Configuration)\$(MSBuildProjectName).log</Path>
+      <Path>$(Platform)\$(Configuration)\util_rehearsal\$(MSBuildProjectName).log</Path>
     </BuildLog>
     <ManifestResourceCompile>
-      <ResourceOutputFileName>$(Platform)\$(Configuration)\$(TargetName)$(TargetExt).embed.manifest.res</ResourceOutputFileName>
+      <ResourceOutputFileName>$(Platform)\$(Configuration)\util_rehearsal\$(TargetName)$(TargetExt).embed.manifest.res</ResourceOutputFileName>
     </ManifestResourceCompile>
     <Bscmake>
-      <OutputFile>$(Platform)\$(Configuration)\$(TargetName).bsc</OutputFile>
+      <OutputFile>$(Platform)\$(Configuration)\util_rehearsal\$(TargetName).bsc</OutputFile>
     </Bscmake>
     <Xdcmake>
-      <OutputFile>$(Platform)\$(Configuration)\$(TargetName).xml</OutputFile>
+      <OutputFile>$(Platform)\$(Configuration)\util_rehearsal\$(TargetName).xml</OutputFile>
     </Xdcmake>
     <PostBuildEvent>
       <Command>mkdir $(MLE_HOME)\bin64\rehearsal
-copy x64\Release\util.dll $(MLE_HOME)\bin64\rehearsal\util.dll
+copy x64\Release\util_rehearsal\util.dll $(MLE_HOME)\bin64\rehearsal\util.dll
 mkdir $(MLE_HOME)\lib\rehearsal
-copy x64\Release\util.lib $(MLE_HOME)\lib64\rehearsal\util.lib
+copy x64\Release\util_rehearsal\util.lib $(MLE_HOME)\lib64\rehearsal\util.lib
 mkdir $(MLE_HOME)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
 </Command>

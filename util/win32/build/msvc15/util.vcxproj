@@ -69,20 +69,26 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\</IntDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\</IntDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\util\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\util\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\util\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\util\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\util\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\util\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\util\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\util\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <TargetName>utild</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <TargetName>utild</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>util</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>util</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -93,33 +99,34 @@
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)\util.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>$(Platform)\$(Configuration)\</AssemblerListingLocation>
-      <ObjectFileName>$(Platform)\$(Configuration)\</ObjectFileName>
-      <ProgramDataBaseFileName>$(Platform)\$(Configuration)\</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)\util\util.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(Platform)\$(Configuration)\util\</AssemblerListingLocation>
+      <ObjectFileName>$(Platform)\$(Configuration)\util\</ObjectFileName>
+      <ProgramDataBaseFileName>$(Platform)\$(Configuration)\util\</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <XMLDocumentationFileName>$(Platform)\$(Configuration)</XMLDocumentationFileName>
-      <BrowseInformationFile>$(Platform)\$(Configuration)</BrowseInformationFile>
+      <XMLDocumentationFileName>$(Platform)\$(Configuration)\util\</XMLDocumentationFileName>
+      <BrowseInformationFile>$(Platform)\$(Configuration)\util\</BrowseInformationFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(Platform)\$(Configuration)\util.lib</OutputFile>
+      <OutputFile>$(Platform)\$(Configuration)\util\util.lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\Release/util.bsc</OutputFile>
+      <OutputFile>$(Platform)\$(Configuration)\util/util.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
       <Message>Install Library</Message>
       <Command>mkdir $(MLE_HOME)\lib\tools
-copy win32\Release\util.lib $(MLE_HOME)\lib\tools\util.lib
+copy win32\Release\util\util.lib $(MLE_HOME)\lib\tools\util.lib
 mkdir $(MLE_HOME)\lib\runtime\cdecl
-copy win32\Release\util.lib $(MLE_HOME)\lib\runtime\cdecl\util.lib
+copy win32\Release\util\util.lib $(MLE_HOME)\lib\runtime\cdecl\util.lib
 mkdir $(MLE_HOME)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
 xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
@@ -141,31 +148,32 @@ xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)\util.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>$(Platform)\$(Configuration)\</AssemblerListingLocation>
-      <ObjectFileName>$(Platform)\$(Configuration)\</ObjectFileName>
-      <ProgramDataBaseFileName>$(Platform)\$(Configuration)\</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)\util\util.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(Platform)\$(Configuration)\util\</AssemblerListingLocation>
+      <ObjectFileName>$(Platform)\$(Configuration)\util\</ObjectFileName>
+      <ProgramDataBaseFileName>$(Platform)\$(Configuration)\util\</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(Platform)\$(Configuration)\util.lib</OutputFile>
+      <OutputFile>$(Platform)\$(Configuration)\util\util.lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>$(Platform)\$(Configuration)/util.bsc</OutputFile>
+      <OutputFile>$(Platform)\$(Configuration)\util/util.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
       <Message>Install Library</Message>
       <Command>mkdir $(MLE_HOME)\lib64\tools
-copy x64\Release\util.lib $(MLE_HOME)\lib64\tools\util.lib
+copy x64\Release\util\util.lib $(MLE_HOME)\lib64\tools\util.lib
 mkdir $(MLE_HOME)\lib64\runtime\cdecl
-copy x64\Release\util.lib $(MLE_HOME)\lib64\runtime\cdecl\util.lib
+copy x64\Release\util\util.lib $(MLE_HOME)\lib64\runtime\cdecl\util.lib
 mkdir $(MLE_HOME)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
 xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
@@ -180,34 +188,35 @@ xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)\util.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>$(Platform)\$(Configuration)\</AssemblerListingLocation>
-      <ObjectFileName>$(Platform)\$(Configuration)\</ObjectFileName>
-      <ProgramDataBaseFileName>$(Platform)\$(Configuration)\</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)\util\util.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(Platform)\$(Configuration)\util\</AssemblerListingLocation>
+      <ObjectFileName>$(Platform)\$(Configuration)\util\</ObjectFileName>
+      <ProgramDataBaseFileName>$(Platform)\$(Configuration)\util\</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-      <XMLDocumentationFileName>$(Platform)\$(Configuration)</XMLDocumentationFileName>
-      <BrowseInformationFile>$(Platform)\$(Configuration)</BrowseInformationFile>
+      <XMLDocumentationFileName>$(Platform)\$(Configuration)\util\</XMLDocumentationFileName>
+      <BrowseInformationFile>$(Platform)\$(Configuration)\util</BrowseInformationFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(Platform)\$(Configuration)\utild.lib</OutputFile>
+      <OutputFile>$(Platform)\$(Configuration)\util\utild.lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>Debug/utild.bsc</OutputFile>
+      <OutputFile>$(Platform)\$(Configuration)\util/utild.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
       <Message>Install Library</Message>
       <Command>mkdir $(MLE_HOME)\lib\tools
-copy win32\Debug\utild.lib $(MLE_HOME)\lib\tools\utild.lib
+copy win32\Debug\util\utild.lib $(MLE_HOME)\lib\tools\utild.lib
 mkdir $(MLE_HOME)\lib\runtime\cdecl
-copy win32\Debug\utild.lib $(MLE_HOME)\lib\runtime\cdecl\utild.lib
+copy win32\Debug\util\utild.lib $(MLE_HOME)\lib\runtime\cdecl\utild.lib
 mkdir $(MLE_HOME)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
 xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
@@ -228,32 +237,33 @@ xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)\util.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>$(Platform)\$(Configuration)\</AssemblerListingLocation>
-      <ObjectFileName>$(Platform)\$(Configuration)\</ObjectFileName>
-      <ProgramDataBaseFileName>$(Platform)\$(Configuration)\</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)\util\util.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(Platform)\$(Configuration)\util\</AssemblerListingLocation>
+      <ObjectFileName>$(Platform)\$(Configuration)\util\</ObjectFileName>
+      <ProgramDataBaseFileName>$(Platform)\$(Configuration)\util\</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(Platform)\$(Configuration)\utild.lib</OutputFile>
+      <OutputFile>$(Platform)\$(Configuration)\util\utild.lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>$(Platform)\$(Configuration)/utild.bsc</OutputFile>
+      <OutputFile>$(Platform)\$(Configuration)\util/utild.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
       <Message>Install Library</Message>
       <Command>mkdir $(MLE_HOME)\lib64\tools
-copy x64\Debug\utild.lib $(MLE_HOME)\lib64\tools\utild.lib
+copy x64\Debug\util\utild.lib $(MLE_HOME)\lib64\tools\utild.lib
 mkdir $(MLE_HOME)\lib64\runtime\cdecl
-copy x64\Debug\utild.lib $(MLE_HOME)\lib64\runtime\cdecl\utild.lib
+copy x64\Debug\util\utild.lib $(MLE_HOME)\lib64\runtime\cdecl\utild.lib
 mkdir $(MLE_HOME)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
 xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle

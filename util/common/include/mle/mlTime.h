@@ -52,6 +52,7 @@ extern "C" {
 
 // Include Magic Lantern header files.
 #include "mle/mlTypes.h"
+#include "mle/MleUtil.h"
 
 
 /**
@@ -62,7 +63,7 @@ extern "C" {
  * and is 72 bytes long. The user of this routine is responsible for managing
  * the allocated memory.
  */
-EXTERN char *mlGetUTC();
+EXTERN MLE_UTIL_API char *mlGetUTC();
 
 
 #ifdef __cplusplus
