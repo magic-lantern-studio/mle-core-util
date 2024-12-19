@@ -4,17 +4,13 @@
  *  @ingroup MleCore
  *
  *  Magic Lantern Core - Win32 specific definitions.
- *
- *  @author Mark S. Millard
- *  @date July 10, 2003
- *  @version 0.13
  */
 
 // COPYRIGHT_BEGIN
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2018 Wizzer Works
+// Copyright (c) 2015-2024 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -46,6 +42,9 @@
 #ifndef __MLE_CORE_GETOPT_H_
 #define __MLE_CORE_GETOPT_H_
 
+// Include Magic Lantern header files.
+#include "mle/MleUtil.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -53,7 +52,7 @@ extern "C" {
 extern int optind;
 extern TCHAR *optarg;
 
-int getopt(int argc, TCHAR *argv[], TCHAR *optstring);
+int MLE_UTIL_API getopt(int argc, TCHAR *argv[], TCHAR *optstring);
 
 #ifdef __cplusplus
 } /* end of 'extern "C"' */
