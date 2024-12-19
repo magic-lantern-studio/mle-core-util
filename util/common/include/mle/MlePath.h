@@ -48,12 +48,13 @@
 // Include Magic Lantern header files.
 #include "mle/mlTypes.h" 
 #include "mle/mlErrno.h"
+#include "mle/MleUtil.h"
 
 /**
  * @ingroup MleDWPAccess
  * @brief MlePath is used to define an abstraction for a file path.
  */
-class MlePath
+class MLE_UTIL_API MlePath
 {
 
 	public:
