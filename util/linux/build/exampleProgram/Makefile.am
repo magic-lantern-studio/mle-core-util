@@ -28,7 +28,7 @@ exampleProgram_LDFLAGS = -rpath `cd $(top_srcdir);pwd`/libmlutil/.libs
 
 # Compiler options for a.out
 exampleProgram_CPPFLAGS = \
-	-DMLE_NOT_DLL \
+	-DMLE_NOT_UTIL_DLL \
 	-I$(top_srcdir)/include \
 	-I$(top_srcdir)/../../common/include \
 	-I$(top_srcdir)/../../linux/include
