@@ -2,7 +2,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2022 Wizzer Works
+// Copyright (c) 2022 - 2025 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -47,15 +47,15 @@
 
 
 TEST(MlTraceTest, OutputInformativeMsg) {
-    MLE_TRACE_INFO(stdout, Testing info trace);
+    MLE_TRACE_INFO(stdout, Testing info trace to stdout);
 }
 
 TEST(MlTraceTest, OutputWarningMsg) {
-    MLE_TRACE_WARN(stdout, Testing warning trace);
+    MLE_TRACE_WARN(stdout, Testing warning trace to stdout);
 }
 
 TEST(MlTraceTest, OutputErrorMsg) {
-    MLE_TRACE_ERROR(stderr, Testing error trace);
+    MLE_TRACE_ERROR(stderr, Testing error trace to stderr);
 }
 
 
