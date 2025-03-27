@@ -26,12 +26,16 @@ build_script:
     sudo mkdir $MLE_ROOT;
     sudo MLE_ROOT=$MLE_ROOT make install
 
-- cmd: >-
-    echo Building Visual Studio 2017 library;
-    subst M: C:;
-    pwd;
-    cd M:\projects\mle-core-util\util\win32\build\msvc15;
-    pwd
+- cmd: "
+    @echo Building Windows 10 library
+    FOR %%P IN (x64) DO (
+      FOR %%C IN (Debug,Release) DO (
+        msbuild
+          /p:Configuration=%%C
+          /p:Platform=%%P ...
+        || EXIT 1
+      )
+    )"
 
 # Custom script to create an .zip file containing the libmlutil artifacts.
 after_build:
