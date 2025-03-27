@@ -13,7 +13,7 @@ environment:
 # Custom script to build libmlutil.so using autoconf tools.
 build_script:
 - sh: >-
-    printf "Building Ubuntu 22.04 Linux library";
+    printf "Building Ubuntu 22.04 Linux library\n";
     cd util/linux/build;
     libtoolize;
     aclocal;
@@ -22,15 +22,16 @@ build_script:
     ./configure;
     make
 - sh: >-
-    printf "Installing Ubuntu 22.04 Linux library";
+    printf "Installing Ubuntu 22.04 Linux library\n";
     sudo mkdir $MLE_ROOT;
     sudo MLE_ROOT=$MLE_ROOT make install
 
 - cmd: >-
     echo Building Visual Studio 2017 library;
-    subst M: C:\Users\appveyor;
-    cd util\win32\build\msvc15;
-    dir
+    subst M: C:;
+    pwd;
+    cd M:\projects\mle-core-util\util\win32\build\msvc15;
+    pwd
 
 # Custom script to create an .zip file containing the libmlutil artifacts.
 after_build:
