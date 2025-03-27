@@ -141,7 +141,7 @@ xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>MLE_REHEARSAL;MLE_DLL;MLE_INTERNAL;MLE_MAKE_DLL;MLE_DEBUG;WIN32;_DEBUG;_WINDOWS;_USRDLL;UTIL_REHEARSAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>MLE_REHEARSAL;MLE_UTIL_DLL;MLE_INTERNAL;MLE_MAKE_DLL;MLE_DEBUG;WIN32;_DEBUG;_WINDOWS;_USRDLL;UTIL_REHEARSAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\include;..\..\..\common\include;..\..\..\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)\util_rehearsal\util.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>$(Platform)\$(Configuration)\util_rehearsal/</AssemblerListingLocation>
@@ -150,6 +150,7 @@ xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
       <BrowseInformationFile>$(Platform)\$(Configuration)\util_rehearsal/</BrowseInformationFile>
       <XMLDocumentationFileName>$(Platform)\$(Configuration)\util_rehearsal</XMLDocumentationFileName>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -240,7 +241,7 @@ xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>MLE_REHEARSAL;MLE_DLL;MLE_INTERNAL;MLE_MAKE_DLL;WIN32;NDEBUG;_WINDOWS;_USRDLL;UTIL_REHEARSAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>MLE_REHEARSAL;MLE_UTIL_DLL;MLE_INTERNAL;MLE_MAKE_DLL;WIN32;NDEBUG;_WINDOWS;_USRDLL;UTIL_REHEARSAL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\include;..\..\..\common\include;..\..\..\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderOutputFile>$(Platform)\$(Configuration)\util_rehearsal\$(TargetName).pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>$(Platform)\$(Configuration)\util_rehearsal/</AssemblerListingLocation>
@@ -249,6 +250,7 @@ xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
       <XMLDocumentationFileName>$(Platform)\$(Configuration)\util_rehearsal/util.xml</XMLDocumentationFileName>
       <BrowseInformationFile>$(Platform)\$(Confguration)\util_rehearsal\</BrowseInformationFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
