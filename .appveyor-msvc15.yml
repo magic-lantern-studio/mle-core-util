@@ -30,7 +30,6 @@ build:
 # Custom script to create an .zip file containing the util.lib artifacts.
 after_build:
 - cmd: >-
-    cd %MLE_ROOT%;
     7z a mlutil.zip %MLE_ROOT%
 
 # Define artifacts to push to AppVeyor
