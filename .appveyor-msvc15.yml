@@ -13,6 +13,7 @@ image:
 # Set environmnet
 environment:
     MLE_ROOT: C:\opt\MagicLantern
+    MLE_HOME: C:\opt\MagicLantern
 
 # Build platform
 platform: x64
@@ -28,7 +29,7 @@ build:
 
 # Custom script to create an .zip file containing the util.lib artifacts.
 after_build:
-- sh: >-
+- cmd: >-
     cd %MLE_ROOT%;
     7z a mlutil.zip %MLE_ROOT%
 
