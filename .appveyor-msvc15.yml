@@ -1,0 +1,21 @@
+# Version format
+version: 1.0.{build}
+
+# Branches to build
+branches:
+  only:
+  - master
+
+# Build worker image
+image:
+  - Visual Studio 2017
+
+# Build platform
+platform: x64
+
+# Build Configuration
+configuration: Debug
+
+# MSBuild settings
+build:
+    project: util\win32\build\msvc15\mleutil.sln
