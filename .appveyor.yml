@@ -1,10 +1,14 @@
+# Version format
 version: 1.0.{build}
+
+# Branches to build
 branches:
   only:
   - master
+
+# Build worker image
 image:
   - Ubuntu2204
-  - Visual Studio 2017
 
 # Set environmnet
 environment:
@@ -25,17 +29,6 @@ build_script:
     printf "Installing Ubuntu 22.04 Linux library\n";
     sudo mkdir $MLE_ROOT;
     sudo MLE_ROOT=$MLE_ROOT make install
-
-- cmd: "
-    @echo Building Windows 10 library
-    FOR %%P IN (x64) DO (
-      FOR %%C IN (Debug,Release) DO (
-        msbuild
-          /p:Configuration=%%C
-          /p:Platform=%%P ...
-        || EXIT 1
-      )
-    )"
 
 # Custom script to create an .zip file containing the libmlutil artifacts.
 after_build:
