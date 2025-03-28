@@ -18,7 +18,9 @@ environment:
 platform: x64
 
 # Build Configuration
-configuration: Debug Release
+configuration:
+  - Debug
+  - Release
 
 # MSBuild settings
 build:
