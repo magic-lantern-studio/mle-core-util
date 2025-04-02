@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "debugUnitTest", "debugUnitTest.vcxproj", "{58E63006-7065-462D-B427-30444A8A42DF}"
 EndProject
@@ -14,8 +14,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "uniqueUnitTest", "uniqueUnitTest.vcxproj", "{FCBE1589-3141-4179-8309-49A35F4FA3BC}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "util", "util.vcxproj", "{7B0B79B0-303E-4E65-B553-91C9E8B4C447}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "util_rehearsal", "..\..\..\rehearsal\build\msvc15\util_rehearsal.vcxproj", "{6730A2FA-7DBA-4520-8E19-E190E0961486}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,12 +51,6 @@ Global
 		{7B0B79B0-303E-4E65-B553-91C9E8B4C447}.Release|Win32.Build.0 = Release|Win32
 		{7B0B79B0-303E-4E65-B553-91C9E8B4C447}.Release|x64.ActiveCfg = Release|x64
 		{7B0B79B0-303E-4E65-B553-91C9E8B4C447}.Release|x64.Build.0 = Release|x64
-		{6730A2FA-7DBA-4520-8E19-E190E0961486}.Debug|Win32.ActiveCfg = Debug|Win32
-		{6730A2FA-7DBA-4520-8E19-E190E0961486}.Debug|Win32.Build.0 = Debug|Win32
-		{6730A2FA-7DBA-4520-8E19-E190E0961486}.Debug|x64.ActiveCfg = Debug|x64
-		{6730A2FA-7DBA-4520-8E19-E190E0961486}.Release|Win32.ActiveCfg = Release|Win32
-		{6730A2FA-7DBA-4520-8E19-E190E0961486}.Release|Win32.Build.0 = Release|Win32
-		{6730A2FA-7DBA-4520-8E19-E190E0961486}.Release|x64.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
