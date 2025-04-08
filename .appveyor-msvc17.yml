@@ -46,12 +46,11 @@ image:
 # Set environmnet
 environment:
     MLE_ROOT: C:\opt\MagicLantern
-    MLE_HOME: C:\opt\MagicLantern
 
 # Build platform
 platform: x64
 
-# Build Configuration
+# Build Configurations
 configuration:
   - Debug
   - Release
@@ -63,8 +62,8 @@ build:
 # Custom script to create an .zip file containing the util.lib artifacts.
 after_build:
   - ps: |
-      if ($env:configuration -eq "Debug") {7z a mlutil-debug.zip $env:MLE_ROOT}
-      if ($env:configuration -eq "Release") {7z a mlutil-release.zip $env:MLE_ROOT}
+      if ($env:configuration -eq "Debug") {7z a mlutil-debug.zip $env:MLE_ROOT\*}
+      if ($env:configuration -eq "Release") {7z a mlutil-release.zip $env:MLE_ROOT\*}
 
 # Define artifacts to push to AppVeyor
 artifacts:
