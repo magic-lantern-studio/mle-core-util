@@ -63,10 +63,13 @@ build:
 # Custom script to create an .zip file containing the util.lib artifacts.
 after_build:
   - ps: |
-      if ($env:configuration -eq "Debug") {7z a mlutil-debug.zip %MLE_ROOT%}
-      if ($env:configuration -eq "Release") {7z a mlutil-release.zip %MLE_ROOT%}
+      if ($env:configuration -eq "Debug") {7z a mlutil-debug.zip $env:MLE_ROOT}
+      if ($env:configuration -eq "Release") {7z a mlutil-release.zip $env:MLE_ROOT}
 
 # Define artifacts to push to AppVeyor
 artifacts:
-- path: mlutil.zip
+- path: mlutil-debug.zip
+  name: mle-core-util-windows
+
+- path: mlutil-release.zip
   name: mle-core-util-windows
