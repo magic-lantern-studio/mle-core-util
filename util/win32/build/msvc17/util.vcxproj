@@ -170,15 +170,15 @@ xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
     </Bscmake>
     <PostBuildEvent>
       <Message>Install Library</Message>
-      <Command>mkdir $(MLE_HOME)\lib64\tools
-copy x64\Release\util\util.lib $(MLE_HOME)\lib64\tools\util.lib
-mkdir $(MLE_HOME)\lib64\rehearsal
-copy x64\Release\util\util.lib $(MLE_HOME)\lib64\rehearsal\util.lib
-mkdir $(MLE_HOME)\lib64\runtime\cdecl
-copy x64\Release\util\util.lib $(MLE_HOME)\lib64\runtime\cdecl\util.lib
-mkdir $(MLE_HOME)\include\mle
-xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
-xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
+      <Command>mkdir $(MLE_ROOT)\lib64\tools
+copy x64\Release\util\util.lib $(MLE_ROOT)\lib64\tools\util.lib
+mkdir $(MLE_ROOT)\lib64\rehearsal
+copy x64\Release\util\util.lib $(MLE_ROOT)\lib64\rehearsal\util.lib
+mkdir $(MLE_ROOT)\lib64\runtime\cdecl
+copy x64\Release\util\util.lib $(MLE_ROOT)\lib64\runtime\cdecl\util.lib
+mkdir $(MLE_ROOT)\include\mle
+xcopy /Y ..\..\..\common\include\mle\* $(MLE_ROOT)\include\mle
+xcopy /Y ..\..\include\mle\* $(MLE_ROOT)\include\mle
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -262,15 +262,15 @@ xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
     </Bscmake>
     <PostBuildEvent>
       <Message>Install Library</Message>
-      <Command>mkdir $(MLE_HOME)\lib64\tools
-copy x64\Debug\util\utild.lib $(MLE_HOME)\lib64\\tools\utild.lib
-mkdir $(MLE_HOME)\lib64\rehearsal
-copy x64\Debug\util\utild.lib $(MLE_HOME)\lib64\rehearsal\utild.lib
-mkdir $(MLE_HOME)\lib64\runtime\cdecl
-copy x64\Debug\util\utild.lib $(MLE_HOME)\lib64\runtime\cdecl\utild.lib
-mkdir $(MLE_HOME)\include\mle
-xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
-xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
+      <Command>mkdir $(MLE_ROOT)\lib64\tools
+copy x64\Debug\util\utild.lib $(MLE_ROOT)\lib64\\tools\utild.lib
+mkdir $(MLE_ROOT)\lib64\rehearsal
+copy x64\Debug\util\utild.lib $(MLE_ROOT)\lib64\rehearsal\utild.lib
+mkdir $(MLE_ROOT)\lib64\runtime\cdecl
+copy x64\Debug\util\utild.lib $(MLE_ROOT)\lib64\runtime\cdecl\utild.lib
+mkdir $(MLE_ROOT)\include\mle
+xcopy /Y ..\..\..\common\include\mle\* $(MLE_ROOT)\include\mle
+xcopy /Y ..\..\include\mle\* $(MLE_ROOT)\include\mle
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
