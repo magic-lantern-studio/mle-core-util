@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{7B0B79B0-303E-4E65-B553-91C9E8B4C447}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.20348.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -82,13 +82,13 @@
     <TargetName>utild</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <TargetName>utild</TargetName>
+    <TargetName>mlutild</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <TargetName>util</TargetName>
+    <TargetName>mlutil</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <TargetName>util</TargetName>
+    <TargetName>mlutil</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -114,7 +114,7 @@
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(Platform)\$(Configuration)\util\util.lib</OutputFile>
+      <OutputFile>$(Platform)\$(Configuration)\util\mlutil.lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -124,9 +124,9 @@
     <PostBuildEvent>
       <Message>Install Library</Message>
       <Command>mkdir $(MLE_HOME)\lib\tools
-copy win32\Release\util\util.lib $(MLE_HOME)\lib\tools\util.lib
+copy win32\Release\util\mlutil.lib $(MLE_HOME)\lib\tools\mlutil.lib
 mkdir $(MLE_HOME)\lib\runtime\cdecl
-copy win32\Release\util\util.lib $(MLE_HOME)\lib\runtime\cdecl\util.lib
+copy win32\Release\util\mlutil.lib $(MLE_HOME)\lib\runtime\cdecl\mlutil.lib
 mkdir $(MLE_HOME)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
 xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
@@ -161,7 +161,7 @@ xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(Platform)\$(Configuration)\util\util.lib</OutputFile>
+      <OutputFile>$(Platform)\$(Configuration)\util\mlutil.lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -171,11 +171,11 @@ xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
     <PostBuildEvent>
       <Message>Install Library</Message>
       <Command>mkdir $(MLE_ROOT)\lib64\tools
-copy x64\Release\util\util.lib $(MLE_ROOT)\lib64\tools\util.lib
+copy x64\Release\util\mlutil.lib $(MLE_ROOT)\lib64\tools\mlutil.lib
 mkdir $(MLE_ROOT)\lib64\rehearsal
-copy x64\Release\util\util.lib $(MLE_ROOT)\lib64\rehearsal\util.lib
+copy x64\Release\util\mlutil.lib $(MLE_ROOT)\lib64\rehearsal\mlutil.lib
 mkdir $(MLE_ROOT)\lib64\runtime\cdecl
-copy x64\Release\util\util.lib $(MLE_ROOT)\lib64\runtime\cdecl\util.lib
+copy x64\Release\util\mlutil.lib $(MLE_ROOT)\lib64\runtime\cdecl\mlutil.lib
 mkdir $(MLE_ROOT)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_ROOT)\include\mle
 xcopy /Y ..\..\include\mle\* $(MLE_ROOT)\include\mle
@@ -206,7 +206,7 @@ xcopy /Y ..\..\include\mle\* $(MLE_ROOT)\include\mle
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(Platform)\$(Configuration)\util\utild.lib</OutputFile>
+      <OutputFile>$(Platform)\$(Configuration)\util\mlutild.lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -216,9 +216,9 @@ xcopy /Y ..\..\include\mle\* $(MLE_ROOT)\include\mle
     <PostBuildEvent>
       <Message>Install Library</Message>
       <Command>mkdir $(MLE_HOME)\lib\tools
-copy win32\Debug\util\utild.lib $(MLE_HOME)\lib\tools\utild.lib
+copy win32\Debug\util\mlutild.lib $(MLE_HOME)\lib\tools\mlutild.lib
 mkdir $(MLE_HOME)\lib\runtime\cdecl
-copy win32\Debug\util\utild.lib $(MLE_HOME)\lib\runtime\cdecl\utild.lib
+copy win32\Debug\util\mlutild.lib $(MLE_HOME)\lib\runtime\cdecl\mlutild.lib
 mkdir $(MLE_HOME)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_HOME)\include\mle
 xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
@@ -253,7 +253,7 @@ xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(Platform)\$(Configuration)\util\utild.lib</OutputFile>
+      <OutputFile>$(Platform)\$(Configuration)\util\mlutild.lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -263,11 +263,11 @@ xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
     <PostBuildEvent>
       <Message>Install Library</Message>
       <Command>mkdir $(MLE_ROOT)\lib64\tools
-copy x64\Debug\util\utild.lib $(MLE_ROOT)\lib64\\tools\utild.lib
+copy x64\Debug\util\mlutild.lib $(MLE_ROOT)\lib64\\tools\mlutild.lib
 mkdir $(MLE_ROOT)\lib64\rehearsal
-copy x64\Debug\util\utild.lib $(MLE_ROOT)\lib64\rehearsal\utild.lib
+copy x64\Debug\util\mlutild.lib $(MLE_ROOT)\lib64\rehearsal\mlutild.lib
 mkdir $(MLE_ROOT)\lib64\runtime\cdecl
-copy x64\Debug\util\utild.lib $(MLE_ROOT)\lib64\runtime\cdecl\utild.lib
+copy x64\Debug\util\mlutild.lib $(MLE_ROOT)\lib64\runtime\cdecl\mlutild.lib
 mkdir $(MLE_ROOT)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_ROOT)\include\mle
 xcopy /Y ..\..\include\mle\* $(MLE_ROOT)\include\mle
