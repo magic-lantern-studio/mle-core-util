@@ -13,7 +13,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2024 Wizzer Works
+// Copyright (c) 2015-2025 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -71,9 +71,9 @@ MlPhysadr *mlCalloc(unsigned int, unsigned int);
 
 /* Include system header files. */
 #include <stdlib.h>
-#ifdef WIN32
+#ifdef _WINDOWS
 #include <memory.h>
-#endif /* WIN32 */
+#endif /* _WINDOWS */
 
 typedef void *MlPhysadr;
 

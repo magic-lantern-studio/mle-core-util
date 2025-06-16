@@ -7,17 +7,13 @@
  *  This file implemtns the Win32 interface of the cross platform path abstraction
  *  for file names and Uniform Resource Locators (URLs)
  *  It was ported from the Auteur Portability Toolkit from Wizzer Works.
- *
- *  @author Mark S. Millard
- *  @date July 10, 2003
- *  @version 0.13
  */
 
 // COPYRIGHT_BEGIN
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2018 Wizzer Works
+// Copyright (c) 2015-2025 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -228,9 +224,11 @@ MleWin32Path::setPlatformPath(const MlChar *platformPath)
     // platform specific path was parsed.
 
     MleMemoryManager::getManager()->resize((void **)&m_Path, strlen((char *)newPath) + 1);
-    strcpy((char *)m_Path, (char *)newPath);
+	strcpy((char *)m_Path, (char *)newPath);
+	//strcpy_s((char*)m_Path, (strlen((char*)newPath) + 1) * sizeof(char), (char*)newPath);
     MleMemoryManager::getManager()->resize((void **)&m_PlatformPath, strlen((char *)platformPath) + 1);
     strcpy((char *)m_PlatformPath, (char *)platformPath);
+	//strcpy_s((char*)m_PlatformPath, (strlen((char*)platformPath) + 1) * sizeof(char), (char*)platformPath);
 
     return MLE_S_OK;
 }

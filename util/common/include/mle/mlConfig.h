@@ -12,7 +12,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2024 Wizzer Works
+// Copyright (c) 2015-2025 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -48,7 +48,7 @@
 #if defined(__linux__) || defined(__APPLE__)
 #define MleDefaultHomePath "/usr/WizzerWorks/MagicLantern"
 #else
-#if defined(WIN32)
+#if defined(_WINDOWS)
 #define MleDefaultHomePath "C:/Program Files/Wizzer Works/MagicLantern"
 #else
 Unknown Platform Configuration!!!
@@ -74,7 +74,7 @@ Unknown Platform Configuration!!!
 #define MLE_PLAYER_PATH \
 	(getenv("MLE_PLAYER") ? getenv("MLE_PLAYER") : "$MLE_ROOT/bin/mleplay")
 #else
-#if defined(WIN32)
+#if defined(_WINDOWS)
 #define MLE_PLAYER_PATH \
 	(getenv("MLE_PLAYER") ? getenv("MLE_PLAYER") : "C:/Program Files/Wizzer Works/MagicLantern/bin/mleplay")
 #endif

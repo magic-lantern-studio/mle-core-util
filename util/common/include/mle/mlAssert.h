@@ -20,7 +20,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2024 Wizzer Works
+// Copyright (c) 2015-2054 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -55,7 +55,7 @@
 
 #if defined(MLE_DEBUG)
 
-#if defined(WIN32) || defined (__linux__) || defined(__APPLE__)
+#if defined(_WINDOWS) || defined (__linux__) || defined(__APPLE__)
 #include <stdio.h>
 #include <stdlib.h>
 #else /* Unknown platform. */
@@ -76,7 +76,7 @@ error...undefined platform
 
 #if defined(MLE_DEBUG)
 
-#if defined(WIN32) || defined(__linux__) || defined(__APPLE__)
+#if defined(_WINDOWS) || defined(__linux__) || defined(__APPLE__)
 /**
  * Assert macro for testing pre-conditions in function implementations
  * - turned on if MLE_DEBUG flag is set.
@@ -94,7 +94,7 @@ error...undefined platform
         }                                                                     \
     }
 #else /* Unknown platform. */
-error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
+error...undefined platform (must define one of __linux__, __APPLE__, _WINDOWS)
 #endif
 #else /* ! MLE_DEBUG */
 
@@ -105,7 +105,7 @@ error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
 
 #if defined(MLE_DEBUG)
 
-#if defined(WIN32) || defined(__linux__) || defined(__APPLE__)
+#if defined(_WINDOWS) || defined(__linux__) || defined(__APPLE__)
 /**
  * Assert macro for testing pre-conditions in function implementations
  * - turned off unless MLE_DEBUG flag is set.
@@ -124,7 +124,7 @@ error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
         }                                                                     \
     }
 #else
-error...undefined platform (must define one of__linux__, __APPLE__, WIN32)
+error...undefined platform (must define one of__linux__, __APPLE__, _WINDOWS)
 #endif
 #else /* ! MLE_DEBUG */
 
@@ -135,7 +135,7 @@ error...undefined platform (must define one of__linux__, __APPLE__, WIN32)
 
 #if defined(MLE_DEBUG)
 
-#if defined(WIN32) || defined(__linux__) || defined(__APPLE__)
+#if defined(_WINDOWS) || defined(__linux__) || defined(__APPLE__)
 /**
  * Use the following when calling methods or functions that are
  * not absolutely required to succeed.
@@ -165,7 +165,7 @@ error...undefined platform (must define one of__linux__, __APPLE__, WIN32)
 
 #if defined(MLE_DEBUG)
 
-#if defined(WIN32) || defined(__linux__) || defined(__APPLE__)
+#if defined(_WINDOWS) || defined(__linux__) || defined(__APPLE__)
 
 /**
  * Use the following when calling methods or functions that MUST
@@ -198,7 +198,7 @@ error...undefined platform (must define one of__linux__, __APPLE__, WIN32)
 #if defined(MLE_DEBUG)
 
 
-#if defined(WIN32) || defined(__linux__) || defined(__APPLE__)
+#if defined(_WINDOWS) || defined(__linux__) || defined(__APPLE__)
 /**
  * Use this macro when calling functions and methods that should throw an
  * exception if they don't succeed.
@@ -275,7 +275,7 @@ error...undefined platform (must define one of__linux__, __APPLE__, WIN32)
 
 /**** COMPATIBILITY MACROS ****/
 
-#if defined(WIN32)
+#if defined(_WINDOWS)
 
 /**
  * A macro for handling exception throwing on different platforms.

@@ -12,7 +12,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2024 Wizzer Works
+// Copyright (c) 2015-2025 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -54,12 +54,12 @@
 #if defined(__linux__) || defined(__APPLE__)
 #include <dlfcn.h>
 #endif /* __linux__ */
-#if defined(WIN32)
+#if defined(_WINDOWS)
 #include <windows.h>
 #include <stdio.h>
 #include <process.h>
 #include "psapi.h"
-#endif /* WIN32 */
+#endif /* _WINDOWS */
 
 // Include Magic Lantern header files.
 #include "mle/mlAssert.h"
@@ -75,9 +75,9 @@ static char *dso_path[] = {
 #if defined(__linux__) || defined(__APPLE__)
 	(char *)"$MLE_ROOT/lib/",
 #endif /* __linux__ */
-#if defined(WIN32)
+#if defined(_WINDOWS)
 	(char *)"C:/Program Files/WizzerWorks/MagicLantern/lib/",
-#endif /* WIN32 */
+#endif /* _WINDOWS */
 	NULL
 };
 
@@ -105,7 +105,7 @@ void (*MleDSOLoader::findInitClass(const char *classname,void *handle,const char
 			(strlen(classname) + strlen(prefix)),prefix,classname);
 		initClass = (void (*)(void))dlsym(handle,dso_func);
 #endif /* __linux__ */
-#if defined(WIN32)
+#if defined(_WINDOWS)
 		typedef VOID (*INITCLASSFUNC)(VOID); 
 
 		INITCLASSFUNC procAddress;
@@ -113,7 +113,7 @@ void (*MleDSOLoader::findInitClass(const char *classname,void *handle,const char
 		procAddress = (INITCLASSFUNC) GetProcAddress((HINSTANCE)handle, dso_func);
 
 		initClass = procAddress;
-#endif /* WIN32 */
+#endif /* _WINDOWS */
 	}
 
 	// If that doesn't work, try without the prefix.
@@ -124,7 +124,7 @@ void (*MleDSOLoader::findInitClass(const char *classname,void *handle,const char
 			strlen(classname),classname);
 		initClass = (void (*)(void))dlsym(handle,dso_func);
 #endif /* __linux__ */
-#if defined(WIN32)
+#if defined(_WINDOWS)
 		typedef VOID (*INITCLASSFUNC)(VOID); 
 
 		INITCLASSFUNC procAddress;
@@ -132,7 +132,7 @@ void (*MleDSOLoader::findInitClass(const char *classname,void *handle,const char
 		procAddress = (INITCLASSFUNC) GetProcAddress((HINSTANCE)handle, dso_func);
 
 		initClass = procAddress;
-#endif /* WIN32 */
+#endif /* _WINDOWS */
 	}
 
 	// Return the function pointer.
@@ -161,7 +161,7 @@ void (*MleDSOLoader::findInitModule(void *handle))(void *)
 	initModule = (void (*)(void))dlsym(handle,dso_func);
 #endif /* 0 */
 #endif /* __linux__ */
-#if defined(WIN32)
+#if defined(_WINDOWS)
 	typedef VOID (*INITMODULEFUNC)(VOID *); 
 
 	INITMODULEFUNC procAddress;
@@ -169,13 +169,13 @@ void (*MleDSOLoader::findInitModule(void *handle))(void *)
 	procAddress = (INITMODULEFUNC) GetProcAddress((HINSTANCE)handle, dso_func);
 
 	initModule = procAddress;
-#endif /* WIN32 */
+#endif /* _WINDOWS */
 
 	// Return the function pointer.
 	return initModule;
 }
 
-#if defined(WIN32)
+#if defined(_WINDOWS)
 #if _MSC_VER >= 1300    // for VC 7.0
   // from ATL 7.0 sources
   #ifndef _delayimp_h
@@ -263,7 +263,7 @@ int GetProcessModules(HMODULE *hMods, unsigned int size)
 
 	return cbNeeded;
 }
-#endif /* WIN32 */
+#endif /* _WINDOWS */
 
 
 MleDSOLoader::MleDSOLoader(void)
@@ -338,9 +338,9 @@ MleDSOLoader::loadFile(const char *filename,char **pathlist)
 		char *expand = mlFilenameExpand(dso_file);
 
 		// Open the DSO.
-#ifdef WIN32
+#ifdef _WINDOWS
 		handle = LoadLibrary(expand);
-#endif /* WIN32 */
+#endif /* _WINDOWS */
 #if defined(__linux__) || defined(__APPLE__)
 		handle = dlopen(expand,RTLD_LAZY);
 #endif /* __linux__ */
@@ -415,7 +415,7 @@ MleDSOLoader::loadClass(const char *classname,const char *prefix)
 		dsoEntry = dsoEntry->next;
 	}
 
-#if defined(WIN32)
+#if defined(_WINDOWS)
 	// Next, attempt to find the class in all known modules.
 	HMODULE hMods[1024];
 	int cbNeeded = GetProcessModules(hMods, sizeof(hMods));
@@ -432,7 +432,7 @@ MleDSOLoader::loadClass(const char *classname,const char *prefix)
 		    return 0;
 		}
 	}
-#endif /* WIN32 */
+#endif /* _WINDOWS */
 
 	// Else attempt to load a file base on the class name.
 	char dso_file[256];
@@ -442,13 +442,13 @@ MleDSOLoader::loadClass(const char *classname,const char *prefix)
 #if defined(__APPLE__)
     sprintf(dso_file,"%s.dylib",classname);
 #endif /* __APPLE__ */
-#if defined(WIN32)
+#if defined(_WINDOWS)
 #ifdef MLE_DEBUG
 	sprintf(dso_file,"%sd.dll",classname);
 #else
 	sprintf(dso_file,"%s.dll",classname);
 #endif /* ! MLE_DEBUG */
-#endif /* WIN32 */
+#endif /* _WINDOWS */
 	handle = loadFile(dso_file,m_pathlist);
 
 #if defined(__linux__)
@@ -469,10 +469,10 @@ MleDSOLoader::loadClass(const char *classname,const char *prefix)
 
 	// If we haven't found it yet, hope it's in the current image.
 	if ( handle == NULL )
-#if defined(WIN32)
+#if defined(_WINDOWS)
 	    // Attempt to use the current module.
 	    handle = GetCurrentModule();
-#endif /* WIN32 */
+#endif /* _WINDOWS */
 #if defined(__linux__) || defined(__APPLE__)
 	    handle = dlopen(NULL,RTLD_NOW);
 #endif /* __linux__ */

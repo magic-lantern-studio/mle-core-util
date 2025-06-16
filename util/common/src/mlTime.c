@@ -9,7 +9,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2024 Wizzer Works
+// Copyright (c) 2024-2025 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -58,16 +58,16 @@ char *mlGetUTC()
 
     struct tm tm;
     memset(&tm, 0, sizeof(tm));
-#if defined(WIN32)
+#if defined(_WINDOWS)
 	assert(gmtime_s(&tm, &t) == 0);
 #else
     assert(gmtime_r(&t, &tm) != NULL); // error handling
-#endif /* ! WIN32 */
+#endif /* ! _WINDOWS */
 
     retValue = mlMalloc(72);
     assert(retValue != NULL); // error handling
 
-#if defined(WIN32)
+#if defined(_WINDOWS)
 	sprintf_s(retValue, 72, "%04d-%02d-%02dT%02d:%02d:%02d",
 		1900 + tm.tm_year, tm.tm_mon + 1, tm.tm_mday,
 		tm.tm_hour, tm.tm_min, tm.tm_sec);
@@ -75,7 +75,7 @@ char *mlGetUTC()
     sprintf(retValue, "%04d-%02d-%02dT%02d:%02d:%02d",
             1900+tm.tm_year, tm.tm_mon+1, tm.tm_mday,
             tm.tm_hour, tm.tm_min, tm.tm_sec);
-#endif /* ! WIN32 */
+#endif /* ! _WINDOWS */
 
     return retValue;
 }

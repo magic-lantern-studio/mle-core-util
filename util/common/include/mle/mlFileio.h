@@ -13,7 +13,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2024 Wizzer Works
+// Copyright (c) 2015-2025 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -68,7 +68,7 @@
 #endif /* __linux__ */
 
 
-#ifdef WIN32
+#ifdef _WINDOWS
 
 /* Include system header files. */
 #include <io.h>
@@ -103,12 +103,12 @@
 #define S_IREAD    _S_IREAD
 #define S_IWRITE   _S_IWRITE
 
-#endif /* WIN32 */
+#endif /* _WINDOWS */
 
 
 /*** L E V E L  2   F I L E   I / O ***/
 
-#if defined(WIN32) || defined(psx) || defined(__linux__) || defined(__APPLE__)
+#if defined(_WINDOWS) || defined(psx) || defined(__linux__) || defined(__APPLE__)
 
 /* Include syste header files. */
 #include <stdio.h>
@@ -147,7 +147,7 @@ int unlink(char *path);
 #define LITTLE_ENDIAN   1234    /**< least-significant byte first */
 #define BIG_ENDIAN      4321    /**< most-significant byte first */
 
-#if defined(WIN32)
+#if defined(_WINDOWS)
 #define BYTE_ORDER LITTLE_ENDIAN
 #else
 #define BYTE_ORDER BIG_ENDIAN

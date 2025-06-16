@@ -13,7 +13,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2024 Wizzer Works
+// Copyright (c) 2015-2025 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -65,7 +65,7 @@
 typedef unsigned char       ubyte_t;     /**< 8-bit unsigned type. */
 typedef unsigned char       uchar_t;     /**< 8-bit unsigned type. */
 typedef unsigned short      ushort_t;    /**< 16-bit unsigned type. */
-#if defined(WIN32)
+#if defined(_WINDOWS)
 typedef unsigned __int32    uint_t;      /**< 32-bit unsigned type. */
 typedef unsigned __int64    uintd_t;     /**< 64-bit unsigned type. */
 #endif
@@ -78,7 +78,7 @@ typedef u_int64_t           uintd_t;     /**< 64-bit unsigned type. */
 typedef signed char         byte_t;      /**< 8-bit signed type. */
 typedef signed char         char_t;
 typedef signed short        short_t;     /**< 16-bit signed type. */
-#if defined(WIN32)
+#if defined(_WINDOWS)
 typedef signed __int32      int_t;       /**< 32-bit signed type. */
 typedef signed __int64      intd_t;      /**< 64-bit signed type. */
 #endif
@@ -165,10 +165,10 @@ typedef double              double_t;    /**< double precision floating-point ty
 #endif
 #endif /* __linux __ */
 
-#if defined(WIN32)
+#if defined(_WINDOWS)
 // 32-bit "native" integers
 #define _ML_SZLONG 32
-#endif /* WIN32 */
+#endif /* _WINDOWS */
 
 #if defined(__APPLE__)
 // 64-bit "native" integers

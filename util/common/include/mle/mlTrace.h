@@ -20,7 +20,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2024 Wizzer Works
+// Copyright (c) 2024-2925 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -55,7 +55,7 @@
 
 #if defined(MLE_DEBUG)
 
-#if defined(WIN32) || defined (__linux__) || defined(__APPLE__)
+#if defined(_WINDOWS) || defined (__linux__) || defined(__APPLE__)
 #include <stdio.h>
 #include <stdlib.h>
 #else /* Unknown platform. */
@@ -73,7 +73,7 @@ error...undefined platform
 
 #if defined(MLE_DEBUG)
 
-#if defined(WIN32)|| defined(__linux__) || defined(__APPLE__)
+#if defined(_WINDOWS)|| defined(__linux__) || defined(__APPLE__)
 /**
  * Trace macro for displaying informative messages.
  * - turned on if MLE_DEBUG flag is set.
@@ -89,7 +89,7 @@ error...undefined platform
         mlFree(utc);                                                          \
     }
 #else /* Unknown platform. */
-error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
+error...undefined platform (must define one of __linux__, __APPLE__, _WINDOWS)
 #endif
 #else /* ! MLE_DEBUG */
 
@@ -99,7 +99,7 @@ error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
 
 #if defined(MLE_DEBUG)
 
-#if defined(WIN32) || defined(__linux__) || defined(__APPLE__)
+#if defined(_WINDOWS) || defined(__linux__) || defined(__APPLE__)
 /**
  * Trace macro for displaying warning messages in debug mode.
  * - turned on if MLE_DEBUG flag is set.
@@ -115,7 +115,7 @@ error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
         mlFree(utc);                                                          \
     }
 #else /* Unknown platform. */
-error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
+error...undefined platform (must define one of __linux__, __APPLE__, _WINDOWS)
 #endif
 #else /* ! MLE_DEBUG */
 
@@ -125,7 +125,7 @@ error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
 
 #if defined(MLE_DEBUG)
 
-#if defined(WIN32)|| defined(__linux__) || defined(__APPLE__)
+#if defined(_WINDOWS)|| defined(__linux__) || defined(__APPLE__)
 /**
  * Trace macro for displaying error messages in debug mode.
  * - turned on if MLE_DEBUG flag is set.
@@ -141,7 +141,7 @@ error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
         mlFree(utc);                                                           \
     }
 #else /* Unknown platform. */
-error...undefined platform (must define one of __linux__, __APPLE__, WIN32)
+error...undefined platform (must define one of __linux__, __APPLE__, _WINDOWS)
 #endif
 #else /* ! MLE_DEBUG */
 

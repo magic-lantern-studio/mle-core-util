@@ -11,7 +11,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2024 Wizzer Works
+// Copyright (c) 2015-2025 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -43,13 +43,13 @@
 /* Include system header files. */
 #include <stdio.h>
 #include <stdarg.h>
-#ifdef WIN32
+#ifdef _WINDOWS
 #include <string.h>
 #include <process.h>
 #else
 #include <string.h>
 #include <strings.h>
-#endif /* WIN32 */
+#endif /* _WINDOWS */
 #include <time.h>
 #include <fcntl.h>
 #include <ctype.h>
@@ -84,7 +84,7 @@ _mlLogFileInit(
     MLE_ASSERT(tag != NULL);
 
     logFile->m_isOpen = FALSE;
-#ifdef WIN32
+#ifdef _WINDOWS
     logFile->m_directory = (char *)_strdup(defaultDirectory);
     logFile->m_category = (char *)_strdup(category);
     logFile->m_name = (char *)_strdup(name);
@@ -102,7 +102,7 @@ _mlLogFileInit(
     else
         logFile->m_tag = (char *)strdup("??");
     logFile->m_pid = getpid();
-#endif /* WIN32 */
+#endif /* _WINDOWS */
 }
 
 
@@ -169,7 +169,7 @@ mlLogFileSetDirectory(MleLogFileP *logFile,const char *dir)
 
     if (logFile->m_directory)
         mlFree(logFile->m_directory);
-#ifdef WIN32
+#ifdef _WINDOWS
     logFile->m_directory = (char *)_strdup(dir);
 #else
     logFile->m_directory = (char *)strdup(dir);
@@ -185,7 +185,7 @@ mlLogFileSetTag(MleLogFileP *logFile,const char *tag)
 
     if (logFile->m_tag != NULL)
 	mlFree(logFile->m_tag);
-#ifdef WIN32
+#ifdef _WINDOWS
     logFile->m_tag = (char *)_strdup(tag);
 #else
     logFile->m_tag = (char *)strdup(tag);
@@ -198,11 +198,11 @@ mlLogFileOpen(MleLogFileP *logFile)
 {
     /* Declare local variables. */
     char *fileName;
-#ifdef WIN32
+#ifdef _WINDOWS
     int mode = _umask(0);
 #else
     mode_t mode = umask(0);
-#endif /* WIN32 */
+#endif /* _WINDOWS */
     MlBoolean retValue = TRUE;
 
     MLE_ASSERT(logFile != NULL);
@@ -228,11 +228,11 @@ mlLogFileOpen(MleLogFileP *logFile)
             return(FALSE);
     }
 
-#ifdef WIN32
+#ifdef _WINDOWS
     _umask(mode);
 #else
     umask(mode);
-#endif /* WIN32 */
+#endif /* _WINDOWS */
     return(retValue);
 }
 

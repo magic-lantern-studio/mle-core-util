@@ -12,7 +12,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2024 Wizzer Works
+// Copyright (c) 2015-2025 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -64,11 +64,11 @@ typedef struct _MleLogFileP
     char       *m_directory; /**< Directory where log file is created/opened. */
     char       *m_category;  /**< Category/class of log item. */
     int         m_fd;        /**< File descriptor for log file. */
-#if defined(WIN32)
+#if defined(_WINDOWS)
     int         m_pid;       /**< Process id which is logging file. */
 #else
     pid_t       m_pid;       /**< Process id which is logging file. */
-#endif /* WIN32 */
+#endif /* _WINDOWS */
 } MleLogFileP;
 
 

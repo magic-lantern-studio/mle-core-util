@@ -33,7 +33,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2024 Wizzer Works
+// Copyright (c) 2015-2025 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -66,11 +66,11 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
-#ifndef WIN32
+#ifndef _WINDOWS
 #include <unistd.h>
 #include <strings.h>
 #include <pwd.h>
-#endif /* ! WIN32 */
+#endif /* ! _WINDOWS */
 #include <time.h>
 
 // Include Magic Lantern header files.
@@ -153,7 +153,7 @@ mlFilenameExpand(const char *inName)
     VStr *vstr;
 
     if (inName == NULL) {
-#if defined(WIN32)
+#if defined(_WINDOWS)
         return _strdup("");
 #else
         return strdup("");
@@ -167,7 +167,7 @@ mlFilenameExpand(const char *inName)
     if (*inName != TILDE &&
         strchr(inName, DOLLAR) == NULL &&
         strchr(inName, PERCENT) == NULL ) {
-#if defined(WIN32)
+#if defined(_WINDOWS)
         return _strdup(inName);
 #else
         return strdup(inName);
@@ -274,7 +274,7 @@ mlFilenameExpand(const char *inName)
     return newPtr;
 }
 
-#ifdef WIN32
+#ifdef _WINDOWS
 
 /*
  * XXX - may want to add password features in getHomeOfMe() and getHomeOfName()
@@ -287,7 +287,7 @@ getHomeOfMe()
     char *home;
  
     if ((home = getenv("HOME")) != NULL) {
-#if defined(WIN32)
+#if defined(_WINDOWS)
         return _strdup(home);
 #else
         return strdup(home);
@@ -310,7 +310,7 @@ getHomeOfName(char *name)
     return home;
 }
 
-#else /* ! WIN32 */
+#else /* ! _WINDOWS */
 
 static char *
 getHomeOfMe(void)
@@ -346,7 +346,7 @@ getHomeOfName(char *name)
     return home;
 }
 
-#endif /* WIN32 */
+#endif /* _WINDOWS */
 
 
 /*
