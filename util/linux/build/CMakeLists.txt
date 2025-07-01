@@ -35,7 +35,7 @@
 cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
 
 # Project name and enable C++ support
-project(mlert VERSION 1.0.0 LANGUAGES CXX)
+project(mlert VERSION 1.0.0 LANGUAGES C CXX)
 
 # Require C++17
 set(CMAKE_CXX_STANDARD 17)
@@ -47,6 +47,9 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 # Specify Debug postfix
 set(CMAKE_DEBUG_POSTFIX "d")
+
+# Turn on verbose mode.
+set(CMAKE_VERBOSE_MAKEFILE ON)
 
 # Fail early if one of the required packages cannot be found
 find_package(PkgConfig REQUIRED)
