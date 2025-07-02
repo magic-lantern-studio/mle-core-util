@@ -56,7 +56,6 @@
  */
 class MLE_UTIL_API MlePath
 {
-
 	public:
 
 		/**

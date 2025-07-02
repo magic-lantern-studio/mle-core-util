@@ -399,3 +399,29 @@ MleWin32Path::isAbsolutePath()
 
 	return isAbsolute;
 }
+
+void*
+MleWin32Path::operator new(size_t tSize)
+{
+	void* p = mlMalloc(tSize);
+	return p;
+}
+
+void*
+MleWin32Path::operator new[](size_t tSize)
+{
+	void* p = mlMalloc(tSize);
+	return p;
+}
+
+void
+MleWin32Path::operator delete(void* p)
+{
+	mlFree(p);
+}
+
+void
+MleWin32Path::operator delete[](void* p)
+{
+	mlFree(p);
+}

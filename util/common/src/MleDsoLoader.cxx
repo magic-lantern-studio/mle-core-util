@@ -500,3 +500,29 @@ MleDSOLoader::loadClass(const char *classname,const char *prefix)
 
 	return 0;
 }
+
+void*
+MleDSOLoader::operator new(size_t tSize)
+{
+	void* p = mlMalloc(tSize);
+	return p;
+}
+
+void*
+MleDSOLoader::operator new[](size_t tSize)
+{
+	void* p = mlMalloc(tSize);
+	return p;
+}
+
+void
+MleDSOLoader::operator delete(void* p)
+{
+	mlFree(p);
+}
+
+void
+MleDSOLoader::operator delete[](void* p)
+{
+	mlFree(p);
+}

@@ -73,15 +73,25 @@ MleMemoryManager::getManager()
 void *
 MleMemoryManager::operator new(size_t s)
 {
-//#undef malloc
     return mlMalloc(s);
 }
-
 
 void
 MleMemoryManager::operator delete(void *ptr) 
 {
-//#undef free
+    mlFree(ptr);
+}
+
+void*
+MleMemoryManager::operator new[](size_t tSize)
+{
+    void* p = mlMalloc(tSize);
+    return p;
+}
+
+void
+MleMemoryManager::operator delete[](void* ptr)
+{
     mlFree(ptr);
 }
 

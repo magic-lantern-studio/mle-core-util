@@ -5,17 +5,13 @@
  *  @ingroup MleCore
  *
  *  Win32 implementation of platform specific memory manager code.
- *
- *  @author Mark S. Millard
- *  @date July 10, 2003
- *  @version 0.13
  */
 
 // COPYRIGHT_BEGIN
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2018 Wizzer Works
+// Copyright (c) 2015-2025 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -70,7 +66,6 @@ MleMemoryManager::platformCleanup(void *&cookie)
 void *
 MleMemoryManager::platformAllocate(void * /* cookie */, MlUInt size)
 {
-//#undef mlMalloc
     return mlMalloc(size);
 }
 
@@ -78,7 +73,6 @@ MleMemoryManager::platformAllocate(void * /* cookie */, MlUInt size)
 void *
 MleMemoryManager::platformResize(void * /* cookie */, void *memory, MlUInt newSize)
 {
-//#undef mlRealloc
     return mlRealloc(memory, newSize);
 }
 
@@ -86,7 +80,6 @@ MleMemoryManager::platformResize(void * /* cookie */, void *memory, MlUInt newSi
 MlResult
 MleMemoryManager::platformRelease(void * /* cookie */, void *memory)
 {
-//#undef mlFree
     mlFree(memory);
 
     return MLE_S_OK;
