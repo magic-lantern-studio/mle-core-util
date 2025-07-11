@@ -188,6 +188,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -753,12 +761,12 @@
             }
             "{994432C3-9487-495D-8656-3E829A8DBDDE}:_694E1F17796E492696637AFFE01C30AB"
             {
-            "DefaultLocation" = "8:[TARGETDIR]"
+            "DefaultLocation" = "8:[WindowsVolume]"
             "Name" = "8:MagicLantern"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Property" = "8:NEWPROPERTY1"
+            "Property" = "8:MLEROOT"
                 "Folders"
                 {
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_6BE396EA1B0646A0AE81AE8D3BE3D826"
@@ -880,7 +888,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:mlutild"
         "ProductCode" = "8:{31E4A29B-4A80-4601-86E6-40E667EB6CD1}"
-        "PackageCode" = "8:{9FC36DCD-6556-4C46-93C4-C811DBB66E01}"
+        "PackageCode" = "8:{E4440E7D-28AC-4AA3-AC27-B1B1388F8B17}"
         "UpgradeCode" = "8:{146AF71A-7F4D-4E36-ADBE-68844A06FD7E}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"

@@ -758,12 +758,12 @@
         {
             "{994432C3-9487-495D-8656-3E829A8DBDDE}:_00FB48615E5D4A5AA2B6666F26EA78DB"
             {
-            "DefaultLocation" = "8:[TARGETDIR]"
+            "DefaultLocation" = "8:[WindowsVolume]"
             "Name" = "8:MagicLantern"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
-            "Property" = "8:NEWPROPERTY1"
+            "Property" = "8:MLEROOT"
                 "Folders"
                 {
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_A38050F65FBA4E68847376717DBD4EAC"
@@ -896,7 +896,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:mlutil"
         "ProductCode" = "8:{CD0AD6F1-BDA1-4B79-88AE-4BFBA4C56A41}"
-        "PackageCode" = "8:{63F1169E-4EC9-455A-9A07-BDEFB5FF3FF8}"
+        "PackageCode" = "8:{C9AF2A69-8CF9-4BD3-9C5B-A174FDED04AE}"
         "UpgradeCode" = "8:{A889A89A-64A6-4BA5-BF72-80FDFE2F0DC8}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
