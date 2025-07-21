@@ -758,7 +758,7 @@
         {
             "{994432C3-9487-495D-8656-3E829A8DBDDE}:_00FB48615E5D4A5AA2B6666F26EA78DB"
             {
-            "DefaultLocation" = "8:[WindowsVolume]"
+            "DefaultLocation" = "8:[TARGETDIR]"
             "Name" = "8:MagicLantern"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
