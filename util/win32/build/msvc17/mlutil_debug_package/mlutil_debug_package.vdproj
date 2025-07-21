@@ -769,7 +769,7 @@
             }
             "{994432C3-9487-495D-8656-3E829A8DBDDE}:_694E1F17796E492696637AFFE01C30AB"
             {
-            "DefaultLocation" = "8:[WindowsVolume]"
+            "DefaultLocation" = "8:[TARGETDIR]"
             "Name" = "8:MagicLantern"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -911,7 +911,7 @@
         "Subject" = "8:"
         "ARPCONTACT" = "8:mark.s.millard@gmail.com"
         "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:"
+        "ARPCOMMENTS" = "8:Magic Lantern Utility Debug Library"
         "ARPURLINFOABOUT" = "8:www.wizzerworks.com"
         "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
