@@ -57,6 +57,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_2CE650A3D6B5405490E40C020455E817"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_32C3148F74FC472A8B27504CC09EBDAF"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -117,7 +123,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_7FEBD30424284849BD5FDFC643100F58"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_883F415240354B359B8AB2DD59B9BEDB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8F75E45FFF004234B0E273B72BFAF467"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -390,6 +408,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2CE650A3D6B5405490E40C020455E817"
+            {
+            "SourcePath" = "8:..\\x64\\Debug\\util\\mlutild.lib"
+            "TargetName" = "8:mlutild.lib"
+            "Tag" = "8:"
+            "Folder" = "8:_CC23838DCD29476BB851A56EFB92C011"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_32C3148F74FC472A8B27504CC09EBDAF"
             {
             "SourcePath" = "8:..\\..\\..\\..\\common\\include\\mle\\mlToken.h"
@@ -590,12 +628,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7FEBD30424284849BD5FDFC643100F58"
+            {
+            "SourcePath" = "8:..\\x64\\Debug\\util\\mlutild.lib"
+            "TargetName" = "8:mlutild.lib"
+            "Tag" = "8:"
+            "Folder" = "8:_493B7F0D35C34C07BBD183CD133A5EA3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_883F415240354B359B8AB2DD59B9BEDB"
             {
             "SourcePath" = "8:..\\..\\..\\..\\common\\include\\mle\\mlLogFile.h"
             "TargetName" = "8:mlLogFile.h"
             "Tag" = "8:"
             "Folder" = "8:_C5464C48228144D5B28B74744FA0A7E4"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8F75E45FFF004234B0E273B72BFAF467"
+            {
+            "SourcePath" = "8:..\\x64\\Debug\\util\\mlutild.pdb"
+            "TargetName" = "8:mlutild.pdb"
+            "Tag" = "8:"
+            "Folder" = "8:_E5075293A34E415091D5CA2D504B5EDF"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -909,7 +987,7 @@
         "ARPHELPLINK" = "8:"
         "Title" = "8:Utility Debug Library"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:mark.s.millard@gmail.com"
+        "ARPCONTACT" = "8:msm@wizzerworks.com"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Magic Lantern Utility Debug Library"
         "ARPURLINFOABOUT" = "8:www.wizzerworks.com"
@@ -1415,90 +1493,6 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_4AE46F5EFC124D818B65F4ABCE8F8F48"
-            {
-            "SourcePath" = "8:"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_493B7F0D35C34C07BBD183CD133A5EA3"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:Debug|x64"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{7B0B79B0-303E-4E65-B553-91C9E8B4C447}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D07AE0EC20D54559A193B0E08271D451"
-            {
-            "SourcePath" = "8:"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_CC23838DCD29476BB851A56EFB92C011"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:Debug|x64"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{7B0B79B0-303E-4E65-B553-91C9E8B4C447}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_E8E1C70FA25C4EF59A5141F3633F6743"
-            {
-            "SourcePath" = "8:"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_E5075293A34E415091D5CA2D504B5EDF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:Debug|x64"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{7B0B79B0-303E-4E65-B553-91C9E8B4C447}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
         }
     }
 }
