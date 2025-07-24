@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_36C82E14DB37490EBB65EB68CA1B75F3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3A48019856744433B64FACB5D5E65E72"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -99,6 +105,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_81CE616783684BFAA3CE86A8C0260211"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_82D50F19253745C4A060651C2CCE23EB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -136,6 +148,12 @@
         "Entry"
         {
         "MsmKey" = "8:_C6009BF5FC1C4543AA9902589A9417F9"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C62601A101EE4D0AA561EDD009968E3E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -296,6 +314,26 @@
             "TargetName" = "8:mlTypes.h"
             "Tag" = "8:"
             "Folder" = "8:_41D5E2E3E70849D18067E1B5C6A83820"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_36C82E14DB37490EBB65EB68CA1B75F3"
+            {
+            "SourcePath" = "8:..\\x64\\Release\\util\\mlutil.lib"
+            "TargetName" = "8:mlutil.lib"
+            "Tag" = "8:"
+            "Folder" = "8:_D13D0B69B7BE4DEB8327B780A6197DA5"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -530,6 +568,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_81CE616783684BFAA3CE86A8C0260211"
+            {
+            "SourcePath" = "8:..\\x64\\Release\\util\\mlutil.lib"
+            "TargetName" = "8:mlutil.lib"
+            "Tag" = "8:"
+            "Folder" = "8:_E9B90D5D9D6A429FB7829E2B8AD0425E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_82D50F19253745C4A060651C2CCE23EB"
             {
             "SourcePath" = "8:..\\..\\..\\..\\common\\include\\mle\\mlMalloc.h"
@@ -670,6 +728,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C62601A101EE4D0AA561EDD009968E3E"
+            {
+            "SourcePath" = "8:..\\x64\\Release\\util\\mlutil.lib"
+            "TargetName" = "8:mlutil.lib"
+            "Tag" = "8:"
+            "Folder" = "8:_1A9A063535E2457F80876B87CFA4EDD9"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EE0F0B9AB01140B098698FD15D4C0A9C"
             {
             "SourcePath" = "8:..\\..\\..\\..\\common\\include\\mle\\mlTrace.h"
@@ -760,7 +838,7 @@
             {
             "DefaultLocation" = "8:[TARGETDIR]"
             "Name" = "8:MagicLantern"
-            "AlwaysCreate" = "11:FALSE"
+            "AlwaysCreate" = "11:TRUE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:MLEROOT"
@@ -896,7 +974,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:mlutil"
         "ProductCode" = "8:{CD0AD6F1-BDA1-4B79-88AE-4BFBA4C56A41}"
-        "PackageCode" = "8:{C9AF2A69-8CF9-4BD3-9C5B-A174FDED04AE}"
+        "PackageCode" = "8:{13ADAE4D-58A2-446F-ACF2-1957595065A1}"
         "UpgradeCode" = "8:{A889A89A-64A6-4BA5-BF72-80FDFE2F0DC8}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
@@ -909,7 +987,7 @@
         "ARPHELPLINK" = "8:"
         "Title" = "8:Utility Release Library"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:mark.s.millard@gmail.com"
+        "ARPCONTACT" = "8:msm@wizzerworks.com"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Magic Lantern Utility Release Library"
         "ARPURLINFOABOUT" = "8:www.wizzerworks.com"
@@ -1415,90 +1493,6 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_0A85D6AEDB80473BBB6745AE9325419B"
-            {
-            "SourcePath" = "8:"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_E9B90D5D9D6A429FB7829E2B8AD0425E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:Release|x64"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{7B0B79B0-303E-4E65-B553-91C9E8B4C447}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_4D619C120D6E4761B5FF80EA689F2D99"
-            {
-            "SourcePath" = "8:"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_1A9A063535E2457F80876B87CFA4EDD9"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:Release|x64"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{7B0B79B0-303E-4E65-B553-91C9E8B4C447}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_8A8806A07E0B40D0B512982FB85549F6"
-            {
-            "SourcePath" = "8:"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_D13D0B69B7BE4DEB8327B780A6197DA5"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:Release|x64"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{7B0B79B0-303E-4E65-B553-91C9E8B4C447}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
         }
     }
 }
