@@ -117,6 +117,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_83F52CFC8D9C45A39E25DC24D5156A38"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_84C3668675D0437690F1EE3F95431745"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -154,6 +160,18 @@
         "Entry"
         {
         "MsmKey" = "8:_C62601A101EE4D0AA561EDD009968E3E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CC25E4C6BC0144E89FE455AC0BCADA5C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E5184924A837491E883E4504586E53E0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -608,6 +626,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_83F52CFC8D9C45A39E25DC24D5156A38"
+            {
+            "SourcePath" = "8:..\\x64\\Debug\\util\\mlutild.lib"
+            "TargetName" = "8:mlutild.lib"
+            "Tag" = "8:"
+            "Folder" = "8:_1A9A063535E2457F80876B87CFA4EDD9"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_84C3668675D0437690F1EE3F95431745"
             {
             "SourcePath" = "8:..\\..\\..\\..\\common\\include\\mle\\mlFileio.h"
@@ -734,6 +772,46 @@
             "TargetName" = "8:mlutil.lib"
             "Tag" = "8:"
             "Folder" = "8:_1A9A063535E2457F80876B87CFA4EDD9"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CC25E4C6BC0144E89FE455AC0BCADA5C"
+            {
+            "SourcePath" = "8:..\\x64\\Debug\\util\\mlutild.lib"
+            "TargetName" = "8:mlutild.lib"
+            "Tag" = "8:"
+            "Folder" = "8:_D13D0B69B7BE4DEB8327B780A6197DA5"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E5184924A837491E883E4504586E53E0"
+            {
+            "SourcePath" = "8:..\\x64\\Debug\\util\\mlutild.lib"
+            "TargetName" = "8:mlutild.lib"
+            "Tag" = "8:"
+            "Folder" = "8:_E9B90D5D9D6A429FB7829E2B8AD0425E"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -974,7 +1052,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:mlutil"
         "ProductCode" = "8:{CD0AD6F1-BDA1-4B79-88AE-4BFBA4C56A41}"
-        "PackageCode" = "8:{13ADAE4D-58A2-446F-ACF2-1957595065A1}"
+        "PackageCode" = "8:{8EE49CF6-9368-407D-BC81-9819CE08622F}"
         "UpgradeCode" = "8:{A889A89A-64A6-4BA5-BF72-80FDFE2F0DC8}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
