@@ -1,0 +1,34 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+	<DirectoryRef Id="HEADERS_INCLUDE_MLE">
+	  <Component Id="HeaderFiles" Guid="{B408D1F5-72F3-47EC-A223-331BA6DBA270}">
+		<File Id="HeaderFile1" Source="..\..\..\..\common\include\mle\mlArray.h" />
+	    <File Id="HeaderFile2" Source="..\..\..\..\common\include\mle\mlAssert.h" />
+		<File Id="HeaderFile3" Source="..\..\..\..\common\include\mle\mlConfig.h" />
+		<File Id="HeaderFile4" Source="..\..\..\..\common\include\mle\mlDebug.h" />
+		<File Id="HeaderFile5" Source="..\..\..\..\common\include\mle\mle.h" />
+		<File Id="HeaderFile6" Source="..\..\..\..\common\include\mle\MleDsoLoader.h" />
+		<File Id="HeaderFile7" Source="..\..\..\..\common\include\mle\MleMemoryManager.h" />
+		<File Id="HeaderFile8" Source="..\..\..\..\common\include\mle\MlePath.h" />
+		<File Id="HeaderFile9" Source="..\..\..\..\common\include\mle\mlErrno.h" />
+		<File Id="HeaderFile10" Source="..\..\..\..\common\include\mle\MleTemplate.h" />
+		<File Id="HeaderFile11" Source="..\..\..\..\common\include\mle\MleUtil.h" />
+		<File Id="HeaderFile12" Source="..\..\..\include\mle\MleWin32Path.h" />
+		<File Id="HeaderFile13" Source="..\..\..\..\common\include\mle\mlExpandFilename.h" />
+		<File Id="HeaderFile14" Source="..\..\..\..\common\include\mle\mlFileio.h" />
+	  </Component>
+	</DirectoryRef>
+    <ComponentGroup Id="MlutilComponents" Directory="MLEROOT">
+      <Component Id="rehearsal" Directory="LIB64_REHEARSAL">
+        <File Id="mlutil_rehearsal" Source="$(var.util.TargetPath)"/>
+      </Component>
+	  <Component Id="tools" Directory="LIB64_TOOLS">
+		<File Id="mlutil_tools" Source="$(var.util.TargetPath)"/>
+	  </Component>
+	  <Component Id="runtime" Directory="LIB64_RUNTIME_CDECL">
+		<File Id="mlutil_runtime" Source="$(var.util.TargetPath)"/>
+	  </Component>
+	  <ComponentRef Id="HeaderFiles" />
+    </ComponentGroup>
+  </Fragment>
+</Wix>
