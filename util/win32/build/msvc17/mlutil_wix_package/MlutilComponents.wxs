@@ -16,6 +16,16 @@
 		<File Id="HeaderFile12" Source="..\..\..\include\mle\MleWin32Path.h" />
 		<File Id="HeaderFile13" Source="..\..\..\..\common\include\mle\mlExpandFilename.h" />
 		<File Id="HeaderFile14" Source="..\..\..\..\common\include\mle\mlFileio.h" />
+		<File Id="HeaderFile15" Source="..\..\..\include\mle\mlGetopt.h" />
+		<File Id="HeaderFile16" Source="..\..\..\..\common\include\mle\mlItoa.h" />
+		<File Id="HeaderFile17" Source="..\..\..\..\common\include\mle\mlLogFile.h" />
+		<File Id="HeaderFile18" Source="..\..\..\..\common\include\mle\mlMacros.h" />
+		<File Id="HeaderFile19" Source="..\..\..\..\common\include\mle\mlMalloc.h" />
+		<File Id="HeaderFile20" Source="..\..\..\include\mle\mlPlatformDefs.h" />
+		<File Id="HeaderFile21" Source="..\..\..\..\common\include\mle\mlTime.h" />
+		<File Id="HeaderFile22" Source="..\..\..\..\common\include\mle\mlToken.h" />
+		<File Id="HeaderFile23" Source="..\..\..\..\common\include\mle\mlTypes.h" />
+		<File Id="HeaderFile24" Source="..\..\..\..\common\include\mle\mlUnique.h" />
 	  </Component>
 	</DirectoryRef>
     <ComponentGroup Id="MlutilComponents" Directory="MLEROOT">
