@@ -1,11 +1,27 @@
 ﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
-  <Package Id="wizzer.magiclantern.mlutil_wix_package"
-		   Name="mlutil" Manufacturer="WizzerWorks"
-		   Version="1.0.0.0">
-    <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" />
+  <?if $(var.Configuration) = Debug ?>
+	<!-- Debug Package -->
+    <Package Id="wizzer.magiclantern.mlutild_wix_package"
+	  	     Name="mlutild"
+		     Manufacturer="WizzerWorks"
+		     Version="1.0.0.0">
+      <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" />
 
-    <Feature Id="Main">
-      <ComponentGroupRef Id="MlutilComponents" />
-    </Feature>
-  </Package>
+      <Feature Id="Main">
+        <ComponentGroupRef Id="MlutilComponents" />
+      </Feature>
+    </Package>
+  <?else?>
+	<!-- Release Package -->
+	<Package Id="wizzer.magiclantern.mlutil_wix_package"
+		     Name="mlutil"
+		     Manufacturer="WizzerWorks"
+		     Version="1.0.0.0">
+	  <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" />
+
+	  <Feature Id="Main">
+		<ComponentGroupRef Id="MlutilComponents" />
+	  </Feature>
+	</Package>
+  <?endif?>
 </Wix>
