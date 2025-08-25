@@ -49,7 +49,7 @@
 #define MleDefaultHomePath "/usr/WizzerWorks/MagicLantern"
 #else
 #if defined(_WINDOWS)
-#define MleDefaultHomePath "C:/Program Files/Wizzer Works/MagicLantern"
+#define MleDefaultHomePath "C:/Program Files/WizzerWorks/MagicLantern"
 #else
 Unknown Platform Configuration!!!
 #endif
@@ -59,12 +59,12 @@ Unknown Platform Configuration!!!
  * Template Files
  */
 
-#define MLE_TITLE_CPP_TEMPLATE        "$MLE_ROOT/lib/TitleCppCode.tmpl"    /**< Title template for C++ code generation. */
-#define MLE_TITLE_JAVA_TEMPLATE       "$MLE_ROOT/lib/TitleJavaCode.tmpl"   /**< Title template for Java code generation. */
-#define MLE_TITLE_MAKEFILE_TEMPLATE   "$MLE_ROOT/lib/TitleMakefile.tmpl"   /**< Title template for Makefile generation. */
-#define MLE_TITLE_ANT_TEMPLATE        "$MLE_ROOT/lib/TitleAnt.tmpl"        /**< Title template for Ant generation. */
-#define MLE_TOC_CPP_GLOBALS_TEMPLATE  "$MLE_ROOT/lib/TOCCppGlobals.tmpl"   /**< Template for C++ TOC globals. */
-#define MLE_TOC_JAVA_GLOBALS_TEMPLATE "$MLE_ROOT/lib/TOCJavaGlobals.tmpl"  /**< Template for Java TOC globals. */
+#define MLE_TITLE_CPP_TEMPLATE        "$MLE_ROOT/lib64/TitleCppCode.tmpl"    /**< Title template for C++ code generation. */
+#define MLE_TITLE_JAVA_TEMPLATE       "$MLE_ROOT/lib64/TitleJavaCode.tmpl"   /**< Title template for Java code generation. */
+#define MLE_TITLE_MAKEFILE_TEMPLATE   "$MLE_ROOT/lib64/TitleMakefile.tmpl"   /**< Title template for Makefile generation. */
+#define MLE_TITLE_ANT_TEMPLATE        "$MLE_ROOT/lib64/TitleAnt.tmpl"        /**< Title template for Ant generation. */
+#define MLE_TOC_CPP_GLOBALS_TEMPLATE  "$MLE_ROOT/lib64/TOCCppGlobals.tmpl"   /**< Template for C++ TOC globals. */
+#define MLE_TOC_JAVA_GLOBALS_TEMPLATE "$MLE_ROOT/lib64/TOCJavaGlobals.tmpl"  /**< Template for Java TOC globals. */
 
 /*
  * Miscellaneous executables
@@ -72,11 +72,11 @@ Unknown Platform Configuration!!!
 
 #if defined(__linux__) || defined(__APPLE__)
 #define MLE_PLAYER_PATH \
-	(getenv("MLE_PLAYER") ? getenv("MLE_PLAYER") : "$MLE_ROOT/bin/mleplay")
+	(getenv("MLE_PLAYER") ? getenv("MLE_PLAYER") : "$MLE_ROOT/bin64/mleplay")
 #else
 #if defined(_WINDOWS)
 #define MLE_PLAYER_PATH \
-	(getenv("MLE_PLAYER") ? getenv("MLE_PLAYER") : "C:/Program Files/Wizzer Works/MagicLantern/bin/mleplay")
+	(getenv("MLE_PLAYER") ? getenv("MLE_PLAYER") : "C:/Program Files/WizzerWorks/MagicLantern/bin/mleplay")
 #endif
 #endif
 
@@ -85,7 +85,7 @@ Unknown Platform Configuration!!!
  */
 
 #define MLE_ACTOR_DIR "$MLE_HOME/actors" /**< Magic Lantern actor directory. */
-#define MLE_LIB_DIR "$MLE_HOME/lib"      /**< Magic Lantern library directory. */
+#define MLE_LIB_DIR "$MLE_ROOT/lib64"      /**< Magic Lantern library directory. */
 
 /*
  * These are the recommended filename extensions for code generation.
