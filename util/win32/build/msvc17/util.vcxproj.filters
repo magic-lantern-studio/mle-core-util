@@ -40,6 +40,9 @@
     <ClCompile Include="..\..\..\common\src\mlUnique.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\common\src\mlReadFile.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\common\include\mle\mlArray.h">
@@ -112,6 +115,9 @@
       <Filter>Headers Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\common\include\mle\mlUnique.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\common\include\mle\mlReadFile.h">
       <Filter>Headers Files</Filter>
     </ClInclude>
   </ItemGroup>

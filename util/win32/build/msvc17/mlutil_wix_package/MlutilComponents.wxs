@@ -22,10 +22,11 @@
 		<File Id="HeaderFile18" Source="..\..\..\..\common\include\mle\mlMacros.h" />
 		<File Id="HeaderFile19" Source="..\..\..\..\common\include\mle\mlMalloc.h" />
 		<File Id="HeaderFile20" Source="..\..\..\include\mle\mlPlatformDefs.h" />
-		<File Id="HeaderFile21" Source="..\..\..\..\common\include\mle\mlTime.h" />
-		<File Id="HeaderFile22" Source="..\..\..\..\common\include\mle\mlToken.h" />
-		<File Id="HeaderFile23" Source="..\..\..\..\common\include\mle\mlTypes.h" />
-		<File Id="HeaderFile24" Source="..\..\..\..\common\include\mle\mlUnique.h" />
+		<File Id="HeaderFile21" Source="..\..\..\..\common\include\mle\mlReadFile.h" />
+		<File Id="HeaderFile22" Source="..\..\..\..\common\include\mle\mlTime.h" />
+		<File Id="HeaderFile23" Source="..\..\..\..\common\include\mle\mlToken.h" />
+		<File Id="HeaderFile24" Source="..\..\..\..\common\include\mle\mlTypes.h" />
+		<File Id="HeaderFile25" Source="..\..\..\..\common\include\mle\mlUnique.h" />
 	  </Component>
 	</DirectoryRef>
     <ComponentGroup Id="MlutilComponents" Directory="MLEROOT">
