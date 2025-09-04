@@ -18,7 +18,8 @@ libmlutil_la_SOURCES = \
 	$(top_srcdir)/../../common/src/mlLogFile.c \
 	$(top_srcdir)/../../common/src/mlUnique.c \
 	$(top_srcdir)/../../common/src/mlItoa.c \
-	$(top_srcdir)/../../common/src/mlTime.c
+	$(top_srcdir)/../../common/src/mlTime.c \
+	$(top_srcdir)/../../common/src/mlReadFile.c 
 
 if LINUX
 libmlutil_la_SOURCES += \
