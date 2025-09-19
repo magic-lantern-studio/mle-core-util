@@ -51,17 +51,22 @@ environment:
 build_script:
 - sh: >-
     printf "Building Ubuntu 22.04 Linux library\n";
-    cd util/linux/build;
-    libtoolize;
-    aclocal;
-    automake --add-missing --ignore-deps;
-    autoconf;
-    ./configure;
-    make
+    cd util/linux;
+    cmake -Hbuild -Bmlutil_release -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/opt/MagicLantern -DCMAKE_PREFIX_PATH="/opt/MagicLantern";
+    cd mlutil_release;
+    make;
+    cd ..;
+    cmake -Hbuild -Bmlutil_debug -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=/opt/MagicLantern -DCMAKE_PREFIX_PATH="/opt/MagicLantern";
+    cd mlutil_debug;
+    make;
+    cd ..
 - sh: >-
     printf "Installing Ubuntu 22.04 Linux library\n";
     sudo mkdir $MLE_ROOT;
-    sudo MLE_ROOT=$MLE_ROOT make install
+    cd mlutil_release;
+    sudo make install;
+    cd ../mlutil_debug;
+    sudo make install
 
 # Custom script to create an .zip file containing the libmlutil artifacts.
 after_build:
