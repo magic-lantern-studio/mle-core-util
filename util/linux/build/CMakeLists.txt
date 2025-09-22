@@ -93,6 +93,7 @@ add_library(
     ../../common/src/MleTemplate.cxx
     ../../common/src/mlExpandFilename.c
     ../../common/src/mlLogFile.c
+    ../../common/src/mlReadFile.c
     ../../common/src/mlUnique.c
     ../../common/src/mlItoa.c
     ../../common/src/mlTime.c
@@ -109,6 +110,7 @@ add_library(
     ../../common/src/MleTemplate.cxx
     ../../common/src/mlExpandFilename.c
     ../../common/src/mlLogFile.c
+    ../../common/src/mlReadFile.c
     ../../common/src/mlUnique.c
     ../../common/src/mlItoa.c
     ../../common/src/mlTime.c
@@ -123,7 +125,7 @@ add_library(
 
   target_compile_options(mlutilShared
     PRIVATE
-      $<$<CONFIG:Debug>:-O0>
+      $<$<CONFIG:Debug>: -O0>
       $<$<CONFIG:Release>:>)
 
   target_compile_definitions(mlutilShared
@@ -138,7 +140,7 @@ add_library(
 
   target_compile_options(mlutilStatic
     PRIVATE
-      $<$<CONFIG:Debug>:-O0>
+      $<$<CONFIG:Debug>: -O0>
       $<$<CONFIG:Release>:>)
 
   target_compile_definitions(mlutilStatic
@@ -174,6 +176,7 @@ add_library(
       ../../common/include/mle/mlLogFile.h
       ../../common/include/mle/mlMacros.h
       ../../common/include/mle/mlMalloc.h
+      ../../common/include/mle/mlReadFile.h
       ../../common/include/mle/mlToken.h
       ../../common/include/mle/mlTrace.h
       ../../common/include/mle/mlTypes.h

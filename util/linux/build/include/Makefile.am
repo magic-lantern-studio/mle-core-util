@@ -24,7 +24,8 @@ include_HEADERS = \
 	$(top_srcdir)/../../common/include/mle/mlTypes.h \
 	$(top_srcdir)/../../common/include/mle/mlUnique.h \
 	$(top_srcdir)/../../common/include/mle/mlItoa.h \
-	$(top_srcdir)/../../common/include/mle/mlTime.h
+	$(top_srcdir)/../../common/include/mle/mlTime.h \
+	$(top_srcdir)/../../common/include/mle/mlReadFile.h
 
 if LINUX
 include_HEADERS += \
