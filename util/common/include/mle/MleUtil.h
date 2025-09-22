@@ -77,11 +77,11 @@
  */
 
 // Magic Lantern Digital Workprint export rules.
-# ifdef MLE_INTERNAL
+# ifdef MLE_EXPORT
 #  ifdef MLE_MAKE_DLL
 #   define MLE_UTIL_API __declspec(dllexport)
 #  endif /* MLE_MAKE_DLL */
-# else /* !MLE_INTERNAL */
+# else /* !MLE_EXPORT */
 #  ifdef MLE_UTIL_DLL
 #   define MLE_UTIL_API __declspec(dllimport)
 #  else /* !MLE_UTIL_DLL */
@@ -89,7 +89,7 @@
 #    error Define either MLE_UTIL_DLL or MLE_NOT_UTIL_DLL as appropriate for your linkage! See mle/MleUtil.h for further instructions.
 #   endif /* MLE_NOT_UTIL_DLL */
 #  endif /* !MLE_UTIL_DLL */
-# endif /* !MLE_INTERNAL */
+# endif /* !MLE_EXPORT */
 
 /* Empty define to avoid errors when _not_ compiling an MSWindows DLL. */
 #ifndef MLE_UTIL_API
