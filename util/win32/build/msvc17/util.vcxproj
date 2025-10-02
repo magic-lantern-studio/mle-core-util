@@ -294,10 +294,6 @@ xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
       <Message>Install Library</Message>
       <Command>mkdir $(MLE_ROOT)\lib64\tools
 copy x64\Release\util\mlutil.lib $(MLE_ROOT)\lib64\tools\mlutil.lib
-mkdir $(MLE_ROOT)\lib64\rehearsal
-copy x64\Release\util\mlutil.lib $(MLE_ROOT)\lib64\rehearsal\mlutil.lib
-mkdir $(MLE_ROOT)\lib64\runtime\cdecl
-copy x64\Release\util\mlutil.lib $(MLE_ROOT)\lib64\runtime\cdecl\mlutil.lib
 mkdir $(MLE_ROOT)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_ROOT)\include\mle
 xcopy /Y ..\..\include\mle\* $(MLE_ROOT)\include\mle
@@ -342,6 +338,10 @@ xcopy /Y ..\..\include\mle\* $(MLE_ROOT)\include\mle
 copy x64\ReleaseDSO\util\mlutil.lib $(MLE_ROOT)\lib64\rehearsal\mlutil.lib
 mkdir $(MLE_ROOT)\bin64\rehearsal
 copy x64\ReleaseDSO\util\mlutil.dll $(MLE_ROOT)\bin64\rehearsal\mlutil.dll
+mkdir $(MLE_ROOT)\lib64\runtime\cdecl
+copy x64\ReleaseDSO\util\mlutil.lib $(MLE_ROOT)\lib64\runtime\cdecl\mlutil.lib
+mkdir $(MLE_ROOT)\bin64\runtime\cdecl
+copy x64\ReleaseDSO\util\mlutil.dll $(MLE_ROOT)\bin64\runtime\cdecl\mlutil.dll
 mkdir $(MLE_ROOT)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_ROOT)\include\mle
 xcopy /Y ..\..\include\mle\* $(MLE_ROOT)\include\mle
@@ -479,10 +479,6 @@ xcopy /Y ..\..\include\mle\* $(MLE_HOME)\include\mle
       <Message>Install Library</Message>
       <Command>mkdir $(MLE_ROOT)\lib64\tools
 copy x64\Debug\util\mlutild.lib $(MLE_ROOT)\lib64\\tools\mlutild.lib
-mkdir $(MLE_ROOT)\lib64\rehearsal
-copy x64\Debug\util\mlutild.lib $(MLE_ROOT)\lib64\rehearsal\mlutild.lib
-mkdir $(MLE_ROOT)\lib64\runtime\cdecl
-copy x64\Debug\util\mlutild.lib $(MLE_ROOT)\lib64\runtime\cdecl\mlutild.lib
 mkdir $(MLE_ROOT)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_ROOT)\include\mle
 xcopy /Y ..\..\include\mle\* $(MLE_ROOT)\include\mle
@@ -527,6 +523,10 @@ xcopy /Y ..\..\include\mle\* $(MLE_ROOT)\include\mle
 copy x64\DebugDSO\util\mlutild.lib $(MLE_ROOT)\lib64\rehearsal\mlutild.lib
 mkdir $(MLE_ROOT)\bin64\rehearsal
 copy x64\DebugDSO\util\mlutild.dll $(MLE_ROOT)\bin64\rehearsal\mlutild.dll
+mkdir $(MLE_ROOT)\lib64\runtime\cdecl
+copy x64\DebugDSO\util\mlutild.lib $(MLE_ROOT)\lib64\runtime\cdecl\mlutild.lib
+mkdir $(MLE_ROOT)\bin64\runtime\cdecl
+copy x64\DebugDSO\util\mlutild.dll $(MLE_ROOT)\bin64\runtime\cdecl\mlutild.dll
 mkdir $(MLE_ROOT)\include\mle
 xcopy /Y ..\..\..\common\include\mle\* $(MLE_ROOT)\include\mle
 xcopy /Y ..\..\include\mle\* $(MLE_ROOT)\include\mle
