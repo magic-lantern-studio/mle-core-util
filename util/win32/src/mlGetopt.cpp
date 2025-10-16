@@ -4,17 +4,13 @@
  *  @ingroup MleCore
  *
  *  Magic Lantern Core - implements getopt(), a function to parse command lines.
- *
- *  @author Mark S. Millard
- *  @date July 10, 2003
- *  @version 0.13
  */
 
 // COPYRIGHT_BEGIN
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2018 Wizzer Works
+// Copyright (c) 2015-2025 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -164,8 +160,8 @@
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-TCHAR	*optarg;		// global argument pointer
-int		optind = 0; 	// global argv index
+MLE_UTIL_API TCHAR *optarg;		// global argument pointer
+MLE_UTIL_API int   optind = 0; 	// global argv index
 
 int getopt(int argc, TCHAR *argv[], TCHAR *optstring)
 {

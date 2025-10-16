@@ -10,7 +10,7 @@
 //
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2024 Wizzer Works
+// Copyright (c) 2015-2025 Wizzer Works
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -49,10 +49,27 @@
 extern "C" {
 #endif
 
-extern int optind;
-extern TCHAR *optarg;
+MLE_UTIL_API extern int optind;
+MLE_UTIL_API extern TCHAR * optarg;
 
-int MLE_UTIL_API getopt(int argc, TCHAR *argv[], TCHAR *optstring);
+// @brief Get the next option in the argument list.
+// 
+// The getopt() function parses the command-line arguments. Its
+// arguments argc and argv are the argument count and array as passed
+// from the calling function on program invocation. An element of argv
+// that starts with '-' (and is not exactly "-" or "--") is an option
+// element. The characters of this element (aside from the initial
+// '-') are option characters. If getopt() is called repeatedly, it
+// returns successively each of the option characters from each of
+// the option elements.
+//
+// @param argc The number of arguments in the argument list.
+// @param argv A pointer to the list of arguments to parse.
+// @param optstring A pointer to a character string defining the legitimate options.
+//
+// @return If parsing is successful, then the next character will be returned
+// as an integer value.
+MLE_UTIL_API int getopt(int argc, TCHAR *argv[], TCHAR *optstring);
 
 #ifdef __cplusplus
 } /* end of 'extern "C"' */
