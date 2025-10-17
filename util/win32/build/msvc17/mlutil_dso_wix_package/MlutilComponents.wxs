@@ -38,10 +38,16 @@
 				<Component Id="mlutil_lib_rehearsal_loc" Directory="LIB64_REHEARSAL">
 					<File Id="mlutil_lib_rehearsal" Source="$(var.util.TargetDir)\mlutild.lib"/>
 				</Component>
+				<Component Id="mlutil_lib_runtime_loc" Directory="LIB64_RUNTIME_CDECL">
+					<File Id="mlutil_lib_runtime" Source="$(var.util.TargetDir)\mlutild.lib"/>
+				</Component>
 			<?else?>
 				<!-- Release Package -->
 				<Component Id="mlutil_lib_rehearsal_loc" Directory="LIB64_REHEARSAL">
 					<File Id="mlutil_lib_rehearsal" Source="$(var.util.TargetDir)\mlutil.lib"/>
+				</Component>
+				<Component Id="mlutil_lib_runtime_loc" Directory="LIB64_RUNTIME_CDECL">
+					<File Id="mlutil_lib_runtime" Source="$(var.util.TargetDir)\mlutil.lib"/>
 				</Component>
 			<?endif?>
 			<ComponentRef Id="HeaderFiles" />
