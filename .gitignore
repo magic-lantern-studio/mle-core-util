@@ -20,5 +20,9 @@
 **/ltmain.sh
 **/depcomp
 
+## Linux CMake
+**/mlutil_release
+**/mlutil_debug
+
 ## Apple XCode User Settings
 xcuserdata/
