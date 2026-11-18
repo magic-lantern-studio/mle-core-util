@@ -5,8 +5,15 @@ The Core Util Library provides utilities that are common across the Magic Lanter
 
 # Build Status
 
-  * AppVeyor CI for Ubuntu 22.04 LTS 64-bit: <img src="https://ci.appveyor.com/api/projects/status/jdax43js3ip53gxx?svg=true" alt="Linux Project Badge">
-  * AppVeyor CI for Visual Studio 2022: <img src="https://ci.appveyor.com/api/projects/status/fi70lj0qxprjxse4?svg=true" alt="Windows Project Badge">
+Actions CI for Ubuntu 24.04 LTS 64-bit
+<a href="https://github.com/magic-lantern-studio/mle-core-util/actions/workflows/ubuntu-24.04.yml">
+  <img src="https://github.com/magic-lantern-studio/mle-core-util/actions/workflows/ubuntu-24.04.yml/badge.svg" alt="Ubuntu 24.04 build">
+</a>
+
+Actions CI for Visual Studio 2022:
+<a href="https://github.com/magic-lantern-studio/mle-core-util/actions/workflows/windows-msvc17.yml">
+  <img src="https://github.com/magic-lantern-studio/mle-core-util/actions/workflows/windows-msvc17.yml/badge.svg" alt="Windows build">
+</a>
 
 # Documentation
 Documentation on the Magic Lantern utility library can be found at:
