@@ -1,0 +1,40 @@
+name: Build (Windows, Visual Studio 2022)
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  # The Visual Studio project post-build steps install into %MLE_ROOT%.
+  MLE_ROOT: C:\opt\MagicLantern
+
+jobs:
+  build:
+    # GitHub does not offer a "Windows 11" runner image; windows-2022 has
+    # Visual Studio 2022 (v143 toolset) preinstalled.
+    runs-on: windows-2022
+    strategy:
+      fail-fast: false
+      matrix:
+        configuration: [ Debug, Release ]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Build
+        run: >
+          msbuild util\win32\build\msvc17\mleutil.sln
+          /m
+          /p:Configuration=${{ matrix.configuration }}
+          /p:Platform=x64
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mle-core-util-windows-${{ matrix.configuration }}
+          path: ${{ env.MLE_ROOT }}

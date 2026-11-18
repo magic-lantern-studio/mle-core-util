@@ -1,0 +1,42 @@
+name: Build (Ubuntu 24.04)
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        build_type: [ Release, Debug ]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential cmake pkg-config
+
+      - name: Configure
+        run: >
+          cmake -S util/linux/build -B build_${{ matrix.build_type }}
+          -G "Unix Makefiles"
+          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+          -DCMAKE_INSTALL_PREFIX=${{ github.workspace }}/stage
+
+      - name: Build
+        run: cmake --build build_${{ matrix.build_type }} --parallel
+
+      - name: Install (staged)
+        run: cmake --install build_${{ matrix.build_type }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mle-core-util-ubuntu-24.04-${{ matrix.build_type }}
+          path: stage
