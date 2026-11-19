@@ -33,6 +33,17 @@ jobs:
           /p:Configuration=${{ matrix.configuration }}
           /p:Platform=x64
 
+      # The rehearsal player links the DLL (DSO) flavour of mlutil, which the
+      # ReleaseDSO configuration installs into lib64\rehearsal. It is built in
+      # the Release job so it ends up in the same artifact.
+      - name: Build DSO libraries
+        if: matrix.configuration == 'Release'
+        run: >
+          msbuild util\win32\build\msvc17\mleutil.sln
+          /m
+          /p:Configuration=ReleaseDSO
+          /p:Platform=x64
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
