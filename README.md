@@ -7,7 +7,7 @@ The Core Util Library provides utilities that are common across the Magic Lanter
 
 Actions CI for Ubuntu 24.04 LTS 64-bit
 <a href="https://github.com/magic-lantern-studio/mle-core-util/actions/workflows/continuous-integration-ubuntu-24.04.yml">
-  <img src="https://github.com/magic-lantern-studio/mle-core-util/actions/workflows/continuous-integration-ubuntu-24.04.yml/badge.svg" alt="Continuous integration Ubuntu 24.04 build">
+  <img src="https://github.com/magic-lantern-studio/mle-core-util/actions/workflows/continuous-integration-ubuntu-24.04.yml/badge.svg" alt="Continuous Integration Ubuntu 24.04 build">
 </a>
 
 Actions CI for Visual Studio 2022:
