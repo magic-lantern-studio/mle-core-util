@@ -86,7 +86,8 @@ add_library(mlutiltest SHARED
   libmlutiltest/libmlutiltest.cxx
   libmlutiltest/testMlDebug.cxx
   libmlutiltest/testLogFile.cxx
-  libmlutiltest/testMlTrace.cxx)
+  libmlutiltest/testMlTrace.cxx
+  libmlutiltest/testMleArray.cxx)
 target_include_directories(mlutiltest PRIVATE
   $<TARGET_PROPERTY:GTest::gtest,INTERFACE_INCLUDE_DIRECTORIES>)
 

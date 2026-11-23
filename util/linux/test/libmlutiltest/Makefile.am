@@ -12,7 +12,8 @@ libmlutiltest_la_SOURCES = \
     libmlutiltest.cxx \
     testMlDebug.cxx \
     testLogFile.cxx \
-    testMlTrace.cxx
+    testMlTrace.cxx \
+    testMleArray.cxx
 
 # Linker options libTestProgram
 libmlutiltest_la_LDFLAGS = 

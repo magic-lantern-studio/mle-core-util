@@ -45,6 +45,7 @@
 // Include standard header files.
 #if defined(__linux__) || defined(__APPLE__)
 #include <string>
+#include <string.h>
 #include <new>
 #endif /* __linux__ */
 #ifdef _WINDOWS
@@ -74,6 +75,27 @@ template <class T> class MleArray
     T * m_data;
     
 
+  // Allocate memory for num elements. The memory is allocated with mlMalloc()
+  // because resize() uses mlRealloc() and the destructor uses mlFree().
+  static T* allocate(int num)
+  {
+      if (num <= 0)
+          return NULL;
+      T* data = (T *) mlMalloc( num * sizeof(T) );
+      if (NULL != data)
+          new (data) T[num];
+      return data;
+  }
+
+  // Copy the elements of another array. This array must be empty.
+  void copy(const MleArray& a)
+  {
+      m_data = allocate(a.m_numElements);
+      m_numElements = (NULL == m_data) ? 0 : a.m_numElements;
+      if (m_numElements > 0)
+          memcpy ( m_data, a.m_data, m_numElements * sizeof(T) );
+  }
+
   // Declare member functions.
 
   public:
@@ -99,7 +121,7 @@ template <class T> class MleArray
     MleArray(int num)
     {
         m_numElements = num;
-        m_data = new T[num];
+        m_data = allocate(num);
     }
 
     
@@ -108,7 +130,9 @@ template <class T> class MleArray
 	 * of the array.
 	 *
 	 * @param num The number of elements in the array.
-	 * @param ptr A pointer to the elements to place in the array.
+	 * @param ptr A pointer to the elements to place in the array. The array
+	 * takes ownership of the memory, which must have been allocated with
+	 * mlMalloc(), and releases it with mlFree().
 	 */
     MleArray(int num, T * ptr)
     {
@@ -140,9 +164,28 @@ template <class T> class MleArray
 	 */
     MleArray(const MleArray& a)
     {
-        m_numElements = a.m_numElements;
-        m_data = new T[m_numElements];
-        memcpy ( m_data, a.m_data, m_numElements * sizeof(T) );
+        m_numElements = 0;
+        m_data = NULL;
+        copy(a);
+    }
+
+	/**
+	 * @brief The assignment operator.
+	 *
+	 * The elements are copied, so the arrays do not share memory.
+	 *
+	 * @param a A reference to another array of elements from which to
+	 * copy.
+	 */
+    MleArray& operator= (const MleArray& a)
+    {
+        if (this != &a) {
+            mlFree(m_data);
+            m_numElements = 0;
+            m_data = NULL;
+            copy(a);
+        }
+        return *this;
     }
 
 
@@ -151,7 +194,7 @@ template <class T> class MleArray
 	 */
     ~MleArray()
     {
-    	if (m_data != NULL) delete m_data;
+        mlFree(m_data);
     }
 
 	
@@ -163,7 +206,7 @@ template <class T> class MleArray
 	 */
     T& operator[] (int i)
     {
-        if (i > size()) {
+        if (i >= size()) {
             resize( i+1 );
         }
         return ( ((T *)m_data)[i] );
