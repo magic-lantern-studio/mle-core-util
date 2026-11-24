@@ -197,6 +197,7 @@ mlFilenameExpand(const char *inName)
             curPtr = newPtr;
         }
         appendStr(vstr, tildeName);
+        mlFree(tildeName);
     }
 
     /*
