@@ -42,6 +42,7 @@
 
 // Include system header files.
 #include <memory.h>
+#include <string.h>
 
 // Inlude Magic Lantern header files.
 #include "mle/mlUnique.h"
@@ -69,7 +70,7 @@ mlUnique(void *ap, int n, int size, int(*compare)(const void *, const void *))
 				   memcpy(((char *)ap)+(k-1)*size, ((char *)ap)+k*size, size);
  				}
 #endif
-				memcpy(((char *)ap)+j*size, ((char *)ap)+(j+1)*size, (n-(j+1))*size);
+				memmove(((char *)ap)+j*size, ((char *)ap)+(j+1)*size, (n-(j+1))*size);
 				n--;
 			} else {
 				j++;
