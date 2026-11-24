@@ -82,6 +82,11 @@ static char *dso_path[] = {
 };
 
 
+// Format a name into a fixed size buffer. This is nonzero if the name did not
+// fit, in which case the buffer must not be used.
+#define MLE_DSO_NAME(buffer,...) \
+	(snprintf((buffer),sizeof(buffer),__VA_ARGS__) >= (int)sizeof(buffer))
+
 // Declare the static head of the DSO list.
 MleDSOEntry *MleDSOLoader::m_dsoList = NULL;
 
@@ -101,16 +106,16 @@ void (*MleDSOLoader::findInitClass(const char *classname,void *handle,const char
 	if ( prefix )
 	{
 #if defined(__linux__) || defined(__APPLE__)
-		sprintf(dso_func,"_ZN%zu%s%s9initClassEv",
-			(strlen(classname) + strlen(prefix)),prefix,classname);
-		initClass = (void (*)(void))dlsym(handle,dso_func);
+		if ( ! MLE_DSO_NAME(dso_func,"_ZN%zu%s%s9initClassEv",
+			(strlen(classname) + strlen(prefix)),prefix,classname) )
+			initClass = (void (*)(void))dlsym(handle,dso_func);
 #endif /* __linux__ */
 #if defined(_WINDOWS)
 		typedef VOID (*INITCLASSFUNC)(VOID); 
 
 		INITCLASSFUNC procAddress;
-		sprintf(dso_func,"?initClass@%s%s@@SAXXZ",prefix,classname);
-		procAddress = (INITCLASSFUNC) GetProcAddress((HINSTANCE)handle, dso_func);
+		procAddress = MLE_DSO_NAME(dso_func,"?initClass@%s%s@@SAXXZ",prefix,classname) ? NULL :
+			(INITCLASSFUNC) GetProcAddress((HINSTANCE)handle, dso_func);
 
 		initClass = procAddress;
 #endif /* _WINDOWS */
@@ -120,16 +125,16 @@ void (*MleDSOLoader::findInitClass(const char *classname,void *handle,const char
 	if ( initClass == NULL )
 	{
 #if defined(__linux__) || defined(__APPLE__)
-		sprintf(dso_func,"_ZN%zu%s9initClassEv",
-			strlen(classname),classname);
-		initClass = (void (*)(void))dlsym(handle,dso_func);
+		if ( ! MLE_DSO_NAME(dso_func,"_ZN%zu%s9initClassEv",
+			strlen(classname),classname) )
+			initClass = (void (*)(void))dlsym(handle,dso_func);
 #endif /* __linux__ */
 #if defined(_WINDOWS)
 		typedef VOID (*INITCLASSFUNC)(VOID); 
 
 		INITCLASSFUNC procAddress;
-		sprintf(dso_func,"?initClass@%s@@SAXXZ",classname);
-		procAddress = (INITCLASSFUNC) GetProcAddress((HINSTANCE)handle, dso_func);
+		procAddress = MLE_DSO_NAME(dso_func,"?initClass@%s@@SAXXZ",classname) ? NULL :
+			(INITCLASSFUNC) GetProcAddress((HINSTANCE)handle, dso_func);
 
 		initClass = procAddress;
 #endif /* _WINDOWS */
@@ -332,7 +337,12 @@ MleDSOLoader::loadFile(const char *filename,char **pathlist)
 	while ( handle == NULL && pathlist[ipath] )
 	{
 		// Construct the DSO filename, type.so
-		sprintf(dso_file,"%s%s",pathlist[ipath],filename);
+		if ( MLE_DSO_NAME(dso_file,"%s%s",pathlist[ipath],filename) )
+		{
+			// This is too long to be a file name, so try the next directory.
+			ipath++;
+			continue;
+		}
 
 		// Expand environment variables, etc.
 		char *expand = mlFilenameExpand(dso_file);
@@ -437,16 +447,20 @@ MleDSOLoader::loadClass(const char *classname,const char *prefix)
 	// Else attempt to load a file base on the class name.
 	char dso_file[256];
 #if defined(__linux__)
-	sprintf(dso_file,"%s.so",classname);
+	if ( MLE_DSO_NAME(dso_file,"%s.so",classname) )
+		return 1;
 #endif /* __linux__ */
 #if defined(__APPLE__)
-    sprintf(dso_file,"%s.dylib",classname);
+    if ( MLE_DSO_NAME(dso_file,"%s.dylib",classname) )
+		return 1;
 #endif /* __APPLE__ */
 #if defined(_WINDOWS)
 #ifdef MLE_DEBUG
-	sprintf(dso_file,"%sd.dll",classname);
+	if ( MLE_DSO_NAME(dso_file,"%sd.dll",classname) )
+		return 1;
 #else
-	sprintf(dso_file,"%s.dll",classname);
+	if ( MLE_DSO_NAME(dso_file,"%s.dll",classname) )
+		return 1;
 #endif /* ! MLE_DEBUG */
 #endif /* _WINDOWS */
 	handle = loadFile(dso_file,m_pathlist);
@@ -454,7 +468,8 @@ MleDSOLoader::loadClass(const char *classname,const char *prefix)
 #if defined(__linux__)
     if (handle == NULL) {
         // Try to load with Unix 'lib' prefix.
-        sprintf(dso_file,"lib%s.so",classname);
+        if ( MLE_DSO_NAME(dso_file,"lib%s.so",classname) )
+		return 1;
         handle = loadFile(dso_file,m_pathlist);
     }
 #endif /* __linux__ */
@@ -462,7 +477,8 @@ MleDSOLoader::loadClass(const char *classname,const char *prefix)
 #if defined(__APPLE__)
     if (handle == NULL) {
         // Try to load with Unix 'lib' prefix.
-        sprintf(dso_file,"lib%s.dylib",classname);
+        if ( MLE_DSO_NAME(dso_file,"lib%s.dylib",classname) )
+		return 1;
         handle = loadFile(dso_file,m_pathlist);
     }
 #endif /* __linux__ */
